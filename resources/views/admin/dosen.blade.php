@@ -34,10 +34,11 @@
                     </thead>
 
                     <tbody>
+                        @foreach ($datadosen as $row)    
                         <tr>
-                            <td>Fitri Wibowo,S.ST., MT.</td>
-                            <td>19851228 201504 1 002</td>
-                            <td>Laki-laki</td>
+                            <td>{{ $row->nama }}</td>
+                            <td>{{ $row->nip }}</td>
+                            <td>{{ $row->jeniskelamin }}</td>
                             <td class="action">
                                 <a href="/edit_dosen" class="text-decoration-none"><button
                                         class="btn-transaction bg-warning text-white mx-auto">Edit</button></a>
@@ -45,6 +46,7 @@
                                         class="btn-transaction bg-danger text-white mx-auto">Hapus</button></a>
                             </td>
                         </tr>
+                        @endforeach
 
                     </tbody>
                 </table>

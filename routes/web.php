@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DosenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,17 +57,9 @@ Route::get('/edit_matakuliah', function(){
 
 
 
-Route::get('/dosen', function(){
-    return view('admin/dosen',[
-        "sidebar"=>"Dosen"
-    ]);
-});
-
-Route::get('/tambah_dosen', function(){
-    return view('admin/tambah_dosen',[
-        "sidebar"=>"Dosen"
-    ]);
-});
+Route::get('/dosen',[DosenController::class, 'dosen'])->name('dosen');
+Route::get('/tambah_dosen',[DosenController::class, 'tambahdosen'])->name('tambahdosen');
+Route::post('/insertdata_dosen',[DosenController::class, 'insertdata_dosen'])->name('insertdata_dosen');
 
 Route::get('/edit_dosen', function(){
     return view('admin/edit_dosen',[
