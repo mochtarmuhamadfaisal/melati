@@ -30,7 +30,7 @@
                     <div class="align-items-center justify-content-center d-lg-none d-flex">
                         <img class="img-fluid" src="assets/img/login.png" alt="" />
                     </div>
-                    <h3 class="text-judul-fitur">Selamat Datang di Aplikasii <span style="color: var(--warna-pertama);">MELATI</span>👋</h3>
+                    <h3 class="text-judul-fitur">Selamat Datang di Aplikasi <span style="color: var(--warna-pertama);">MELATI</span>👋</h3>
                     <p class="text-caption">
                         <span class="text-fitur">ME</span>dia Pembe<span class="text-fitur">LA</span>jaran <span class="text-fitur">T</span>eknik <span class="text-fitur">I</span>nformatika
                     </p>
