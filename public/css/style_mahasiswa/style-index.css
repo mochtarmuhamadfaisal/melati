@@ -1,0 +1,648 @@
+:root{
+    --warna-pertama:#2390B9;
+    --warna-kedua:#D4F3FF;
+    --warna-font-pertama:#272E35;
+    --warna-font-kedua:#BDBDBD;
+    
+}
+
+.text-fitur{
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--warna-pertama);
+}
+
+.text-judul-fitur{
+    margin-top: 7px;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--warna-font-pertama);
+    line-height: 45px;
+}
+
+.text-caption{
+    color: #121212;
+    font-weight: 300;
+    line-height: 32px;
+}
+
+/* Import font form google font*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+    font-family: 'Poppins', sans-serif !important;
+  }
+
+/* ========== AWAL CSS INDEX PAGE ========== */
+
+/* AWAL CSS= Navbar dan Hero section*/
+.header-2-1 .modal-item.modal {
+    top: 2rem;
+  }
+  
+  .header-2-1 .navbar,
+  .header-2-1 .hero {
+    padding: 3rem 2rem;
+  }
+  
+  .header-2-1 .navbar-light .navbar-nav .nav-link {
+    font: 300 18px/1.5rem Poppins, sans-serif;
+    color: #1d1e3c;
+    transition: 0.3s;
+  }
+  
+  .header-2-1 .navbar-light .navbar-nav .nav-link:hover {
+    font: 600 18px/1.5rem Poppins, sans-serif;
+    color: #1d1e3c;
+    transition: 0.3s;
+  }
+  
+  .header-2-1 .navbar-light .navbar-nav .active>.nav-link,
+  .header-2-1 .navbar-light .navbar-nav .nav-link.active,
+  .header-2-1 .navbar-light .navbar-nav .nav-link.show,
+  .header-2-1 .navbar-light .navbar-nav .show>.nav-link {
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  
+  .header-2-1 .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  
+  .header-2-1 .btn:focus,
+  .header-2-1 .btn:active {
+    outline: none !important;
+  }
+  
+  .header-2-1 .btn-fill {
+    font: 600 18px/normal Poppins, sans-serif;
+    background-color: var(--warna-pertama);
+    border-radius: 12px;
+    padding: 12px 32px;
+    transition: 0.3s;
+  }
+  
+  .header-2-1 .btn-fill:hover {
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    transition: 0.3s;
+  }
+  
+  .header-2-1 .btn-no-fill {
+    font: 300 18px/1.75rem Poppins, sans-serif;
+    color: #1d1e3c;
+    padding: 12px 32px;
+    transition: 0.3s;
+  }
+  
+  .header-2-1 .modal-item .modal-dialog .modal-content {
+    border-radius: 8px;
+  }
+  
+  .header-2-1 .responsive li a {
+    padding: 1rem;
+  }
+  
+  .header-2-1 .text-caption {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--warna-pertama);
+  }
+  
+  .header-2-1 .left-column {
+    margin-bottom: 2.75rem;
+    width: 100%;
+  }
+  
+  .header-2-1 .right-column {
+    width: 100%;
+  }
+  
+  .header-2-1 .title-text-big {
+    font-size: 55px !important;
+    font-weight: 600;
+    margin-bottom: 5rem;
+    color: #272e35;
+  }
+  
+  .header-2-1 .btn-try {
+    font: 600 1rem/1.5rem Poppins, sans-serif;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    background-color: var(--warna-pertama);
+    transition: 0.3s;
+  }
+  
+  .header-2-1 .btn-try:hover {
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    transition: 0.3s;
+  }
+  
+  .header-2-1 .btn-outline {
+    font: 400 1rem/1.5rem Poppins, sans-serif;
+    border: 1px solid #555b61;
+    color: #555b61;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    background-color: transparent;
+    transition: 0.3s;
+  }
+  
+  .header-2-1 .btn-outline:hover {
+    border: 1px solid var(--warna-pertama);
+    color: var(--warna-pertama);
+    transition: 0.3s;
+  }
+  
+  .header-2-1 .btn-outline:hover div path {
+    fill: var(--warna-pertama);
+    transition: 0.3s;
+  }
+  
+  body section div nav.navbar{
+    height: 1rem;
+  }
+  
+  div.hero{
+      margin-top: 70px;
+  }
+  
+  
+  
+  
+  @media (min-width: 576px) {
+    .header-2-1 .modal-item .modal-dialog {
+      max-width: 95%;
+      border-radius: 12px;
+    }
+  
+    .header-2-1 .navbar {
+      padding: 3rem 2rem;
+    }
+  
+    .header-2-1 .hero {
+      padding: 3rem 2rem 5rem;
+    }
+  
+    .header-2-1 .title-text-big {
+      font-size: 3rem;
+      line-height: 1.2;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .header-2-1 .navbar {
+      padding: 3rem 4rem;
+    }
+  
+    .header-2-1 .hero {
+      padding: 3rem 4rem 5rem;
+    }
+  
+    .header-2-1 .left-column {
+      margin-bottom: 3rem;
+    }
+  }
+
+  @media (max-width: 768px){
+    .header-2-1 .btn-try{
+        padding: 1rem 6.2rem;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .header-2-1 .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: 1.25rem;
+      padding-left: 1.25rem;
+    }
+  
+    .header-2-1 .navbar {
+      padding: 3rem 6rem;
+    }
+  
+    .header-2-1 .hero {
+      padding: 3rem 6rem 5rem;
+    }
+  
+    .header-2-1 .left-column {
+      width: 50%;
+      margin-bottom: 0;
+    }
+  
+    .header-2-1 .right-column {
+      width: 50%;
+    }
+  
+    .header-2-1 .title-text-big {
+      font-size: 3.75rem;
+      line-height: 1.2;
+    }
+  }
+/* AKHIR CSS= Navbar dan Hero section*/
+
+/* ========== AWAL CSS INDEX PAGE ========== */
+
+
+
+
+
+
+/* ========== AWAL CSS TENTANG APLIKASI ========== */
+.content-2-2 .btn:focus,
+.content-2-2 .btn:active {
+  outline: none !important;
+}
+
+.content-2-2 .title-text {
+  padding-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.content-2-2 .text-title {
+  font: 600 2.25rem/2.5rem Poppins, sans-serif;
+  color: #121212;
+  margin-bottom: 0.625rem;
+}
+
+.content-2-2 .text-caption {
+  color: #121212;
+  font-weight: 300;
+}
+
+.content-2-2 .column {
+  padding: 2rem 2.25rem;
+}
+
+.content-2-2 .icon {
+  margin-bottom: 1.5rem;
+}
+
+.content-2-2 .icon-title {
+  font: 500 1.5rem/2rem Poppins, sans-serif;
+  margin-bottom: 0.625rem;
+  color: #121212;
+}
+
+.content-2-2 .icon-caption {
+  font: 400 1rem/1.625 Poppins, sans-serif;
+  letter-spacing: 0.025em;
+  color: #565656;
+}
+
+.icon i{
+  background-color: var(--warna-pertama);
+  border-radius: 50%;
+  font-size: 35px;
+  padding: 15px;
+  color: white;
+}
+
+.icon i:hover{
+  background-color: #003A50;
+}
+
+/* AWAL Responsive tentang aplikasi */
+@media (min-width: 576px) {
+  .content-2-2 .grid-padding {
+    padding: 0rem 2rem 3rem;
+  }
+
+  .content-2-2 .card-block {
+    padding: 3rem 2rem 5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .content-2-2 .grid-padding {
+    padding: 0rem 4rem 3rem;
+  }
+
+  .content-2-2 .card-block {
+    padding: 3rem 4rem 5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .content-2-2 .grid-padding {
+    padding: 1rem 6rem 3rem;
+  }
+
+  .content-2-2 .card-block {
+    padding: 3rem 6rem 5rem;
+  }
+
+  .content-2-2 .column {
+    padding: 0rem 2.25rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content-2-2 .grid-padding {
+    padding: 1rem 10rem 3rem;
+  }
+
+  .content-2-2 .card-block {
+    padding: 3rem 6rem 5rem;
+  }
+
+  .content-2-2 .card-btn-space {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .content-2-2 .btn-card,
+  .content-2-2 .btn-outline {
+    width: 95%;
+    float: right;
+  }
+}
+
+@media (max-width: 980px) {
+  .content-2-2 .card-btn-space {
+    width: 100%;
+  }
+}
+/* AKHIR responsive tentang aplikasi */
+/*========== AKHIR CSS TENTANG APLIKASI =========*/
+
+
+
+
+
+/*========== AWAL CSS FITUR BELAJAR DAN DISKUSI ========= */
+  /* body .content {
+    background: #e0f7ff;
+  } */
+  
+  body .content .content {
+    padding-top: 130px;
+    padding-bottom: 130px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  
+  body .content .content .button-header {
+    margin-top: 40px;
+  }
+  
+  body .content .content .button-header .btn-started {
+    width: 150px;
+    height: 50px;
+    left: 562px;
+    top: 569px;
+    background: var(--warna-pertama);
+    border-radius: 8px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+  }
+  
+  body .content .content .img-brand {
+    margin-top: 34px;
+  }
+  
+  body .content .content .img-brand img {
+    margin-right: 60px;
+  }
+  
+  /* @media only screen and (max-width: 768px) {
+    body .content .content .img-fluid img {
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+  
+  } */
+  
+  @media (max-width: 768px){
+    .content img{
+      width: 100%;
+      margin-bottom: 4rem;
+      margin-top: 4rem;
+    }
+  }
+/*========== AKHIR CSS FITUR BELAJAR DAN DISKUSI ========= */
+
+
+
+
+/*========== AWAL CSS FITUR PENJELASAN SHOWCASE ========= */
+.content-3-2 .btn:focus,
+      .content-3-2 .btn:active {
+        outline: none !important;
+      }
+
+      .content-3-2 {
+        padding: 5rem 2rem;
+      }
+
+      .content-3-2 .img-hero {
+        width: 100%;
+        margin-bottom: 3rem;
+      }
+
+      .content-3-2 .right-column {
+        width: 100%;
+        margin-left: 10rem;
+      }
+
+      .content-3-2 .title-text {
+        font: 600 1.875rem/2.25rem Poppins, sans-serif;
+        margin-bottom: 2.5rem;
+        letter-spacing: -0.025em;
+        color: #121212;
+      }
+
+      .content-3-2 .title-caption {
+        font: 500 1.5rem/2rem Poppins, sans-serif;
+        margin-bottom: 1.25rem;
+        color: #121212;
+      }
+
+      .content-3-2 .circle {
+        font: 500 1.25rem/1.75rem Poppins, sans-serif;
+        height: 3rem;
+        width: 3rem;
+        margin-bottom: 1.25rem;
+        border-radius: 9999px;
+        background-color: var(--warna-pertama);
+      }
+
+      /* .content-3-2 .text-caption {
+        font: 400 1rem/1.75rem Poppins, sans-serif;
+        letter-spacing: 0.025em;
+        color: #565656;
+      } */
+
+      .content-3-2 .btn-learn {
+        font: 600 1rem/1.5rem Poppins, sans-serif;
+        padding: 1rem 2.5rem;
+        background-color: var(--warna-pertama);
+        transition: 0.3s;
+        letter-spacing: 0.025em;
+        border-radius: 0.75rem;
+      }
+
+      .content-3-2 .btn:hover {
+        background-color: var(--warna-pertama);
+        transition: 0.3s;
+      }
+
+      @media (max-width: 768px) {
+        .content-3-2 .title-text {
+          font: 600 2.25rem/2.5rem Poppins, sans-serif;
+        }
+        .content-3-2 .right-column{
+          margin: 1rem auto ;
+        }
+        .content-3-2 .img-hero {
+            width: 100%;
+            margin-bottom: 2rem;
+          }
+      }
+
+      @media (min-width: 768px) {
+        .content-3-2 .title-text {
+          font: 600 2.25rem/2.5rem Poppins, sans-serif;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .content-3-2 .img-hero {
+          width: 50%;
+          margin-bottom: 0;
+        }
+
+        .content-3-2 .right-column {
+          width: 50%;
+        }
+
+        .content-3-2 .circle {
+          margin-right: 1.25rem;
+          margin-bottom: 0;
+        }
+      }
+/*========== AKHIR CSS FITUR PENJELASAN SHOWCASE ========= */
+
+
+
+
+
+/*========== AWAL CSS FOOTER ========= */
+.footer-2-2 .list-space {
+    margin-bottom: 1.25rem;
+}
+
+.footer-2-2 .footer-text-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 1.5rem;
+}
+
+.footer-2-2 .list-menu {
+    color: #c7c7c7;
+    text-decoration: none !important;
+}
+
+.footer-2-2 .list-menu:hover {
+    color: #555252;
+}
+
+.footer-2-2 hr.hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-2-2 .border-color {
+    color: var(--warna-pertama);
+}
+
+.footer-2-2 .footer-link {
+    color: #c7c7c7;
+}
+
+.footer-2-2 .footer-link:hover {
+    color: #555252;
+}
+
+.footer-2-2 .social-media-c:hover circle,
+.footer-2-2 .social-media-p:hover path {
+    fill: #2390B9;
+}
+
+
+.footer-2-2 .footer-info-space {
+    padding-top: 3rem;
+}
+
+.footer-2-2 .list-footer {
+    padding: 5rem 1rem 3rem 1rem;
+}
+
+.footer-2-2 .info-footer {
+    padding: 0 1rem 3rem;
+}
+
+
+
+@media (min-width: 576px) {
+    .footer-2-2 .list-footer {
+        padding: 5rem 2rem 3rem 2rem;
+    }
+
+    .footer-2-2 .info-footer {
+        padding: 0 2rem 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-2-2 .list-footer {
+        padding: 5rem 4rem 6rem 4rem;
+    }
+
+    .footer-2-2 .info-footer {
+        padding: 0 4rem 3rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-2-2 .list-footer {
+        padding: 5rem 6rem 6rem 6rem;
+    }
+
+    .footer-2-2 .info-footer {
+        padding: 0 6rem 3rem;
+    }
+}
+/*========== AKHIR CSS FOOTER ========= */
+
+
+
+
+
+
+
+
+
+/*========== Awal CSS= btn auto scoll ==========*/
+a.btn-scoll i{
+    font-size: 40px;
+    background-color: var(--warna-pertama) !important;
+    color: white;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+  }
+  /*========== Akhir CSS= btn auto scoll ==========*/

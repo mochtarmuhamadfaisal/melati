@@ -1,0 +1,468 @@
+:root{
+  --warna-pertama:#2390B9;
+  --warna-kedua:#D4F3FF;
+  --warna-font-pertama:#272E35;
+  --warna-font-kedua:#BDBDBD;
+  
+}
+
+.text-fitur{
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--warna-pertama);
+}
+
+.text-judul-fitur{
+  margin-top: 7px;
+  font-size: 27px;
+  font-weight: 600;
+  color: var(--warna-font-pertama);
+  line-height: 45px;
+}
+
+.text-caption{
+  color: #121212;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+/* Import font form google font*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* AWAL CSS= Navbar dan Hero section*/
+.header-2-1 .modal-item.modal {
+  top: 2rem;
+}
+
+.header-2-1 .navbar,
+.header-2-1 .hero {
+  padding: 3rem 2rem;
+}
+
+.header-2-1 .navbar-light .navbar-nav .nav-link {
+  font: 300 18px/1.5rem Poppins, sans-serif;
+  color: #1d1e3c;
+  transition: 0.3s;
+}
+
+.header-2-1 .navbar-light .navbar-nav .nav-link:hover {
+  font: 600 18px/1.5rem Poppins, sans-serif;
+  color: #1d1e3c;
+  transition: 0.3s;
+}
+
+.header-2-1 .navbar-light .navbar-nav .active>.nav-link,
+.header-2-1 .navbar-light .navbar-nav .nav-link.active,
+.header-2-1 .navbar-light .navbar-nav .nav-link.show,
+.header-2-1 .navbar-light .navbar-nav .show>.nav-link {
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.header-2-1 .navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.header-2-1 .btn:focus,
+.header-2-1 .btn:active {
+  outline: none !important;
+}
+
+.header-2-1 .btn-fill {
+  font: 600 18px/normal Poppins, sans-serif;
+  background-color: var(--warna-pertama);
+  border-radius: 12px;
+  padding: 12px 32px;
+  transition: 0.3s;
+}
+
+.header-2-1 .btn-fill:hover {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition: 0.3s;
+}
+
+.header-2-1 .btn-no-fill {
+  font: 300 18px/1.75rem Poppins, sans-serif;
+  color: #1d1e3c;
+  padding: 12px 32px;
+  transition: 0.3s;
+}
+
+.header-2-1 .modal-item .modal-dialog .modal-content {
+  border-radius: 8px;
+}
+
+.header-2-1 .responsive li a {
+  padding: 1rem;
+}
+
+.header-2-1 .text-caption {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--warna-pertama);
+}
+
+.header-2-1 .left-column {
+  margin-bottom: 2.75rem;
+  width: 100%;
+}
+
+.header-2-1 .right-column {
+  width: 100%;
+}
+
+.header-2-1 .title-text-big {
+  font-size: 55px !important;
+  font-weight: 600;
+  margin-bottom: 5rem;
+  color: #272e35;
+}
+
+.header-2-1 .btn-try {
+  font: 600 1rem/1.5rem Poppins, sans-serif;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--warna-pertama);
+  transition: 0.3s;
+}
+
+.header-2-1 .btn-try:hover {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition: 0.3s;
+}
+
+.header-2-1 .btn-outline {
+  font: 400 1rem/1.5rem Poppins, sans-serif;
+  border: 1px solid #555b61;
+  color: #555b61;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.header-2-1 .btn-outline:hover {
+  border: 1px solid var(--warna-pertama);
+  color: var(--warna-pertama);
+  transition: 0.3s;
+}
+
+.header-2-1 .btn-outline:hover div path {
+  fill: var(--warna-pertama);
+  transition: 0.3s;
+}
+
+body section div nav.navbar{
+  height: 1rem;
+}
+
+div.hero{
+    margin-top: 70px;
+}
+
+
+
+
+@media (min-width: 576px) {
+  .header-2-1 .modal-item .modal-dialog {
+    max-width: 95%;
+    border-radius: 12px;
+  }
+
+  .header-2-1 .navbar {
+    padding: 3rem 2rem;
+  }
+
+  .header-2-1 .hero {
+    padding: 3rem 2rem 5rem;
+  }
+
+  .header-2-1 .title-text-big {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-2-1 .navbar {
+    padding: 3rem 4rem;
+  }
+
+  .header-2-1 .hero {
+    padding: 3rem 4rem 5rem;
+  }
+
+  .header-2-1 .left-column {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 768px){
+  .header-2-1 .btn-try{
+      padding: 1rem 6.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .header-2-1 .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  .header-2-1 .navbar {
+    padding: 3rem 6rem;
+  }
+
+  .header-2-1 .hero {
+    padding: 3rem 6rem 5rem;
+  }
+
+  .header-2-1 .left-column {
+    width: 50%;
+    margin-bottom: 0;
+  }
+
+  .header-2-1 .right-column {
+    width: 50%;
+  }
+
+  .header-2-1 .title-text-big {
+    font-size: 3.75rem;
+    line-height: 1.2;
+  }
+}
+/* AKHIR CSS= Navbar dan Hero section*/
+
+
+/* ========== AWAL CSS BELAJAR PAGE ========== */
+.btn{
+  border-radius: 9px !important;
+}
+
+.input-group{
+  height: 45px;
+}
+
+.pilihsemester{
+  border-start-start-radius: 17px;
+  border-end-start-radius: 17px;
+}
+
+.pilihsemester-form{
+  border-end-end-radius: 17px;
+  border-top-right-radius: 17px;
+}
+
+.pilihkelas{
+  border-start-start-radius: 17px;
+  border-end-start-radius: 17px;
+}
+
+.pilihkelas-form{
+  border-end-end-radius: 17px;
+  border-top-right-radius: 17px;
+}
+
+table.scroll tbody {
+  display:block;
+  height:500px !important;
+  overflow:auto;
+  float:left;
+  width:100%;
+}
+
+table.scroll tbody tr {
+  display:table;
+  width:100%;
+}
+
+/* table.scroll td {
+  width:33%;
+  padding:8px;
+} */
+
+.table .ini-batang-scroll::-webkit-scrollbar{
+  width: 8px;
+}
+
+.table .ini-batang-scroll::-webkit-scrollbar-track{
+  /* untuk backrol dari batang scroolnya */
+  background: white;
+  border-radius: 50px;
+}
+
+.table .ini-batang-scroll::-webkit-scrollbar-thumb{
+  /* untuk batang scroolnya */
+  background: var(--warna-pertama);
+  border-radius: 60px;
+}
+.row.table::-webkit-scrollbar-thumb{
+  /* untuk batang scroolnya */
+  background: red !important;
+  border-radius: 50px;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    margin-left: -3.6rem;
+  }
+
+  table.scroll tbody {
+    display:block;
+    height:500px !important;
+    overflow-x: auto;
+    float:left;
+    width: 85%;
+  }
+  table.scroll tbody tr {
+    display:table;
+    width: 100%;
+  }
+  table.scroll th, td {
+    width:33%;
+    padding:8px;
+  }
+
+  .table .ini-batang-scroll::-webkit-scrollbar{
+    width: 8px;
+  }
+
+  .table .ini-batang-scroll::-webkit-scrollbar-track{
+    /* untuk backrol dari batang scroolnya */
+    background: white;
+    border-radius: 50px;
+  }
+
+  .table .ini-batang-scroll::-webkit-scrollbar-thumb{
+    /* untuk batang scroolnya */
+    background: var(--warna-pertama);
+    border-radius: 50px;
+  }
+  .row.table::-webkit-scrollbar-thumb{
+    /* untuk batang scroolnya */
+    background: red !important;
+    border-radius: 50px;
+  }
+  }
+
+
+
+
+
+/*========== AWAL CSS FOOTER ========= */
+.footer-2-2 .list-space {
+  margin-bottom: 1.25rem;
+}
+
+.footer-2-2 .footer-text-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.footer-2-2 .list-menu {
+  color: #c7c7c7;
+  text-decoration: none !important;
+}
+
+.footer-2-2 .list-menu:hover {
+  color: #555252;
+}
+
+.footer-2-2 hr.hr {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-2-2 .border-color {
+  color: var(--warna-pertama);
+}
+
+.footer-2-2 .footer-link {
+  color: #c7c7c7;
+}
+
+.footer-2-2 .footer-link:hover {
+  color: #555252;
+}
+
+.footer-2-2 .social-media-c:hover circle,
+.footer-2-2 .social-media-p:hover path {
+  fill: #2390B9;
+}
+
+
+.footer-2-2 .footer-info-space {
+  padding-top: 3rem;
+}
+
+.footer-2-2 .list-footer {
+  padding: 5rem 1rem 3rem 1rem;
+}
+
+.footer-2-2 .info-footer {
+  padding: 0 1rem 3rem;
+}
+
+
+
+@media (min-width: 576px) {
+  .footer-2-2 .list-footer {
+      padding: 5rem 2rem 3rem 2rem;
+  }
+
+  .footer-2-2 .info-footer {
+      padding: 0 2rem 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-2-2 .list-footer {
+      padding: 5rem 4rem 6rem 4rem;
+  }
+
+  .footer-2-2 .info-footer {
+      padding: 0 4rem 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-2-2 .list-footer {
+      padding: 5rem 6rem 6rem 6rem;
+  }
+
+  .footer-2-2 .info-footer {
+      padding: 0 6rem 3rem;
+  }
+}
+/*========== AKHIR CSS FOOTER ========= */
+
+/* ========== AKHIR CSS BELAJAR PAGE ========== */
+
+
+
+
+
+/*========== Awal CSS= btn auto scoll ==========*/
+a.btn-scoll i{
+  font-size: 40px;
+  background-color: var(--warna-pertama) !important;
+  color: white;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+/*========== Akhir CSS= btn auto scoll ==========*/
