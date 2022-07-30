@@ -20,21 +20,27 @@
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">Nama
                             Dosen</label>
-                        <input type="text" name="nama" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
-                            placeholder="">
+                        <input type="text" name="nama" class="form-control rounded-pill p-2 px-3"
+                            id="formGroupExampleInput" placeholder="Masukan nama anda..."  required autofocus>
+                        @error('nama')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">NIP</label>
-                        <input type="text" name="nip" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
-                            placeholder="">
+                        <input type="number" name="nip" class="form-control rounded-pill p-2 px-3"
+                            id="formGroupExampleInput" placeholder="Masukan NIP anda..." required>
+                        @error('nip')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Jenis Kelamin
                         </label>
-                        <select class="form-select rounded-pill py-2" name="jeniskelamin" aria-label="Default select example"
-                            id="recipient-name">
+                        <select class="form-select rounded-pill py-2" name="jeniskelamin"
+                            aria-label="Default select example" id="recipient-name" name="jeniskelamin">
                             <option selected disabled>Pilih Jenis Kelamin</option>
                             <option value="Laki-laki">laki-laki</option>
                             <option value="Perempuan">Perempuan</option>

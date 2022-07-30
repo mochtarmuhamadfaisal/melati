@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="admin d-sm-flex d-block">
                             <img src="{{ asset('img/gue.jpg') }}" class="img-preview rounded-circle"
-                                style="width: 250px; height: 250px; border: 4px solid #2390B9;">
+                                style="width: 250px; height: 250px; border: 4px solid #2390B9; object-fit: cover">
 
 
                             <div class="hl-upload ms-sm-4 d-flex flex-column justify-content-center">

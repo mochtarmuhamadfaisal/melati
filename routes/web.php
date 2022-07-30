@@ -58,14 +58,14 @@ Route::get('/edit_matakuliah', function(){
 
 
 Route::get('/dosen',[DosenController::class, 'dosen'])->name('dosen');
+
 Route::get('/tambah_dosen',[DosenController::class, 'tambahdosen'])->name('tambahdosen');
 Route::post('/insertdata_dosen',[DosenController::class, 'insertdata_dosen'])->name('insertdata_dosen');
 
-Route::get('/edit_dosen', function(){
-    return view('admin/edit_dosen',[
-        "sidebar"=>"Dosen"
-    ]);
-});
+Route::get('/tampilkan_dosen/{id}',[DosenController::class, 'tampilkan_dosen'])->name('tampilkan_dosen');
+Route::post('/updatedata_dosen/{id}',[DosenController::class, 'updatedata_dosen'])->name('updatedata_dosen');
+
+Route::get('/delete/{id}',[DosenController::class, 'delete'])->name('delete');
 
 
 

@@ -10,7 +10,7 @@
                 </button>
 
                 <div class="profile-img">
-                    <img src="{{ asset('img/gue.jpg') }}" class="rounded-circle" style="width: 100%;" alt="">
+                    <img src="{{ asset('img/gue.jpg') }}" class="rounded-circle" style="width: 100%; object-fit: cover" alt="">
                 </div>
 
                 <h4 class="profile-name">nama admin</h4>

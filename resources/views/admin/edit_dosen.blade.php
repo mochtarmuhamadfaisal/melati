@@ -16,19 +16,26 @@
 
         <div class="row mt-3">
             <div class="col-lg-6">
-                <form action="">
+                <form action="/updatedata_dosen/{{ $datadosen->id }}" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold"
                             style="color: #2390B9;">Nama</label>
-                        <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
-                            placeholder="">
+                        <input type="text" name="nama" value="{{ $datadosen->nama }}" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
+                            placeholder="" required>
+                            @error('nama')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                     </div>
 
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold"
                             style="color: #2390B9;">NIP</label>
-                        <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
-                            placeholder="">
+                        <input type="text" name="nip" value="{{ $datadosen->nip }}" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
+                            placeholder="" required>
+                            @error('nip')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                     </div>
 
                     <div class="mb-3">
@@ -36,15 +43,15 @@
                             Kelamin
                         </label>
                         <select class="form-select rounded-pill py-2" aria-label="Default select example"
-                            id="recipient-name">
-                            <option selected disabled>Pilih Jenis Kelamin</option>
-                            <option value="0">laki-laki</option>
-                            <option value="1">Perempuan</option>
+                            id="recipient-name" name="jeniskelamin">
+                            <option selected disabled>{{ $datadosen->jeniskelamin }}</option>
+                            <option value="Laki-laki">laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
                         </select>
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        <button type="button" class="btn-admin rounded-pill mt-2">Simpan</button>
+                        <button type="submit" class="btn-admin rounded-pill mt-2">Simpan</button>
                     </div>
                 </form>
                 <div class="d-flex justify-content-start">

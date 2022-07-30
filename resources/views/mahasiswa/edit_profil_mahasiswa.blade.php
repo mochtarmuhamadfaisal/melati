@@ -14,7 +14,7 @@
                 <div class="edit-profile d-sm-flex d-block justify-content-center mt-5">
 
                     <img src="{{ asset('img/gue.jpg') }}" class="img-preview hl-img rounded-circle"
-                        style="width: 250px; height: 250px; border: 4px solid var(--warna-pertama);">
+                        style="width: 250px; height: 250px; border: 4px solid var(--warna-pertama); object-fit: cover">
                     <div class="hl-upload ms-sm-4 mt-4 mt-lg-0 d-flex flex-column justify-content-center">
                         <label for="foto" class="form-label btn btn-aksi px-4 py-3 border-0">
                             <input class="btn btn-primary rounded-lg @error('foto') is-invalid @enderror" id="foto"
