@@ -28,10 +28,17 @@ class DosenController extends Controller
             'jeniskelamin' => 'required',
         ]);
 
-        
+        $dosen = Dosen::create([
+            'nama' => $request->nama,
+            'nip' => $request->nip,
+            'jeniskelamin' => $request->jeniskelamin,
+            'password' => bcrypt($request->nip)
+        ]);
+
+        $dosen->assignRole('dosen');
 
         // dd($request->all());
-        Dosen::create($request->all());
+        // Dosen::create($request->all());
         return redirect()->route('dosen')->with('berhasil', 'Akun dosen berhasil di buat');
     }
 

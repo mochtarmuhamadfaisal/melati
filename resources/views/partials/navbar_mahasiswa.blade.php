@@ -43,7 +43,7 @@
                             </ul>
                         </div>
                         <div class="modal-footer border-0 gap-3" style="padding: 2rem; padding-top: 0.75rem">
-                            <button class="btn btn-fill text-white">Login</button>
+                            <a href="/login" class="btn btn-fill text-white">Login</a>
                             {{-- <a href="#"> <img class="rounded-circle" src="{{ asset('img/profil.png') }}" style="width: 50px; height: 50px ;"></a>
         <i class='bx bx-chevron-down' style="font-size: 40px;"></i>  --}}
                         </div>
@@ -72,7 +72,7 @@
                     </li>
                 </ul>
                 <div class="gap-3 d-flex justify-content-center">
-                    {{-- @if (auth()user())
+                    @auth('mahasiswa')
                     <li class="nav-item">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #2390b9;">
@@ -85,8 +85,8 @@
                                 data-bs-target="#exampleModal">Keluar</button></li>
                         </ul>
                     </li>
-                    @else --}}
-                    <button class="btn btn-fill text-white">Login</button>
+                    @endauth
+                    <a href="/login" class="btn btn-fill text-white">Login</a>
                     {{-- @endif --}}
                     <!-- <a href="#"> <img class="rounded-circle" src="img/profil.jpg" style="width: 50px; height: 50px ;"></a>
    <i class='bx bx-chevron-down' style="font-size: 40px;"></i> -->

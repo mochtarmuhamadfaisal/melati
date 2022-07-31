@@ -47,6 +47,7 @@
     <!-- AKHIR HERO SECTION -->
 
 
+                {{-- @dd(auth('mahasiswa')->check()) --}}
 
 
     <!-- AWAL  TENTANG APLIKASI -->

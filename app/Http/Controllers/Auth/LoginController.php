@@ -29,33 +29,44 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/home';
     protected function redirectTo()
     {
+        if (Auth::guard('dosen')->hasUser('dosen')) {
+            return '/dashboard_dosen';
+        }else{
+            return '/';
+        }
+
         // if (Auth::guard('admin')->hasUser('admin')) {
-        //     return '/dashboard_admin';
-        // } else if (Auth::guard('dosen')->hasUser('dosen')) {
-        //     return '/dashboard_admin';
-        // } else if (Auth::guard('mahasiswa')->hasUser('mahasiswa')) {
-        //     return '/beranda_mahasiswa';
-        // }
-        return '/dashboard_admin';
+            //         return '/admin';
+            //     } else if (Auth::guard('guru')->hasUser('guru')) {
+            //         return '/admin/data-umum/kelas';
+            //     } else if (Auth::guard('siswa')->hasUser('siswa')) {
+            //         return '/admin/data-umum/semesters';
+            //     }
     }
 
-    // protected function attemptLogin(Request $request)
-    // {
-    //     $adminLogin = Auth::guard('admin')->attempt(
-    //         $this->credentials($request),
-    //         $request->has('remember')
-    //     );
-    //     $guruLogin = Auth::guard('dosen')->attempt(
-    //         $this->credentials($request),
-    //         $request->has('remember')
-    //     );
-    //     $siswaLogin = Auth::guard('mahasiswa')->attempt(
-    //         $this->credentials($request),
-    //         $request->has('remember')
-    //     );
+    protected function attemptLogin(Request $request)
+    {
+        // $adminLogin = Auth::guard('admin')->attempt(
+        //     $this->credentials($request),
+        //     $request->has('remember')
+        // );
+        $guruLogin = Auth::guard('dosen')->attempt(
+            $this->credentials($request),
+            $request->has('remember')
+        );
+        $siswaLogin = Auth::guard('mahasiswa')->attempt(
+            $this->credentials($request),
+            $request->has('remember')
+        );
+        if($guruLogin == true){
+            return $guruLogin;
+        } else {
+            return $siswaLogin;
+        }
     // if ($adminLogin == true) {
     //         return $adminLogin;
     //     } else if ($guruLogin == true) {
@@ -63,8 +74,7 @@ class LoginController extends Controller
     //     } else {
     //         return $siswaLogin;
     //     }
-    // // return $adminLogin;
-    // }
+    }
 
     /**
      * Create a new controller instance.
@@ -81,7 +91,7 @@ class LoginController extends Controller
         return 'nip';
     }
 
-    protected function guard(){
-        return Auth::guard('dosen');
-    }
+    // protected function guard(){
+    //     return Auth::guard('mahasiswa');
+    // }
 }

@@ -32,9 +32,14 @@
                     <span>Pengaturan</span>
                 </a>
 
-                <a href="#" class="sidebar-item" onclick="toggleActive(this)" data-bs-toggle="modal"
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();" class="sidebar-item" onclick="toggleActive(this)" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
                     <span>Keluar</span>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </a>
             </div>
         </aside>

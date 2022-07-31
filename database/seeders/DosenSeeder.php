@@ -15,12 +15,20 @@ class DosenSeeder extends Seeder
      */
     public function run()
     {
-        $dosen=Dosen::create([
+        $dosen3=Dosen::create([
             'nama' => 'Mochtar Muhammad Faisal',
             'nip' => '9079687564565879',
             'jeniskelamin' => 'Laki-laki',
             'password' => bcrypt('1'),
         ]);
-        $dosen->assignRole('dosen');
+        $dosen3->assignRole('dosen');
+
+        $dosen2=Dosen::create([
+            'nama' => 'Faisal',
+            'nip' => '1',
+            'jeniskelamin' => 'Laki-laki',
+            'password' => bcrypt('1'),
+        ]);
+        $dosen2->assignRole('dosen');
     }
 }

@@ -179,7 +179,7 @@ Route::get('/edit_password_dosen', function(){
 
 
 // ========================== AWAL ROUTE MAHASISWA ==========================
-Route::get('/beranda_mahasiswa', function(){
+Route::get('/', function(){
     return view('mahasiswa/beranda_mahasiswa',[
         "navbar"=>"Beranda"
     ]);
