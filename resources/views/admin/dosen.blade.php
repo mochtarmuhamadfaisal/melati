@@ -52,17 +52,26 @@
                                     <td>{{ $row->nip }}</td>
                                     <td>{{ $row->jeniskelamin }}</td>
                                     <td class="action">
-                                        <a href="/tampilkan_dosen/{{ $row->id }}" class="text-decoration-none"><button
+                                        <a href="/tampilkan_dosen/{{ $row->nip }}" class="text-decoration-none"><button
                                                 class="btn-transaction bg-warning text-white mx-auto">Edit</button></a>
-                                        <a href="#" class="text-decoration-none hapus" data-id="{{ $row->id }}"
+                                        
+                                        <button class="btn-transaction bg-danger text-white mx-auto" data-nama="{{ $row->nama }}" onclick="hapus(`{{ $row->nip }}`,`{{ $row->nama }}`)">Hapus</button>        
+                                        
+
+                                        {{-- <a href="#" class="text-decoration-none" data-id="{{ $row->nip }}"
                                             data-nama="{{ $row->nama }}"><button
-                                                class="btn-transaction bg-danger text-white mx-auto">Hapus</button></a>
+                                                class="btn-transaction bg-danger text-white mx-auto" onclick="hapus({{ $row->nip }})">Hapus</button></a> --}}
                                     </td>
                                 </tr>
                             @endforeach
 
                         </tbody>
                     </table>
+                    
+                    <form action="/delete/" class="hapusdosen">
+                    @csrf
+                    @method('delete')
+                    </form>
                 </div>
                 <!-- AKHIR Table Untuk dosen  -->
             </div>
@@ -80,19 +89,23 @@
     {{-- allert sweet allert --}}
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
-        $('.hapus').click(function() {
-            var iddosen = $(this).attr('data-id');
-            var namadosen = $(this).attr('data-nama');
+        function hapus(id, nama){
+            console.log('tess');
+            let url=/delete/id;
+            $('.hapusdosen').attr('action',url);
+            $('.hapusdosen').sumbit;
+            // var iddosen = $(this).attr('data-id');
+            // var namadosen = $(this).attr('data-nama');
             swal({
                     title: "Anda yakin?",
-                    text: "Anda akan menghapus akun dosen atas nama " + namadosen + "",
+                    text: "Anda akan menghapus akun dosen atas nama " + nama + "",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location = "/delete/" + iddosen + ""
+                        window.location = "/delete/" + id + ""
                         // swal("Akun dosen berhasil di hapus", {
                         //     icon: "success",
                         // });
@@ -100,7 +113,7 @@
                         swal("Akun dosen tidak jadi di hapus");
                     }
                 });
-        })
+        }
     </script>
 
     <script>

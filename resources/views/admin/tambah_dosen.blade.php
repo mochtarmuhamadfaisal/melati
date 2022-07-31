@@ -21,7 +21,7 @@
                         <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">Nama
                             Dosen</label>
                         <input type="text" name="nama" class="form-control rounded-pill p-2 px-3"
-                            id="formGroupExampleInput" placeholder="Masukan nama anda..."  required autofocus>
+                            id="formGroupExampleInput" placeholder="Masukan Nama Mahasiswa..."  required autofocus>
                         @error('nama')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
@@ -30,7 +30,7 @@
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">NIP</label>
                         <input type="number" name="nip" class="form-control rounded-pill p-2 px-3"
-                            id="formGroupExampleInput" placeholder="Masukan NIP anda..." required>
+                            id="formGroupExampleInput" placeholder="Masukan NIP Dosen..." required>
                         @error('nip')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,32 +63,24 @@ Route::get('/dosen',[DosenController::class, 'dosen'])->name('dosen');
 Route::get('/tambah_dosen',[DosenController::class, 'tambahdosen'])->name('tambahdosen');
 Route::post('/insertdata_dosen',[DosenController::class, 'insertdata_dosen'])->name('insertdata_dosen');
 
-Route::get('/tampilkan_dosen/{id}',[DosenController::class, 'tampilkan_dosen'])->name('tampilkan_dosen');
-Route::post('/updatedata_dosen/{id}',[DosenController::class, 'updatedata_dosen'])->name('updatedata_dosen');
+Route::get('/tampilkan_dosen/{nip}',[DosenController::class, 'tampilkan_dosen'])->name('tampilkan_dosen');
+Route::put('/updatedata_dosen/{nip}',[DosenController::class, 'updatedata_dosen'])->name('updatedata_dosen');
 
-Route::get('/delete/{id}',[DosenController::class, 'delete'])->name('delete');
-
-
+Route::get('/delete/{nip}',[DosenController::class, 'delete'])->name('dosen.delete');
 
 
 
-Route::get('/mahasiswa', function(){
-    return view('admin/mahasiswa',[
-        "sidebar"=>"Mahasiswa"
-    ]);
-});
 
-Route::get('/tambah_mahasiswa', function(){
-    return view('admin/tambah_mahasiswa',[
-        "sidebar"=>"Mahasiswa"
-    ]);
-});
 
-Route::get('/edit_mahasiswa', function(){
-    return view('admin/edit_mahasiswa',[
-        "sidebar"=>"Mahasiswa"
-    ]);
-});
+Route::get('/mahasiswa',[MahasiswaController::class, 'mahasiswa'])->name('mahasiswa');
+
+Route::get('/tambah_mahasiswa',[MahasiswaController::class, 'tambahmahasiswa'])->name('tambahmahasiswa');
+Route::post('/insertdata_mahasiswa',[MahasiswaController::class, 'insertdata_mahasiswa'])->name('insertdata_mahasiswa');
+
+Route::get('/tampilkan_mahasiswa/{id}',[MahasiswaController::class, 'tampilkanmahasiswa'])->name('tampilkanmahasiswa');
+Route::post('/updatedata_mahasiswa/{id}',[MahasiswaController::class, 'updatedata_mahasiswa'])->name('updatedata_mahasiswa');
+
+Route::get('/delete/{id}',[MahasiswaController::class, 'delete'])->name('delete');
 
 
 

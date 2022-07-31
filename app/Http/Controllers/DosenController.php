@@ -23,37 +23,45 @@ class DosenController extends Controller
 
     public function insertdata_dosen(Request $request){
         $this->validate($request,[
-            'nama' => 'required|min:3|max:25',
+            'nama' => 'required|min:3|max:255',
             'nip' => 'required|min:7|max:20',
+            'jeniskelamin' => 'required',
         ]);
+
+        
 
         // dd($request->all());
         Dosen::create($request->all());
         return redirect()->route('dosen')->with('berhasil', 'Akun dosen berhasil di buat');
     }
 
-    public function tampilkan_dosen($id){
-        $datadosen = Dosen::find($id);
+    public function tampilkan_dosen($nip){
+        $datadosen = Dosen::where('nip',$nip)->first();
         // dd($datadosen);
         return view('admin/edit_dosen',[
                     "sidebar"=>"Dosen"
         ],compact('datadosen'));
     }
 
-    public function updatedata_dosen(Request $request, $id){
+    public function updatedata_dosen(Request $request, $nip){
+        // dd($request,$nip);
         $this->validate($request,[
             'nama' => 'required|min:3|max:25',
             'nip' => 'required|min:7|max:20',
+            'jeniskelamin' => 'required',
         ]);
 
-        $datadosen = Dosen::find($id);
-        $datadosen->update($request->all());
+        $datadosen = Dosen::where('nip',$nip)->update([
+            'nip'=>$request->nip,
+            'nama'=>$request->nama,
+            'jeniskelamin'=>$request->jeniskelamin
+        ]);
+        // $datadosen->update($request->all());
         return redirect()->route('dosen')->with('berhasil', 'Akun dosen berhasil di EDIT');
     }
 
-    public function delete($id){
-        $datadosen = Dosen::find($id);
-        $datadosen->delete();
+    public function delete($nip){
+        $datadosen = Dosen::where('nip',$nip)->delete();
         return redirect()->route('dosen')->with('berhasil', 'Akun dosen berhasil di HAPUS');
     }
 }
