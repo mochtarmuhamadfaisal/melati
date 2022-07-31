@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
@@ -15,11 +16,11 @@ use App\Http\Controllers\MahasiswaController;
 |
 */
 
-Route::get('/login', function(){
-    return view('login/login',[
-        "navbar"=>"Login"
-    ]);
-});
+// Route::get('/login2', function(){
+//     return view('login/login',[
+//         "navbar"=>"Login"
+//     ]);
+// });
 
 
 
@@ -255,3 +256,6 @@ Route::get('/pamerin_showcase', function(){
         "navbar"=>"Pengaturan"]);
 });
 // ========================== AKHIR ROUTE MAHASISWA ==========================
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

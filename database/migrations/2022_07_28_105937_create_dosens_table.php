@@ -16,11 +16,11 @@ class CreateDosensTable extends Migration
         Schema::create('dosens', function (Blueprint $table) {
             // $table->id();
             $table->string('nip')->primary();
-            $table->unsignedBigInteger('id_user')->nullable();
+            // $table->unsignedBigInteger('id_user')->nullable();
             $table->string('nama');
             $table->enum('jeniskelamin',['Laki-laki','Perempuan']);
-            // $table->string('foto');
-            // $table->string('password');
+            $table->string('foto')->nullable();
+            $table->string('password')->nullable();
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Mahasiswa;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,10 +15,13 @@ class MahasiswaSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('mahasiswas')->insert([
+        $mahasiswa = Mahasiswa::create([
             'nama' => 'Mochtar Muhammad Faisal',
-            'nim' => '9079687564565879',
+            'nip' => '3201916018',
             'jeniskelamin' => 'Laki-laki',
+            'password' => bcrypt('1'),
         ]);
+
+        $mahasiswa->assignRole('mahasiswa');
     }
 }
