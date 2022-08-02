@@ -12,7 +12,7 @@ class Dosen extends Model implements Authenticatable
 {
     use HasFactory, HasRoles, AuthenticableTrait;
     protected $guarded =[];
-    protected $table='dosens';
+    protected $table ='dosens';
     protected $primarykey='nip';
     protected $guard = 'dosen';
     protected $guard_name = 'web';

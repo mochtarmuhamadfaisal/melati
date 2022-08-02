@@ -43,22 +43,22 @@
                         <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Jenis
                             Kelamin
                         </label>
-                        <select class="form-select rounded-pill py-2" aria-label="Default select example"
-                            id="recipient-name" name="jeniskelamin">
-                            @if ($datadosen->jeniskelamin = 'Laki-laki')
-                            <option disabled>Pilih Jenis Kelamin</option>
-                            <option selected value="Laki-laki">laki-laki</option>
-                            <option value="Perempuan">Perempuan</option>
-                            @elseif($datadosen->jeniskelamin = 'Laki-laki')
-                            <option disabled>Pilih Jenis Kelamin</option>
-                            <option value="Laki-laki">laki-laki</option>
-                            <option selected value="Perempuan">Perempuan</option>
-                            @else
-                            <option selected disabled>Pilih Jenis Kelamin</option>
-                            <option value="Laki-laki">laki-laki</option>
-                            <option value="Perempuan">Perempuan</option>
-                            @endif
-                        </select>
+                        <select class="form-select rounded-pill py-2" name="jeniskelamin"
+                        aria-label="Default select example" id="recipient-name" name="jeniskelamin">
+                        @if ($datadosen->jeniskelamin = 'Laki-laki')
+                        <option disabled>Pilih Jenis Kelamin</option>
+                        <option selected value="Laki-laki">laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                        @elseif($datadosen->jeniskelamin = 'Laki-laki')
+                        <option disabled>Pilih Jenis Kelamin</option>
+                        <option value="Laki-laki">laki-laki</option>
+                        <option selected value="Perempuan">Perempuan</option>
+                        @else
+                        <option selected disabled>Pilih Jenis Kelamin</option>
+                        <option value="Laki-laki">laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                        @endif
+                    </select>
                         @error('jeniskelamin')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror

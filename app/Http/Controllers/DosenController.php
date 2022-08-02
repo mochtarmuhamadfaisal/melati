@@ -24,18 +24,18 @@ class DosenController extends Controller
     public function insertdata_dosen(Request $request){
         $this->validate($request,[
             'nama' => 'required|min:3|max:255',
-            'nip' => 'required|min:7|max:20',
+            'nip' => 'required|min:7|max:30',
             'jeniskelamin' => 'required',
         ]);
 
-        $dosen = Dosen::create([
+        $datadosen = Dosen::create([
             'nama' => $request->nama,
             'nip' => $request->nip,
             'jeniskelamin' => $request->jeniskelamin,
             'password' => bcrypt($request->nip)
         ]);
 
-        $dosen->assignRole('dosen');
+        $datadosen->assignRole('dosen');
 
         // dd($request->all());
         // Dosen::create($request->all());
@@ -57,12 +57,14 @@ class DosenController extends Controller
             'nip' => 'required|min:7|max:20',
             'jeniskelamin' => 'required',
         ]);
-
+        // $datadosen = Dosen::find($nip);
         $datadosen = Dosen::where('nip',$nip)->update([
-            'nip'=>$request->nip,
-            'nama'=>$request->nama,
-            'jeniskelamin'=>$request->jeniskelamin
+            'nama' => $request->nama,
+            'nip' => $request->nip,
+            'jeniskelamin' => $request->jeniskelamin,
+            'password' => bcrypt($request->nip)
         ]);
+        // $datadosen->assignRole('dosen');
         // $datadosen->update($request->all());
         return redirect()->route('dosen')->with('berhasil', 'Akun dosen berhasil di EDIT');
     }

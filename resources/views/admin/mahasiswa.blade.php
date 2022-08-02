@@ -41,15 +41,13 @@
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $rowmhs->nama }}</td>
-                                    <td>{{ $rowmhs->nim }}</td>
+                                    <td>{{ $rowmhs->nip }}</td>
                                     <td>{{ $rowmhs->jeniskelamin }}</td>
                                     <td class="action">
-                                        <a href="/tampilkan_mahasiswa/{{ $rowmhs->id }}" class="text-decoration-none">
+                                        <a href="/tampilkan_mahasiswa/{{ $rowmhs->nip }}" class="text-decoration-none">
                                             <button class="btn-transaction bg-warning text-white mx-auto">Edit</button></a>
 
-                                        <a href="#" class="text-decoration-none hapuss" data-id="{{ $rowmhs->id }}"
-                                        data-nama="{{ $rowmhs->nama }}">
-                                        <button class="btn-transaction bg-danger text-white mx-auto">Hapus</button></a>
+                                            <button class="btn-transaction bg-danger text-white mx-auto" data-nama="{{ $rowmhs->nama }}" onclick="hapus(`{{ $rowmhs->nip }}`,`{{ $rowmhs->nama }}`)">Hapus</button>        
                                     </td>
                                 </tr>
                             @endforeach
@@ -73,27 +71,31 @@
     {{-- allert sweet allert --}}
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
-        $('.hapuss').click(function() {
-            var idmahasiswa = $(this).attr('data-id');
-            var namamahasiswa = $(this).attr('data-nama');
+        function hapus(id, nama){
+            console.log('tess');
+            let url=/delete/id;
+            $('.hapusmahasiswa').attr('action',url);
+            $('.hapusmahasiswa').sumbit;
+            // var iddosen = $(this).attr('data-id');
+            // var namadosen = $(this).attr('data-nama');
             swal({
                     title: "Anda yakin?",
-                    text: "Anda akan menghapus akun mahaswa atas nama " + namamahasiswa + "",
+                    text: "Anda akan menghapus akun dosen atas nama " + nama + "",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location = "/delete/" + idmahasiswa + ""
+                        window.location = "/delete/" + id + ""
                         // swal("Akun dosen berhasil di hapus", {
                         //     icon: "success",
                         // });
                     } else {
-                        swal("Akun mahasiswa tidak jadi di hapus");
+                        swal("Akun dosen tidak jadi di hapus");
                     }
                 });
-        })
+        }
     </script>
 
     <script>

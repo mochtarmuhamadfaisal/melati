@@ -23,7 +23,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex flex-column justify-content-around align-items-start employee-stat">
                                 <h5 class="content-desc">Jumlah Dosen</h5>
-                                <h3 class="statistics-value">30</h3>
+                                <h3 class="statistics-value">{{ $datadosen }}</h3>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                             <div class="d-flex flex-column justify-content-around align-items-start employee-stat">
                                 <h5 class="content-desc">Jumlah Mahasiswa</h5>
 
-                                <h3 class="statistics-value">1000</h3>
+                                <h3 class="statistics-value">{{ $datamahasiswa }}</h3>
                             </div>
 
                         </div>

@@ -12,6 +12,8 @@ class Mahasiswa extends Model implements Authenticatable
 {
     use HasFactory, HasRoles, AuthenticableTrait;
     protected $guarded =[];
-    protected $guard = 'mahasiswa';
+    protected $table ='mahasiswas';
+    protected $primarykey='nip';
+    protected $guard = 'mahasiswas';
     protected $guard_name = 'web';
 }

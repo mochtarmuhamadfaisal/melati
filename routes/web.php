@@ -2,8 +2,12 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MatakuliahController;
+use App\Http\Controllers\DasboardadminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,27 +31,30 @@ use App\Http\Controllers\MahasiswaController;
 
 
 // ========================== AWAL ROUTE ADMIN ==========================
-Route::get('/dashboard_admin', function(){
-    return view('admin/dashboard_admin',[
-        "sidebar"=>"Dashboard"
-    ]);
-});
+Route::get('/dashboard_admin', [DasboardadminController::class, 'dashboard_admin'])->name('dashboard_admin');
+// Route::get('/dashboard_admin', function(){
+//     return view('admin/dashboard_admin',[
+//         "sidebar"=>"Dashboard"
+//     ]);
+// });
 
 
 
 
+Route::get('/matakuliah',[MatakuliahController::class, 'matakuliah'])->name('matakuliah');
+// Route::get('/matakuliah', function(){
+//     return view('admin/matakuliah',[
+//         "sidebar"=>"Mata Kuliah"
+//     ]);
+// });
+Route::get('/tambah_matakuliah',[MatakuliahController::class, 'tambah_matakuliah'])->name('tambah_matakuliah');
+Route::post('/insertdata_matakuliah',[MatakuliahController::class, 'insertdata_matakuliah'])->name('insertdata_matakuliah');
 
-Route::get('/matakuliah', function(){
-    return view('admin/matakuliah',[
-        "sidebar"=>"Mata Kuliah"
-    ]);
-});
-
-Route::get('/tambah_matakuliah', function(){
-    return view('admin/tambah_matakuliah',[
-        "sidebar"=>"Mata Kuliah"
-    ]);
-});
+// Route::get('/tambah_matakuliah', function(){
+//     return view('admin/tambah_matakuliah',[
+//         "sidebar"=>"Mata Kuliah"
+//     ]);
+// });
 
 Route::get('/edit_matakuliah', function(){
     return view('admin/edit_matakuliah',[
@@ -78,10 +85,10 @@ Route::get('/mahasiswa',[MahasiswaController::class, 'mahasiswa'])->name('mahasi
 Route::get('/tambah_mahasiswa',[MahasiswaController::class, 'tambahmahasiswa'])->name('tambahmahasiswa');
 Route::post('/insertdata_mahasiswa',[MahasiswaController::class, 'insertdata_mahasiswa'])->name('insertdata_mahasiswa');
 
-Route::get('/tampilkan_mahasiswa/{id}',[MahasiswaController::class, 'tampilkanmahasiswa'])->name('tampilkanmahasiswa');
-Route::post('/updatedata_mahasiswa/{id}',[MahasiswaController::class, 'updatedata_mahasiswa'])->name('updatedata_mahasiswa');
+Route::get('/tampilkan_mahasiswa/{nip}',[MahasiswaController::class, 'tampilkan_mahasiswa'])->name('tampilkan_mahasiswa');
+Route::put('/updatedata_mahasiswa/{nip}',[MahasiswaController::class, 'updatedata_mahasiswa'])->name('updatedata_mahasiswa');
 
-Route::get('/delete/{id}',[MahasiswaController::class, 'delete'])->name('delete');
+Route::get('/delete/{nip}',[MahasiswaController::class, 'delete'])->name('delete');
 
 
 

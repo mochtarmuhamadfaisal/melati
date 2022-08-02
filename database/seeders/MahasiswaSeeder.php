@@ -23,5 +23,6 @@ class MahasiswaSeeder extends Seeder
         ]);
 
         $mahasiswa->assignRole('mahasiswa');
+
     }
 }

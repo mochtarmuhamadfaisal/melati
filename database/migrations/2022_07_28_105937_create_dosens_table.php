@@ -21,7 +21,7 @@ class CreateDosensTable extends Migration
             $table->enum('jeniskelamin',['Laki-laki','Perempuan']);
             $table->string('foto')->nullable();
             $table->string('password')->nullable();
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 

@@ -15,8 +15,9 @@
 
         <div class="row mt-3">
             <div class="col-lg-6">
-                <form action="/updatedata_mahasiswa/{{ $datamahasiswa->id }}" method="post" enctype="multipart/form-data">
+                <form action="/updatedata_mahasiswa/{{ $datamahasiswa->nip }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('put')
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">Nama
                             Dosen</label>
@@ -29,7 +30,7 @@
 
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">NIP</label>
-                        <input type="number" name="nim" value="{{ $datamahasiswa->nim }}" class="form-control rounded-pill p-2 px-3"
+                        <input type="number" name="nip" value="{{ $datamahasiswa->nip }}" class="form-control rounded-pill p-2 px-3"
                             id="formGroupExampleInput" placeholder="Masukan NIP Dosen..." required>
                         @error('nip')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
@@ -41,10 +42,23 @@
                         </label>
                         <select class="form-select rounded-pill py-2" name="jeniskelamin"
                             aria-label="Default select example" id="recipient-name" name="jeniskelamin">
-                            <option selected disabled>{{ $datamahasiswa->jeniskelamin }}</option>
+                            @if ($datamahasiswa->jeniskelamin = 'Laki-laki')
+                            <option disabled>Pilih Jenis Kelamin</option>
+                            <option selected value="Laki-laki">laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                            @elseif($datamahasiswa->jeniskelamin = 'Laki-laki')
+                            <option disabled>Pilih Jenis Kelamin</option>
+                            <option value="Laki-laki">laki-laki</option>
+                            <option selected value="Perempuan">Perempuan</option>
+                            @else
+                            <option selected disabled>Pilih Jenis Kelamin</option>
                             <option value="Laki-laki">laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
+                            @endif
                         </select>
+                        @error('jeniskelamin')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="d-flex justify-content-end">

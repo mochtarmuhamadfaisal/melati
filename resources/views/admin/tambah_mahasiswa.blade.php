@@ -30,9 +30,9 @@
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold"
                             style="color: #2390B9;">NIM</label>
-                        <input type="number" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput" name="nim"
+                        <input type="number" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput" name="nip"
                             placeholder="Masukan NIM Mahasiswa.."required>
-                            @error('nim')
+                            @error('nip')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
                     </div>

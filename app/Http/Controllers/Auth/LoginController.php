@@ -38,6 +38,13 @@ class LoginController extends Controller
         }else{
             return '/';
         }
+        // if (Auth::guard('mahasiswa')->hasUser('mahasiswa')) {
+        //     return '/beranda_mahasiswa';
+        // }else{
+        //     return '/';
+        // }
+    }
+        
 
         // if (Auth::guard('admin')->hasUser('admin')) {
             //         return '/admin';
@@ -46,7 +53,7 @@ class LoginController extends Controller
             //     } else if (Auth::guard('siswa')->hasUser('siswa')) {
             //         return '/admin/data-umum/semesters';
             //     }
-    }
+   
 
     protected function attemptLogin(Request $request)
     {
@@ -54,18 +61,24 @@ class LoginController extends Controller
         //     $this->credentials($request),
         //     $request->has('remember')
         // );
-        $guruLogin = Auth::guard('dosen')->attempt(
+        $dosenLogin = Auth::guard('dosen')->attempt(
             $this->credentials($request),
             $request->has('remember')
         );
-        $siswaLogin = Auth::guard('mahasiswa')->attempt(
+        $mahasiswaLogin = Auth::guard('mahasiswa')->attempt(
             $this->credentials($request),
             $request->has('remember')
         );
-        if($guruLogin == true){
-            return $guruLogin;
+        if($dosenLogin == true){
+            return $dosenLogin;
         } else {
-            return $siswaLogin;
+            return $dosenLogin;
+        }
+
+        if($mahasiswaLogin == true){
+            return $mahasiswaLogin;
+        } else {
+            return $dosenLogin;
         }
     // if ($adminLogin == true) {
     //         return $adminLogin;
