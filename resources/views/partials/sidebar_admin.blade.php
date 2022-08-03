@@ -13,7 +13,7 @@
                     <img src="{{ asset('img/gue.jpg') }}" class="rounded-circle" style="width: 100%; object-fit: cover" alt="">
                 </div>
 
-                <h4 class="profile-name">nama admin</h4>
+                <h4 class="profile-name">{{ Auth::guard('admin')->user()->nama }} </h4>
                 <p class="profile-email">Admin</p>
             </div>
 
@@ -40,8 +40,16 @@
                     <span>Pengaturan</span>
                 </a>
 
-                <a href="#" class="sidebar-item" onclick="toggleActive(this)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();"
+                    class="sidebar-item" onclick="toggleActive(this)" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
                     <span>Keluar</span>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </a>
             </div>
         </aside>
@@ -49,7 +57,7 @@
 <!-- AKHIR SIDEBAR -->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -65,4 +73,4 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}

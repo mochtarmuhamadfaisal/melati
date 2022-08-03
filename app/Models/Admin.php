@@ -8,13 +8,13 @@ use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Dosen extends Model implements Authenticatable
+class Admin extends Model implements Authenticatable
 {
     use HasFactory, HasRoles, AuthenticableTrait;
     protected $primaryKey = 'nip';
     protected $guarded =[];
-    protected $table ='dosens';
+    protected $table ='admins';
     protected $primarykey='nip';
-    protected $guard = 'dosen';
+    protected $guard = 'admin';
     protected $guard_name = 'web';
 }

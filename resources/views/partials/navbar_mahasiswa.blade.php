@@ -25,19 +25,19 @@
                         <div class="modal-body" style="padding: 5rem; padding-top: 0; padding-bottom: 0; z-index: 1;"
                             !important>
                             <ul class="navbar-nav responsive me-auto mt-2 mt-lg-0">
-                                <li class="nav-item {{ ($navbar === "Beranda") ? 'active':'' }}">
+                                <li class="nav-item {{ $navbar === 'Beranda' ? 'active' : '' }}">
                                     <a class="nav-link" href="/beranda_mahasiswa">Beranda</a>
                                 </li>
-            
-                                <li class="nav-item {{ ($navbar === "Belajar") ? 'active':'' }}">
+
+                                <li class="nav-item {{ $navbar === 'Belajar' ? 'active' : '' }}">
                                     <a class="nav-link" href="/belajar">Belajar</a>
                                 </li>
-                                
-                                <li class="nav-item {{ ($navbar === "Diskusi") ? 'active':'' }}">
+
+                                <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
                                     <a class="nav-link" href="#">Diskusi</a>
                                 </li>
-            
-                                <li class="nav-item {{ ($navbar === "Showcase") ? 'active':'' }}">
+
+                                <li class="nav-item {{ $navbar === 'Showcase' ? 'active' : '' }}">
                                     <a class="nav-link" href="/showcase">Showcase</a>
                                 </li>
                             </ul>
@@ -45,7 +45,7 @@
                         <div class="modal-footer border-0 gap-3" style="padding: 2rem; padding-top: 0.75rem">
                             <a href="/login" class="btn btn-fill text-white">Login</a>
                             {{-- <a href="#"> <img class="rounded-circle" src="{{ asset('img/profil.png') }}" style="width: 50px; height: 50px ;"></a>
-        <i class='bx bx-chevron-down' style="font-size: 40px;"></i>  --}}
+        <i class='bx bx-chevron-down' style="font-size: 40px;"></i> --}}
                         </div>
                     </div>
                 </div>
@@ -55,38 +55,50 @@
             <!-- Awal Navbar Versi Desktop -->
             <div class="collapse navbar-collapse" id="navbarTogglerDemo">
                 <ul class="navbar-nav ms-auto me-auto mt-lg-0 ">
-                    <li class="nav-item {{ ($navbar === "Beranda") ? 'active':'' }}">
-                        <a class="nav-link" href="/beranda_mahasiswa">Beranda</a>
+                    <li class="nav-item {{ $navbar === 'Beranda' ? 'active' : '' }}">
+                        <a class="nav-link" href="/">Beranda</a>
                     </li>
 
-                    <li class="nav-item {{ ($navbar === "Belajar") ? 'active':'' }}">
+                    <li class="nav-item {{ $navbar === 'Belajar' ? 'active' : '' }}">
                         <a class="nav-link" href="/belajar">Belajar</a>
                     </li>
-                    
-                    <li class="nav-item {{ ($navbar === "Diskusi") ? 'active':'' }}">
+
+                    <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
                         <a class="nav-link" href="#">Diskusi</a>
                     </li>
 
-                    <li class="nav-item {{ ($navbar === "Showcase") ? 'active':'' }}">
+                    <li class="nav-item {{ $navbar === 'Showcase' ? 'active' : '' }}">
                         <a class="nav-link" href="/showcase">Showcase</a>
                     </li>
                 </ul>
                 <div class="gap-3 d-flex justify-content-center">
-                    @auth('mahasiswa')
-                    <li class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #2390b9;">
-                            <img class="rounded-circle me-2" src="assets/img/gue.jpg" 
-                                style="width: 50px; height: 50px; border: 3.5px solid #2390B9;">
-                        </a>
-                        <ul class="dropdown-menu mb-5" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Pengaturan</a></li>
-                            <li><button class="dropdown-item" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Keluar</button></li>
-                        </ul>
-                    </li>
-                    @endauth
-                    <a href="/login" class="btn btn-fill text-white">Login</a>
+                    @if (auth('mahasiswa')->check())
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #2390b9;">
+                                <img class="rounded-circle me-2" src="assets/img/gue.jpg"
+                                    style="width: 50px; height: 50px; border: 3.5px solid #2390B9;">
+                            </a>
+                            <ul class="dropdown-menu mb-5" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Pengaturan</a></li>
+                                <li><a href="{{ route('logout') }}"     
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();"
+                                        class="sidebar-item" onclick="toggleActive(this)" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        <span>Keluar</span>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </a></li>
+                            </ul>
+
+                        </li>
+                    @else
+                        <a href="/login" class="btn btn-fill text-white">Login</a>
+                    @endif
                     {{-- @endif --}}
                     <!-- <a href="#"> <img class="rounded-circle" src="img/profil.jpg" style="width: 50px; height: 50px ;"></a>
    <i class='bx bx-chevron-down' style="font-size: 40px;"></i> -->

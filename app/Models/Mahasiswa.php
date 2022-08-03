@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Mahasiswa extends Model implements Authenticatable
 {
     use HasFactory, HasRoles, AuthenticableTrait;
+    protected $primaryKey = 'nip';
     protected $guarded =[];
     protected $table ='mahasiswas';
     protected $primarykey='nip';

@@ -35,8 +35,10 @@ class LoginController extends Controller
     {
         if (Auth::guard('dosen')->hasUser('dosen')) {
             return '/dashboard_dosen';
-        }else{
+        }elseif (Auth::guard('mahasiswa')->hasUser('mahasiswa')){
             return '/';
+        }else{
+            return '/dashboard_admin';
         }
         // if (Auth::guard('mahasiswa')->hasUser('mahasiswa')) {
         //     return '/beranda_mahasiswa';
@@ -57,28 +59,25 @@ class LoginController extends Controller
 
     protected function attemptLogin(Request $request)
     {
-        // $adminLogin = Auth::guard('admin')->attempt(
-        //     $this->credentials($request),
-        //     $request->has('remember')
-        // );
+        $adminLogin = Auth::guard('admin')->attempt(
+            $this->credentials($request),
+            $request->has('remember')
+        );
         $dosenLogin = Auth::guard('dosen')->attempt(
             $this->credentials($request),
             $request->has('remember')
         );
+        // dd(Auth::guard('dosen')->user()->nama);
         $mahasiswaLogin = Auth::guard('mahasiswa')->attempt(
             $this->credentials($request),
             $request->has('remember')
         );
         if($dosenLogin == true){
             return $dosenLogin;
-        } else {
-            return $dosenLogin;
-        }
-
-        if($mahasiswaLogin == true){
+        } elseif($mahasiswaLogin == true){
             return $mahasiswaLogin;
-        } else {
-            return $dosenLogin;
+        } else{
+            return $adminLogin;
         }
     // if ($adminLogin == true) {
     //         return $adminLogin;
