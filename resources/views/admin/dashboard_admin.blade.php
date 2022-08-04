@@ -47,7 +47,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex flex-column justify-content-around align-items-start employee-stat">
                                 <h5 class="content-desc">Jumlah Mata kuliah</h5>
-                                <h3 class="statistics-value">40</h3>
+                                <h3 class="statistics-value">{{ $datamatkuliah }}</h3>
                             </div>
                         </div>
                     </div>

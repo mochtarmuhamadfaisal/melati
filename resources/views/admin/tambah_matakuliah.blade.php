@@ -15,16 +15,17 @@
 
         <div class="row mt-3">
             <div class="col-lg-6">
-                <form action="">
+                <form action="/insertdata_matakuliah" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">Mata
                             Kuliah</label>
                         <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
-                            placeholder="">
+                            placeholder="Masukan Mata Kuliah" name="nama_matakuliah">
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        <button type="button" class="btn-admin rounded-pill mt-2">Tambah</button>
+                        <button type="submit" class="btn-admin rounded-pill mt-2">Tambah</button>
                     </div>
                 </form>
 

@@ -15,7 +15,9 @@
 
 
         <div class="content">
-            <form action="">
+            <form action="/updatedata_profil_admin/{{ $admin->nip }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('put')
                 <div class="col-12">
                     <div class="row">
                         <div class="admin d-sm-flex d-block">
@@ -59,27 +61,46 @@
                             <label for="formGroupExampleInput" class="form-label fw-bold"
                                 style="color: #2390B9;">Nama</label>
                             <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
-                                placeholder="">
+                                placeholder="" name="nama" value="{{ $admin->nama }}" required autofocus>
+                                @error('nama')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                @enderror
                         </div>
                         <div class="mb-4">
                             <label for="formGroupExampleInput2" class="form-label fw-bold"
                                 style="color: #2390B9;">NIP</label>
                             <input type="text" class="form-control rounded-pill p-2 px-3"
-                                id="formGroupExampleInput2" placeholder="">
+                                id="formGroupExampleInput2" placeholder="" name="nip" value="{{ $admin->nip }}" required>
+                                @error('nip')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                @enderror
                         </div>
                         <div class="mb-2">
                             <label for="formGroupExampleInput3" class="form-label fw-bold"
                                 style="color: #2390B9;">Jenis
                                 Kelamin</label>
-                            <select class="form-select rounded-pill p-2 px-3" aria-label="Default select example"
-                                id="formGroupExampleInput3">
+                                <select class="form-select rounded-pill py-2" name="jeniskelamin"
+                                aria-label="Default select example" id="recipient-name" name="jeniskelamin">
+                                @if ($admin->jeniskelamin = 'Laki-laki')
+                                <option disabled>Pilih Jenis Kelamin</option>
+                                <option selected value="Laki-laki">laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                                @elseif($admin->jeniskelamin = 'Laki-laki')
+                                <option disabled>Pilih Jenis Kelamin</option>
+                                <option value="Laki-laki">laki-laki</option>
+                                <option selected value="Perempuan">Perempuan</option>
+                                @else
                                 <option selected disabled>Pilih Jenis Kelamin</option>
-                                <option value="1">Laki-Laki</option>
-                                <option value="2">Perempuan</option>
+                                <option value="Laki-laki">laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                                @endif
                             </select>
+                            @error('jeniskelamin')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn-admin rounded-pill mt-4">Simpan</button>
+                            <button type="sumbit" class="btn-admin rounded-pill mt-4">Simpan</button>
                         </div>
             </form>
             <div class="d-flex justify-content-start">

@@ -28,17 +28,23 @@
                 <table class="table table-borderless w-50 active mt-4" id="table-all">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Mata Kuliah</th>
                             <th class="action-header text-center">Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
+                        @php
+                        $no = 1;
+                        @endphp
+                        @foreach ($datamatakuliah as $rowmk)
                         <tr>
+                            <td>{{ $no++ }}</td>   
                             <td>
                                 <div>
                                     <div class="d-flex flex-column justify-content-center align-items-start mt-2">
-                                        <h5 class="transaction-game">Pemrograman Mobile</h5>
+                                        <h5 class="transaction-game">{{ $rowmk->nama_matakuliah }}</h5>
                                     </div>
                                 </div>
                             </td>
@@ -49,6 +55,7 @@
                                     data-bs-target="#exampleModal">Hapus</button>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 <!-- AKHIR Table Untuk Mata Kuliah  -->
@@ -78,4 +85,24 @@
         </div>
     </div>
     <!-- Akhir Konten -->
+
+
+    {{-- jquery --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    {{-- allert sweet allert --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        @if (Session::has('berhasil'))
+            swal({
+                title: "Berhasil!",
+                text: "{{ Session::get('berhasil') }}",
+                icon: "success",
+                button: "Oke",
+            });
+        @endif
+    </script>
 @endsection
+
+

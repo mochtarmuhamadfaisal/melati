@@ -47,7 +47,7 @@
                                         <a href="/tampilkan_mahasiswa/{{ $rowmhs->nip }}" class="text-decoration-none">
                                             <button class="btn-transaction bg-warning text-white mx-auto">Edit</button></a>
 
-                                            <button class="btn-transaction bg-danger text-white mx-auto" data-nama="{{ $rowmhs->nama }}" onclick="hapus(`{{ $rowmhs->nip }}`,`{{ $rowmhs->nama }}`)">Hapus</button>        
+                                            <button class="btn-transaction bg-danger text-white mx-auto hapusmahasiswa" data-nama="{{ $rowmhs->nama }}" onclick="hapus(`{{ $rowmhs->nip }}`,`{{ $rowmhs->nama }}`)">Hapus</button>        
                                     </td>
                                 </tr>
                             @endforeach
@@ -73,7 +73,7 @@
     <script>
         function hapus(id, nama){
             console.log('tess');
-            let url=/delete/id;
+            let url=/delete_mahasiswa/id;
             $('.hapusmahasiswa').attr('action',url);
             $('.hapusmahasiswa').sumbit;
             // var iddosen = $(this).attr('data-id');
@@ -87,7 +87,7 @@
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location = "/delete/" + id + ""
+                        window.location = "/delete_mahasiswa/" + id + ""
                         // swal("Akun dosen berhasil di hapus", {
                         //     icon: "success",
                         // });

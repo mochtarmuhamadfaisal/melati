@@ -15,40 +15,52 @@
 
 
         <div class="content">
-            <div class="row row-profile d-flex justify-content-lg-start ">
-                <div class="col-lg-3 col-12">
-                    <img class="rounded-circle mb-5 mb-lg-0" src="{{ asset('img/gue.jpg') }}" alt=""
-                        style="width: 250px; height: 250px; border: 4px solid #2390B9;">
-                </div>
-                <div class="col-lg-3 col-12 ms-0 ms-lg-5">
-                    <div class="mb-4 mt-5 mt-lg-0">
-                        <h5 class="fw-bold" style="color: #2390B9;">Nama</h5>
-                        <p class="mb-5">Mochtar Muhammad Faisal</p>
+            @foreach ($admin as $rowadm)
+                <div class="row row-profile d-flex justify-content-lg-start ">
+                    <div class="col-lg-3 col-12">
+                        <img class="rounded-circle mb-5 mb-lg-0" src="{{ asset('img/gue.jpg') }}" alt=""
+                            style="width: 250px; height: 250px; border: 4px solid #2390B9;">
                     </div>
-                    <div class="mb-5">
-                        <h5 class="fw-bold" style="color: #2390B9;">NIP</h5>
-                        <p>3201916018</p>
+                    <div class="col-lg-3 col-12 ms-0 ms-lg-5">
+                        <div class="mb-4 mt-5 mt-lg-0">
+                            <h5 class="fw-bold" style="color: #2390B9;">Nama</h5>
+                            <p class="mb-5">{{ $rowadm->nama }}</p>
+                        </div>
+                        <div class="mb-5">
+                            <h5 class="fw-bold" style="color: #2390B9;">NIP</h5>
+                            <p>{{ $rowadm->nip }}</p>
+                        </div>
+                        <div class="">
+                            <h5 class="fw-bold" style="color: #2390B9;">Jenis Kelamin</h5>
+                            <p>{{ $rowadm->jeniskelamin }}</p>
+                        </div>
                     </div>
-                    <div class="">
-                        <h5 class="fw-bold" style="color: #2390B9;">Jenis Kelamin</h5>
-                        <p>Laki-laki</p>
-                    </div>
-                </div>
 
-                <div class="col-lg-3 col-12 ms-0  mt-5 mt-lg-0 ms-lg-5 align-self-center">
-                    <a href="/edit_profil_admin"><button type="button" class="btn-admin rounded-pill">Edit
-                            Profile</button></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="d-flex justify-content-start mt-5">
-                    <a href="/pengaturan_admin" class="text-decoration-none">
-                        <p class="text-muted"><span class="">
-                                <</span>Kembali</p>
-                    </a>
-                </div>
+                    <div class="col-lg-3 col-12 ms-0  mt-5 mt-lg-0 ms-lg-5 align-self-center">
+                        <a href="/tampilkan_profil_admin/{{ $rowadm->nip }}"><button type="button" class="btn-admin rounded-pill">Edit
+                                Profile</button></a>
+                    </div>
+            @endforeach
+        </div>
+        <div class="row">
+            <div class="d-flex justify-content-start mt-5">
+                <a href="/pengaturan_admin" class="text-decoration-none">
+                    <p class="text-muted"><span class="">
+                            <</span>Kembali</p>
+                </a>
             </div>
         </div>
     </div>
+    </div>
     <!-- Akhir Konten -->
+    <script>
+        @if (Session::has('berhasil'))
+            swal({
+                title: "Berhasil!",
+                text: "{{ Session::get('berhasil') }}",
+                icon: "success",
+                button: "Oke",
+            });
+        @endif
+    </script>
 @endsection

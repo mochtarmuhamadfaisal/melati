@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="d-flex justify-content-end">
-                    <button type="button" class="btn-admin rounded-pill mt-2">Simpan</button>
+                    <button type="submit" class="btn-admin rounded-pill mt-2">Simpan</button>
                 </div>
             </form>
             <div class="d-flex justify-content-start">

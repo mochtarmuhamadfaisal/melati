@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MatakuliahController;
@@ -42,25 +43,18 @@ Route::get('/dashboard_admin', [DasboardadminController::class, 'dashboard_admin
 
 
 Route::get('/matakuliah',[MatakuliahController::class, 'matakuliah'])->name('matakuliah');
-// Route::get('/matakuliah', function(){
-//     return view('admin/matakuliah',[
-//         "sidebar"=>"Mata Kuliah"
-//     ]);
-// });
+
 Route::get('/tambah_matakuliah',[MatakuliahController::class, 'tambah_matakuliah'])->name('tambah_matakuliah');
 Route::post('/insertdata_matakuliah',[MatakuliahController::class, 'insertdata_matakuliah'])->name('insertdata_matakuliah');
 
-// Route::get('/tambah_matakuliah', function(){
-//     return view('admin/tambah_matakuliah',[
+Route::get('/tampilkan_matakuliah/{id}',[MatakuliahController::class, 'tampilkan_matakuliah'])->name('tampilkan_matakuliah');
+
+
+// Route::get('/edit_matakuliah', function(){
+//     return view('admin/edit_matakuliah',[
 //         "sidebar"=>"Mata Kuliah"
 //     ]);
 // });
-
-Route::get('/edit_matakuliah', function(){
-    return view('admin/edit_matakuliah',[
-        "sidebar"=>"Mata Kuliah"
-    ]);
-});
 
 
 
@@ -74,7 +68,7 @@ Route::post('/insertdata_dosen',[DosenController::class, 'insertdata_dosen'])->n
 Route::get('/tampilkan_dosen/{nip}',[DosenController::class, 'tampilkan_dosen'])->name('tampilkan_dosen');
 Route::put('/updatedata_dosen/{nip}',[DosenController::class, 'updatedata_dosen'])->name('updatedata_dosen');
 
-Route::get('/delete/{nip}',[DosenController::class, 'delete'])->name('dosen.delete');
+Route::get('/delete_dosen/{nip}',[DosenController::class, 'delete'])->name('delete');
 
 
 
@@ -88,7 +82,7 @@ Route::post('/insertdata_mahasiswa',[MahasiswaController::class, 'insertdata_mah
 Route::get('/tampilkan_mahasiswa/{nip}',[MahasiswaController::class, 'tampilkan_mahasiswa'])->name('tampilkan_mahasiswa');
 Route::put('/updatedata_mahasiswa/{nip}',[MahasiswaController::class, 'updatedata_mahasiswa'])->name('updatedata_mahasiswa');
 
-Route::get('/delete/{nip}',[MahasiswaController::class, 'delete'])->name('delete');
+Route::get('/delete_mahasiswa/{nip}',[MahasiswaController::class, 'delete'])->name('delete');
 
 
 
@@ -100,17 +94,21 @@ Route::get('/pengaturan_admin', function(){
     ]);
 });
 
-Route::get('/profil_admin', function(){
-    return view('admin/profil_admin',[
-        "sidebar"=>"Pengaturan"
-    ]);
-});
 
-Route::get('/edit_profil_admin', function(){
-    return view('admin/edit_profil_admin',[
-        "sidebar"=>"Pengaturan"
-    ]);
-});
+Route::get('/profil_admin',[AdminController::class, 'profil_admin'])->name('profil_admin');
+// Route::get('/profil_admin', function(){
+//     return view('admin/profil_admin',[
+//         "sidebar"=>"Pengaturan"
+//     ]);
+// });
+Route::get('/tampilkan_profil_admin/{nip}',[AdminController::class, 'tampilkan_profil_admin'])->name('tampilkan_profil_admin');
+Route::put('/updatedata_profil_admin/{nip}',[AdminController::class, 'updatedata_profil_admin'])->name('updatedata_profil_admin');
+
+// Route::get('/edit_profil_admin', function(){
+//     return view('admin/edit_profil_admin',[
+//         "sidebar"=>"Pengaturan"
+//     ]);
+// });
 
 Route::get('/edit_password_admin', function(){
     return view('admin/edit_password_admin',[
