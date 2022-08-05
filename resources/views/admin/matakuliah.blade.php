@@ -26,7 +26,7 @@
 
                 <!-- AWAL Table Untuk Mata Kuliah  -->
                 <table class="table table-borderless w-50 active mt-4" id="table-all">
-                    <thead>
+                    <thead style="background-color: #D4F3FF;">
                         <tr>
                             <th>No</th>
                             <th>Mata Kuliah</th>
@@ -49,38 +49,20 @@
                                 </div>
                             </td>
                             <td class="action">
-                                <a href="/edit_matakuliah" class="text-decoration-none"><button
+                                <a href="/tampilkan_matakuliah/{{ $rowmk->id }}" class="text-decoration-none"><button
                                         class="btn-transaction bg-warning text-white mx-auto">Edit</button></a>
-                                <button class="btn-transaction bg-danger text-white mx-auto" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">Hapus</button>
+                                <button class="btn-transaction bg-danger text-white mx-auto hapusmatakuliah
+                                hapusmatakuliah" data-bs-toggle="modal" data-bs-target="#exampleModal" data-nama="{{ $rowmk->nama_matakuliah }}" onclick="hapus(`{{ $rowmk->id }}`,`{{ $rowmk->nama_matakuliah }}`)">Hapus</button>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
                 <!-- AKHIR Table Untuk Mata Kuliah  -->
-
-                <!-- Awal Modal Hapus -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Hapus!</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                Anda yakin ingin mengapus data ini?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
-                                <button type="button" class="btn btn-danger">Yakin</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Akhir Modal Hapus -->
+                <form action="/delete/" class="hapusmatakuliah">
+                    @csrf
+                    @method('delete')
+                </form>
             </div>
         </div>
     </div>
@@ -93,6 +75,34 @@
 
     {{-- allert sweet allert --}}
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function hapus(id, nama_matakuliah){
+            // console.log('tess');
+            let url=/delete_matakuliah/id;
+            $('.hapusmatakuliah').attr('action',url);
+            $('.hapusmatakuliah').sumbit;
+            // var id = $(this).attr('data-id');
+            // var nama_matakuliah = $(this).attr('data-nama');
+            swal({
+                    title: "Anda yakin?",
+                    text: "Anda akan menghapus Mata Kuliah " + nama_matakuliah + "",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        window.location = "/delete_matakuliah/" + id + ""
+                        // swal("Akun dosen berhasil di hapus", {
+                        //     icon: "success",
+                        // });
+                    } else {
+                        swal("Mata kuliah tidak jadi di hapus");
+                    }
+                });
+        }
+    </script>
+
     <script>
         @if (Session::has('berhasil'))
             swal({

@@ -38,5 +38,22 @@ class MatakuliahController extends Controller
             "sidebar"=>"Mata Kuliah"
         ],compact('datamatakuliah'));
     }
+
+    public function updatedata_matakuliah(Request $request,$id){
+        $this->validate($request,[
+            'nama_matakuliah' => 'required|min:3|max:255'
+        ]);
+        
+        $datamatakuliah = Matakuliah::find($id);
+        $datamatakuliah = Matakuliah::where('id',$id)->update([
+            'nama_matakuliah' => $request->nama_matakuliah
+        ]);
+        return redirect()->route('matakuliah')->with('berhasil', 'Mata Kuliah berhasil di EDIT');
+    }
+
+    public function delete($id){
+        $datamatakuliah = Matakuliah::find($id)->delete();
+        return redirect()->route('matakuliah')->with('berhasil', 'Akun dosen berhasil di HAPUS');
+    }
     
 }

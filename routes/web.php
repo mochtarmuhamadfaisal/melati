@@ -48,13 +48,10 @@ Route::get('/tambah_matakuliah',[MatakuliahController::class, 'tambah_matakuliah
 Route::post('/insertdata_matakuliah',[MatakuliahController::class, 'insertdata_matakuliah'])->name('insertdata_matakuliah');
 
 Route::get('/tampilkan_matakuliah/{id}',[MatakuliahController::class, 'tampilkan_matakuliah'])->name('tampilkan_matakuliah');
+Route::put('/updatedata_matakuliah/{id}',[MatakuliahController::class, 'updatedata_matakuliah'])->name('updatedata_matakuliah');
 
+Route::get('/delete_matakuliah/{id}',[MatakuliahController::class, 'delete'])->name('delete');
 
-// Route::get('/edit_matakuliah', function(){
-//     return view('admin/edit_matakuliah',[
-//         "sidebar"=>"Mata Kuliah"
-//     ]);
-// });
 
 
 
