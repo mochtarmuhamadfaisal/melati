@@ -16,14 +16,14 @@
 
         <div class="row mt-3">
             <div class="col-lg-6">
-                <form action="/updatedata_dosen/{{ $datadosen->nip }}" method="post" enctype="multipart/form-data">
+                <form action="/updatedata_dosen/{{ $datadosen->id }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold"
                             style="color: #2390B9;">Nama</label>
                         <input type="text" name="nama" value="{{ $datadosen->nama }}" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
-                            placeholder="" required>
+                            placeholder="" required autofocus>
                             @error('nama')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
@@ -32,9 +32,9 @@
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold"
                             style="color: #2390B9;">NIP</label>
-                        <input type="text" name="nip" value="{{ $datadosen->nip }}" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
-                            placeholder="" required>
-                            @error('nip')
+                        <input type="text" name="username" value="{{ $datadosen->username }}" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
+                            placeholder="">
+                            @error('username')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
                     </div>
@@ -43,7 +43,7 @@
                         <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Jenis
                             Kelamin
                         </label>
-                        <select class="form-select rounded-pill py-2" name="jeniskelamin"
+                        <select class="form-select rounded-pill py-2" name="jenis_kelamin"
                         aria-label="Default select example" id="recipient-name" name="jeniskelamin">
                         @if ($datadosen->jeniskelamin = 'Laki-laki')
                         <option disabled>Pilih Jenis Kelamin</option>

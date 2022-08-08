@@ -15,13 +15,12 @@
                 </div>
 
                     {{-- <h4 class="profile-name">{{ Auth::guard('dosen')->user()->nama }} </h4> --}}
-                <h4 class="profile-name">{{ Auth::guard('dosen')->user()->nama }} </h4>
+                <h4 class="profile-name">{{ Auth::user()->nama }} </h4>
                 <p class="profile-email">Dosen</p>
             </div>
 
 
             <div class="sidebar-item-container">
-
                 <a href="/dashboard_dosen" class="sidebar-item {{ $sidebar === 'Dashboard' ? 'active' : '' }}"
                     onclick="toggleActive(this)">
                     <span>Dashboard</span>

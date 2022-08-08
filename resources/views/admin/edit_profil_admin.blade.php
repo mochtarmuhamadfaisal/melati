@@ -2,7 +2,7 @@
 @section('konten_admin')
     <!-- Awal Konten -->
     <div class="col-12 col-xl-9">
-        <div class="nav ">
+        <div class="nav">
             <div class="d-flex justify-content-between align-items-center w-100 mb-3 mb-md-0">
                 <div class="d-flex justify-content-between align-items-center w-100">
                     <h2 class="nav-title">Edit Profil</h2>
@@ -15,21 +15,19 @@
 
 
         <div class="content">
-            <form action="/updatedata_profil_admin/{{ $admin->nip }}" method="POST" enctype="multipart/form-data">
+            <form action="/updatedata_profil_admin/{{ $admin->id }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="col-12">
                     <div class="row">
                         <div class="admin d-sm-flex d-block">
                             <img src="{{ asset('img/gue.jpg') }}" class="img-preview rounded-circle"
-                                style="width: 250px; height: 250px; border: 4px solid #2390B9; object-fit: cover">
-
+                                style="width: 250px; height: 250px; border: 4px solid #2390B9; object-fit: cover"> 
 
                             <div class="hl-upload ms-sm-4 d-flex flex-column justify-content-center">
                                 <label for="foto" class="form-label btn-admin rounded-pill">
                                     <input class="btn btn-primary rounded-lg @error('foto') is-invalid @enderror"
-                                        id="foto" name="foto" type="file" style="display:none"
-                                        onchange="previewname()">Ubah
+                                        id="foto" name="foto" type="file" style="display:none" value="{{ asset($admin->foto) }}">Ubah
                                     Foto Profil</label>
                                 <p class="upload mt-1 ms-0">maks upload (2 Mb)</p>
                             </div>
@@ -70,7 +68,7 @@
                             <label for="formGroupExampleInput2" class="form-label fw-bold"
                                 style="color: #2390B9;">NIP</label>
                             <input type="text" class="form-control rounded-pill p-2 px-3"
-                                id="formGroupExampleInput2" placeholder="" name="nip" value="{{ $admin->nip }}" required>
+                                id="formGroupExampleInput2" placeholder="" name="username" value="{{ $admin->username }}" required>
                                 @error('nip')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                                 @enderror
@@ -79,13 +77,13 @@
                             <label for="formGroupExampleInput3" class="form-label fw-bold"
                                 style="color: #2390B9;">Jenis
                                 Kelamin</label>
-                                <select class="form-select rounded-pill py-2" name="jeniskelamin"
-                                aria-label="Default select example" id="recipient-name" name="jeniskelamin">
-                                @if ($admin->jeniskelamin = 'Laki-laki')
+                                <select class="form-select rounded-pill py-2" name="jenis_kelamin"
+                                aria-label="Default select example" id="recipient-name" >
+                                @if ($admin->jenis_kelamin = 'Laki-laki')
                                 <option disabled>Pilih Jenis Kelamin</option>
                                 <option selected value="Laki-laki">laki-laki</option>
                                 <option value="Perempuan">Perempuan</option>
-                                @elseif($admin->jeniskelamin = 'Laki-laki')
+                                @elseif($admin->jenis_kelamin = 'Laki-laki')
                                 <option disabled>Pilih Jenis Kelamin</option>
                                 <option value="Laki-laki">laki-laki</option>
                                 <option selected value="Perempuan">Perempuan</option>
@@ -95,7 +93,7 @@
                                 <option value="Perempuan">Perempuan</option>
                                 @endif
                             </select>
-                            @error('jeniskelamin')
+                            @error('jenis_kelamin')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
                         </div>

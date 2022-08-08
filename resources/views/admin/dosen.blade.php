@@ -49,13 +49,14 @@
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $row->nama }}</td>
-                                    <td>{{ $row->nip }}</td>
-                                    <td>{{ $row->jeniskelamin }}</td>
+                                    <td>{{ $row->username }}</td>
+                                    <td>{{ $row->jenis_kelamin }}</td>
+                                    {{-- @dd($row->id) --}}
                                     <td class="action">
-                                        <a href="/tampilkan_dosen/{{ $row->nip }}" class="text-decoration-none"><button
+                                        <a href="/tampilkan_dosen/{{ $row->id }}" class="text-decoration-none"><button
                                                 class="btn-transaction bg-warning text-white mx-auto">Edit</button></a>
                                         
-                                        <button class="btn-transaction bg-danger text-white mx-auto hapusdosen" data-nama="{{ $row->nama }}" onclick="hapus(`{{ $row->nip }}`,`{{ $row->nama }}`)">Hapus</button>        
+                                        <button class="btn-transaction bg-danger text-white mx-auto hapusdosen" data-nama="{{ $row->nama }}" onclick="hapus(`{{ $row->id }}`,`{{ $row->nama }}`)">Hapus</button>        
                                         
 
                                         {{-- <a href="#" class="text-decoration-none" data-id="{{ $row->nip }}"

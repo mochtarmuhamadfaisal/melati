@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dosen;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class DosenController extends Controller
 {
     public function dosen(){
-        $datadosen = Dosen::all();
+        $datadosen = User::where('role_id', 2)->get();
 
-        return view('admin/dosen',[
+        return view('admin.dosen',[
             "sidebar"=>"Dosen"
         ],compact('datadosen'));
     }
@@ -29,14 +30,15 @@ class DosenController extends Controller
             'jeniskelamin' => 'required',
         ]);
 
-        $datadosen = Dosen::create([
+        //@dd($request->nip);
+        $datadosen = User::create([
+            'username' => $request->nip,
             'nama' => $request->nama,
-            'nip' => $request->nip,
-            'jeniskelamin' => $request->jeniskelamin,
-            'password' => bcrypt($request->nip)
+            'jenis_kelamin' => $request->jeniskelamin,
+            'password' => bcrypt($request->nip),
+            'role_id' => 2,
         ]);
 
-        $datadosen->assignRole('dosen');
 
         // dd($request->all());
         // Dosen::create($request->all());
@@ -44,34 +46,39 @@ class DosenController extends Controller
     }
 
     public function tampilkan_dosen($nip){
-        $datadosen = Dosen::where('nip',$nip)->first();
+        $datadosen = User::where('id',$nip)->first();
         // dd($datadosen);
-        return view('admin/edit_dosen',[
+        return view('admin.edit_dosen',[
                     "sidebar"=>"Dosen"
         ],compact('datadosen'));
     }
 
     public function updatedata_dosen(Request $request, $nip){
-        // dd($request,$nip);
+        //dd($request,$nip);
         $this->validate($request,[
             'nama' => 'required|min:3|max:25',
-            'nip' => 'required|min:7|max:20',
-            'jeniskelamin' => 'required',
+            'username' => 'required|min:7|max:20',
+            'jenis_kelamin' => 'required',
+        ],
+        [
+            'username.required' => 'NIP kosong',
         ]);
+
+        //dd($request);
         // $datadosen = Dosen::find($nip);
-        $datadosen = Dosen::where('nip',$nip)->update([
+        $datadosen = User::where('id',$nip)->update([
+            'username' => $request->username,
             'nama' => $request->nama,
-            'nip' => $request->nip,
-            'jeniskelamin' => $request->jeniskelamin,
-            'password' => bcrypt($request->nip)
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'password' => bcrypt($request->username)
         ]);
         // $datadosen->assignRole('dosen');
         // $datadosen->update($request->all());
         return redirect()->route('dosen')->with('berhasil', 'Akun dosen berhasil di EDIT');
     }
 
-    public function delete($nip){
-        $datadosen = Dosen::where('nip',$nip)->delete();
+    public function delete($id){
+        $datadosen = User::where('id',$id)->delete();
         return redirect()->route('dosen')->with('berhasil', 'Akun dosen berhasil di HAPUS');
     }
 }

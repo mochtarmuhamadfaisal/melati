@@ -13,7 +13,7 @@
                     <img src="{{ asset('img/gue.jpg') }}" class="rounded-circle" style="width: 100%; object-fit: cover" alt="">
                 </div>
 
-                <h4 class="profile-name">{{ Auth::guard('admin')->user()->nama }} </h4>
+                <h4 class="profile-name">{{ Auth::user()->nama }} </h4>
                 <p class="profile-email">Admin</p>
             </div>
 

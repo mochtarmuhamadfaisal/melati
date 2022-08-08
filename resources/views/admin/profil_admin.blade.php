@@ -1,13 +1,14 @@
 @extends('layouts.main_admin')
 @section('konten_admin')
     <!-- Awal Konten -->
+    @foreach ($admin as $rowadm)
     <div class="col-12 col-xl-9">
         <div class="nav">
             <div class="d-flex justify-content-between align-items-center w-100 mb-3 mb-md-0">
                 <div class="d-flex justify-content-between align-items-center w-100">
                     <h2 class="nav-title">Profil</h2>
                     <button id="toggle-navbar" onclick="toggleNavbar()">
-                        <img src="{{ asset('img/gue.jpg') }}" class="rounded-circle" alt="">
+                        <img src="{{ asset('fotoadmin'.$rowadm->foto) }}" class="rounded-circle" alt="">
                     </button>
                 </div>
             </div>
@@ -15,10 +16,10 @@
 
 
         <div class="content">
-            @foreach ($admin as $rowadm)
+            
                 <div class="row row-profile d-flex justify-content-lg-start ">
                     <div class="col-lg-3 col-12">
-                        <img class="rounded-circle mb-5 mb-lg-0" src="{{ asset('img/gue.jpg') }}" alt=""
+                        <img class="rounded-circle mb-5 mb-lg-0" src="{{ asset('fotoadmin'.$rowadm->foto) }}" alt=""
                             style="width: 250px; height: 250px; border: 4px solid #2390B9;">
                     </div>
                     <div class="col-lg-3 col-12 ms-0 ms-lg-5">
@@ -28,16 +29,16 @@
                         </div>
                         <div class="mb-5">
                             <h5 class="fw-bold" style="color: #2390B9;">NIP</h5>
-                            <p>{{ $rowadm->nip }}</p>
+                            <p>{{ $rowadm->username }}</p>
                         </div>
                         <div class="">
                             <h5 class="fw-bold" style="color: #2390B9;">Jenis Kelamin</h5>
-                            <p>{{ $rowadm->jeniskelamin }}</p>
+                            <p>{{ $rowadm->jenis_kelamin }}</p>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-12 ms-0  mt-5 mt-lg-0 ms-lg-5 align-self-center">
-                        <a href="/tampilkan_profil_admin/{{ $rowadm->nip }}"><button type="button" class="btn-admin rounded-pill">Edit
+                        <a href="/tampilkan_profil_admin/{{ $rowadm->id }}"><button type="button" class="btn-admin rounded-pill">Edit
                                 Profile</button></a>
                     </div>
             @endforeach
@@ -53,6 +54,12 @@
     </div>
     </div>
     <!-- Akhir Konten -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    {{-- allert sweet allert --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         @if (Session::has('berhasil'))
             swal({

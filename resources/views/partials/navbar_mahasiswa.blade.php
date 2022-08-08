@@ -43,7 +43,7 @@
                             </ul>
                         </div>
                         <div class="modal-footer border-0 gap-3" style="padding: 2rem; padding-top: 0.75rem">
-                            <a href="/login" class="btn btn-fill text-white">Login</a>
+                            <a href="{{ route('loginakun') }}" class="btn btn-fill text-white">Login</a>
                             {{-- <a href="#"> <img class="rounded-circle" src="{{ asset('img/profil.png') }}" style="width: 50px; height: 50px ;"></a>
         <i class='bx bx-chevron-down' style="font-size: 40px;"></i> --}}
                         </div>
@@ -72,32 +72,38 @@
                     </li>
                 </ul>
                 <div class="gap-3 d-flex justify-content-center">
-                    @if (auth('mahasiswa')->check())
-                        <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #2390b9;">
+                    @if (auth()->check())
+                        <div class="d-flex">
+                            <div>
                                 <img class="rounded-circle me-2" src="assets/img/gue.jpg"
                                     style="width: 50px; height: 50px; border: 3.5px solid #2390B9;">
-                            </a>
-                            <ul class="dropdown-menu mb-5" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Pengaturan</a></li>
-                                <li><a href="{{ route('logout') }}"     
-                                        onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();"
-                                        class="sidebar-item" onclick="toggleActive(this)" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">
-                                        <span>Keluar</span>
+                            </div>
+                            <div class="dropdown me-4 align-self-center">
+                                <a class="dropdown-toggle me-1 show" href="#" role="button" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown" aria-expanded="true" style="color: #2390B9;">
+                                </a>
+                                <ul class="dropdown-menu show" aria-labelledby="dropdownMenuLink"
+                                    style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(-122px, 38px, 0px); border-radius: 8px; margin-top: 1rem;"
+                                    data-popper-placement="bottom-end">
+                                    <li><a class="dropdown-item" href="/profil_mahasiswa">Profile</a></li>
+                                    <li><a class="dropdown-item" href="/pengaturan_mahasiswa">Pengaturan</a></li>
+                                    <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();"
+                                            class="dropdown-item" onclick="toggleActive(this)" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">
+                                            <span>Keluar</span>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                            class="d-none">
-                                            @csrf
-                                        </form>
-                                    </a></li>
-                            </ul>
-
-                        </li>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
+                                                @csrf
+                                            </form>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
                     @else
-                        <a href="/login" class="btn btn-fill text-white">Login</a>
+                        <a href="{{ route('loginakun') }}" class="btn btn-fill text-white">Login</a>
                     @endif
                     {{-- @endif --}}
                     <!-- <a href="#"> <img class="rounded-circle" src="img/profil.jpg" style="width: 50px; height: 50px ;"></a>

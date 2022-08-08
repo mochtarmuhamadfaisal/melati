@@ -15,7 +15,7 @@
 
         <div class="row mt-3">
             <div class="col-lg-6">
-                <form action="/updatedata_mahasiswa/{{ $datamahasiswa->nip }}" method="post" enctype="multipart/form-data">
+                <form action="/updatedata_mahasiswa/{{ $datamahasiswa->id }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="mb-4">
@@ -30,9 +30,9 @@
 
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">NIP</label>
-                        <input type="number" name="nip" value="{{ $datamahasiswa->nip }}" class="form-control rounded-pill p-2 px-3"
+                        <input type="number" name="username" value="{{ $datamahasiswa->username }}" class="form-control rounded-pill p-2 px-3"
                             id="formGroupExampleInput" placeholder="Masukan NIP Dosen..." required>
-                        @error('nip')
+                        @error('username')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
                     </div>
@@ -40,8 +40,8 @@
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Jenis Kelamin
                         </label>
-                        <select class="form-select rounded-pill py-2" name="jeniskelamin"
-                            aria-label="Default select example" id="recipient-name" name="jeniskelamin">
+                        <select class="form-select rounded-pill py-2" name="jenis_kelamin"
+                            aria-label="Default select example" id="recipient-name">
                             @if ($datamahasiswa->jeniskelamin = 'Laki-laki')
                             <option disabled>Pilih Jenis Kelamin</option>
                             <option selected value="Laki-laki">laki-laki</option>

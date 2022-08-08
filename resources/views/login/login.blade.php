@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Melati | {{ $navbar }}</title>
+    <title>Melati</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <!-- Link icon -->
@@ -34,7 +34,15 @@
                     <p class="text-caption">
                         <span class="text-fitur">ME</span>dia Pembe<span class="text-fitur">LA</span>jaran <span class="text-fitur">T</span>eknik <span class="text-fitur">I</span>nformatika
                     </p>
-                    <form style="margin-top: 1.5rem" action="" method="post">
+
+                    @if(session()->has('logingagal'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('logingagal') }}
+                    </div>
+                      @endif
+
+                    <form style="margin-top: 1.5rem" action="{{ route('loginakun.post') }}" method="post">
+                        @csrf
                         <div style="margin-bottom: 1.75rem">
                             <label for="" class="d-block input-label">Username</label>
                             <div class="d-flex w-100 div-input">
@@ -47,7 +55,7 @@
                                             fill="#CACBCE" />
                                     </svg>
                                 </svg>
-                                <input class="input-field border-0" type="email" name="nip" id=""
+                                <input class="input-field border-0" name="username" id=""
                                     placeholder="Masukan username anda " autocomplete="on" required />
                             </div>
                         </div>

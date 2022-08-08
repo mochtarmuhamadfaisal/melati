@@ -13,11 +13,20 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <button type="button" onclick="logout()">Logout</button>
                     {{ __('You are logged in!') }}
+                        <form action="{{ route('logoutakun1') }}" method="POST" id="form-logout">
+                        @csrf
+                            
+                        </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function logout(){
+        document.getElementById("form-logout").submit();
+    }
+</script>
 @endsection

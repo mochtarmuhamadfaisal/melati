@@ -41,13 +41,13 @@
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $rowmhs->nama }}</td>
-                                    <td>{{ $rowmhs->nip }}</td>
-                                    <td>{{ $rowmhs->jeniskelamin }}</td>
+                                    <td>{{ $rowmhs->username }}</td>
+                                    <td>{{ $rowmhs->jenis_kelamin }}</td>
                                     <td class="action">
-                                        <a href="/tampilkan_mahasiswa/{{ $rowmhs->nip }}" class="text-decoration-none">
+                                        <a href="/tampilkan_mahasiswa/{{ $rowmhs->id }}" class="text-decoration-none">
                                             <button class="btn-transaction bg-warning text-white mx-auto">Edit</button></a>
 
-                                            <button class="btn-transaction bg-danger text-white mx-auto hapusmahasiswa" data-nama="{{ $rowmhs->nama }}" onclick="hapus(`{{ $rowmhs->nip }}`,`{{ $rowmhs->nama }}`)">Hapus</button>        
+                                            <button class="btn-transaction bg-danger text-white mx-auto hapusmahasiswa" data-nama="{{ $rowmhs->nama }}" onclick="hapus(`{{ $rowmhs->id }}`,`{{ $rowmhs->nama }}`)">Hapus</button>        
                                     </td>
                                 </tr>
                             @endforeach
