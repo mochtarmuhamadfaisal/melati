@@ -14,41 +14,44 @@
                     <h2 class="primary-header text-judul-fitur mb-4" style="font-weight: 600;">
                         Pilih kelas anda terlebih dahulu
                     </h2>
-                    <div class="row">
-                        <div class=" col-9 mb-2 col-lg-4">
-                            <div class="input-group mb-2 w-10">
-                                <label class="pilihsemester input-group-text text-white " for="kabupaten"
-                                    style="background-color:  var(--warna-pertama);">Pilih semester</label>
-                                <select class="pilihsemester-form form-select" id="kabupaten" name="kabupaten">
-                                    <option selected="">-</option>
-                                    <option value="1">Semester 1</option>
-                                    <option value="2">Semester 2</option>
-                                    <option value="3">Semester 3</option>
-                                    <option value="4">Semester 4</option>
-                                    <option value="4">Semester 5</option>
-                                    <option value="4">Semester 6</option>
-                                </select>
+                    <form action="/fillter" method="GET">
+                        <div class="row">
+                            <div class=" col-9 mb-2 col-lg-4">
+                                <div class="input-group mb-2 w-10">
+                                    <label class="pilihsemester input-group-text text-white " for="semester"
+                                        style="background-color:  var(--warna-pertama);">Pilih semester</label>
+                                    <select class="pilihsemester-form form-select" id="semester" name="semester">
+                                        <option selected="">-</option>
+                                        <option value="1">Semester 1</option>
+                                        <option value="2">Semester 2</option>
+                                        <option value="3">Semester 3</option>
+                                        <option value="4">Semester 4</option>
+                                        <option value="5">Semester 5</option>
+                                        <option value="6">Semester 6</option>
+                                    </select>
+                                </div>
+                            </div>
+    
+                            <div class="col-9 w-10 col-lg-4">
+                                <div class="input-group mb-2 w-10">
+                                    <label class="pilihkelas input-group-text text-white" for="kelas"
+                                        style="background-color: var(--warna-pertama);">Pilih kelas</label>
+                                    <select class="pilihkelas-form form-select" id="kelas" name="kelas">
+                                        <option selected="">-</option>
+                                        <option value="A">Kelas A</option>
+                                        <option value="B">Kelas B</option>
+                                        <option value="C">Kelas C</option>
+                                        <option value="D">Kelas D</option>
+                                    </select>
+                                </div>
+                            </div>
+    
+                            <div class="col-9 w-10 col-lg-4">
+                                <button class="btn btn-primary">Cari</button> 
+                                <a href="/belajar" class="btn btn-info">Refresh</a> 
                             </div>
                         </div>
-
-                        <div class="col-9 w-10 col-lg-4">
-                            <div class="input-group mb-2 w-10">
-                                <label class="pilihkelas input-group-text text-white" for="kabupaten"
-                                    style="background-color: var(--warna-pertama);">Pilih kelas</label>
-                                <select class="pilihkelas-form form-select" id="kabupaten" name="kabupaten">
-                                    <option selected="">-</option>
-                                    <option value="1">Kelas A</option>
-                                    <option value="2">Kelas B</option>
-                                    <option value="3">Kelas C</option>
-                                    <option value="4">Kelas D</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-9 w-10 col-lg-4">
-                            <a href="http:" class="btn btn-primary" type="submit">Cari</a> 
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 

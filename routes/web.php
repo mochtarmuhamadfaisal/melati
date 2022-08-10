@@ -140,6 +140,7 @@ Route::middleware(['auth','rolemelati:mahasiswa'])->group(function (){
     });
 
     //belajar
+    Route::get('/fillter',[BelajarController::class, 'fillter'])->name('fillter');
     Route::get('/belajar',[BelajarController::class, 'belajar'])->name('belajar');
     // Route::get('/belajar', function(){
     //     return view('mahasiswa/belajar',[
@@ -153,7 +154,7 @@ Route::middleware(['auth','rolemelati:mahasiswa'])->group(function (){
     //         "navbar"=>"Belajar"
     //     ]);
     // });
-    
+
     Route::get('/belajar_diskusi', function(){
         return view('mahasiswa/belajar_diskusi',[
             "navbar"=>"Diskusi"

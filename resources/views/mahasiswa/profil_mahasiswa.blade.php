@@ -26,15 +26,15 @@
                     <form action="#" class="basic-form">
                         <div class="mb-4 mt-5 mt-lg-0">
                             <h5 class="fw-bold" style="color: #2390B9;">Nama</h5>
-                            <p class="mb-5">Mochtar Muhammad Faisal</p>
+                            <p class="mb-5">{{ Auth::user()->nama }}</p>
                         </div>
                         <div class="mb-5">
                             <h5 class="fw-bold" style="color: #2390B9;">NIM</h5>
-                            <p>3201916018</p>
+                            <p>{{ Auth::user()->username }}</p>
                         </div>
                         <div class="mb-5">
                             <h5 class="fw-bold" style="color: #2390B9;">Jenis Kelamin</h5>
-                            <p>Laki-laki</p>
+                            <p>{{ Auth::user()->jenis_kelamin }}</p>
                         </div>
                     </form>
                 </div>

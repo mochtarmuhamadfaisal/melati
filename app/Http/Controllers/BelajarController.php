@@ -7,6 +7,18 @@ use Illuminate\Http\Request;
 
 class BelajarController extends Controller
 {
+    public function fillter(Request $request){
+        $datasemkel = Materi::where(function($query) use($request){
+            return $request->semester ?
+            $query->from('materis')->where('semester',$request->semester): '';
+        })->where(function($query) use($request){
+            return $request->kelas ?
+            $query->from('materis')->where('kelas',$request->kelas): '';
+        })->get();
+        return view('mahasiswa/belajar',[
+            "navbar"=>"Belajar",'datamateri'=> $datasemkel
+        ]);
+    }
     public function belajar(){
         $datamateri = Materi::all();
         return view('mahasiswa/belajar',[

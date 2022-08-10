@@ -29,8 +29,8 @@
                         <tr>
                             <td>{{ $no++ }}</td>
                             <td>{{ $rowmateri->judul_video }}</td>
-                            <td class="text-decoration-underline">{{ $rowmateri->upload_modul }}</td>
-                            <td class="text-decoration-underline">{{ $rowmateri->upload_soal }}</td>
+                            <td class="text-decoration-underline"><a href="{{ asset('modul/') }}/{{ $rowmateri->upload_modul }}" target="_blank" download style="color: black">{{ $rowmateri->upload_modul }}</td></a>
+                            <td class="text-decoration-underline"><a href="{{ asset('soal/') }}/{{ $rowmateri->upload_soal }}" target="_blank" download style="color: black">{{ $rowmateri->upload_soal }}</td></a>
                             <td class="text-center"><a href="" class="btn rounded-pill"
                                     style="background-color: #2390B9; color: white;" data-bs-toggle="modal"
                                     data-bs-target="#staticBackdrop">Tonton</a></td>

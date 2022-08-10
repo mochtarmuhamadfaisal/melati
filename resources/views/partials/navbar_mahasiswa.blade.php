@@ -82,7 +82,7 @@
                                 <a class="dropdown-toggle me-1 show" href="#" role="button" id="dropdownMenuLink"
                                     data-bs-toggle="dropdown" aria-expanded="true" style="color: #2390B9;">
                                 </a>
-                                <ul class="dropdown-menu show" aria-labelledby="dropdownMenuLink"
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink"
                                     style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(-122px, 38px, 0px); border-radius: 8px; margin-top: 1rem;"
                                     data-popper-placement="bottom-end">
                                     <li><a class="dropdown-item" href="/profil_mahasiswa">Profile</a></li>
