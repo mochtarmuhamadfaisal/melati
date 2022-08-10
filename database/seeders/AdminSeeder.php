@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class AdminSeeder extends Seeder
@@ -14,12 +15,13 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        $admin=Admin::create([
-            'nama' => 'bayu',
-            'nip' => '1111111111',
-            'jeniskelamin' => 'Laki-laki',
-            'password' => bcrypt('1'),
+        $admin=User::create([
+            'username' => 'Faisal',
+            'nama' => 'Faisal',
+            'jenis_kelamin' => 'Laki-laki',
+            'password' => bcrypt('12345678'),
+            'role_id' => 1,
         ]);
-        $admin->assignRole('admin');
+        // $admin->assignRole('admin');
     }
 }

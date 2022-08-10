@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\RoleApp;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
@@ -15,19 +16,16 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        Role::create([
-            'name' => 'admin',
-            'guard_name' => 'web'
+        RoleApp::create([
+            'name' => 'admin'
         ]);
 
-        Role::create([
-            'name' => 'dosen',
-            'guard_name' => 'web'
+        RoleApp::create([
+            'name' => 'dosen'
         ]);
 
-        Role::create([
-            'name' => 'mahasiswa',
-            'guard_name' => 'web'
+        RoleApp::create([
+            'name' => 'mahasiswa'
         ]);
     }
 }

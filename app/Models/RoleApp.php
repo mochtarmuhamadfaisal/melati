@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class RoleApp extends Model
 {
     use HasFactory;
-
-    // protected $guarded=[''];
-
-    // protected $table ='roles';
-
+    protected $guarded =[];
+    protected $table = 'role';
+    protected $primaryKey = 'id_role';
 }

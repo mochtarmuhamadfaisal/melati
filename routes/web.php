@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MateriController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\DasboardadminController;
@@ -94,16 +95,18 @@ Route::middleware(['auth','rolemelati:dosen'])->group(function (){
     });
 
      //materi
-     Route::get('/materi', function(){
-        return view('dosen/materi',[
-            "sidebar"=>"Materi"
-        ]);
-    });
-    Route::get('/tambah_materi', function(){
-        return view('dosen/tambah_materi',[
-            "sidebar"=>"Materi"
-        ]);
-    });
+     Route::get('/materi',[MateriController::class, 'materi'])->name('materi');
+     Route::get('/tambah_materi',[MateriController::class, 'tambah_materi'])->name('tambah_materi');
+    //  Route::get('/materi', function(){
+    //     return view('dosen/materi',[
+    //         "sidebar"=>"Materi"
+    //     ]);
+    // });
+    // Route::get('/tambah_materi', function(){
+    //     return view('dosen/tambah_materi',[
+    //         "sidebar"=>"Materi"
+    //     ]);
+    // });
     Route::get('/edit_materi', function(){
         return view('dosen/edit_materi',[
             "sidebar"=>"Materi"

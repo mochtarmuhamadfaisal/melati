@@ -21,13 +21,13 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="admin d-sm-flex d-block">
-                            <img src="{{ asset('img/gue.jpg') }}" class="img-preview rounded-circle"
+                            <img src="{{ asset('storage/' . $admin->foto) }}" class="img-preview rounded-circle"
                                 style="width: 250px; height: 250px; border: 4px solid #2390B9; object-fit: cover"> 
 
                             <div class="hl-upload ms-sm-4 d-flex flex-column justify-content-center">
                                 <label for="foto" class="form-label btn-admin rounded-pill">
                                     <input class="btn btn-primary rounded-lg @error('foto') is-invalid @enderror"
-                                        id="foto" name="foto" type="file" style="display:none" value="{{ asset($admin->foto) }}">Ubah
+                                        id="foto" name="foto" type="file" style="display:none">Ubah
                                     Foto Profil</label>
                                 <p class="upload mt-1 ms-0">maks upload (2 Mb)</p>
                             </div>

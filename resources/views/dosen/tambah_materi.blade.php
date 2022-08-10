@@ -53,6 +53,9 @@
                         <select class="form-select rounded-pill py-2" aria-label="Default select example"
                             id="recipient-name">
                             <option selected>-</option>
+                            @foreach ($collection as $item)
+                                
+                            @endforeach
                             <option value="a">Pemrograman Mobile</option>
                             <option value="b">Basis data</option>
                             <option value="c">Design</option>

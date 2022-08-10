@@ -12,6 +12,11 @@
   <!-- Link icon -->
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
+  {{-- data table --}}
+  <link rel="stylesheet"
+  href=" https://cdnjs.cloudflare.com/ajax/libs/twitterl-bootstrap/5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href=" https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+
   <!-- Link CSS -->
   @stack('css_costum')
 
@@ -39,6 +44,15 @@
 
 
 
+  {{-- data table --}}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
 
   <!-- AWAL SCRIPT JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
