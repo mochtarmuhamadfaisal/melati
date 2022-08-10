@@ -44,7 +44,7 @@ class MatakuliahController extends Controller
             'nama_matakuliah' => 'required|min:3|max:255'
         ]);
         
-        $datamatakuliah = Matakuliah::find($id);
+        // $datamatakuliah = Matakuliah::find($id);
         $datamatakuliah = Matakuliah::where('id',$id)->update([
             'nama_matakuliah' => $request->nama_matakuliah
         ]);

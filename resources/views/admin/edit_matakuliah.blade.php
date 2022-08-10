@@ -18,21 +18,21 @@
     <div class="row mt-3">
         <div class="col-lg-6">
             <form action="/updatedata_matakuliah/{{ $datamatakuliah->id }}" method="POST" enctype="multipart/form-data">
-                @csrf
                 @method('put')
-                <div class="mb-4">
-                    <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">Mata
-                        Kuliah</label>
-                    <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
-                        placeholder="" name="nama_matakuliah" value="{{ $datamatakuliah->nama_matakuliah }}">
-                        @error('nama_matakuliah')
+                @csrf
+                    <div class="mb-4">
+                        <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">Mata
+                            Kuliah</label>
+                        <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
+                            placeholder="Masukan Mata Kuliah" name="nama_matakuliah" value="{{ $datamatakuliah->nama_matakuliah }}">
+                            @error('nama_matakuliah')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
-                        @enderror
-                </div>
+                            @enderror
+                    </div>
 
-                <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn-admin rounded-pill mt-2">Simpan</button>
-                </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn-admin rounded-pill mt-2">Tambah</button>
+                    </div>
             </form>
             <div class="d-flex justify-content-start">
                 <a href="/matakuliah" class="text-decoration-none">

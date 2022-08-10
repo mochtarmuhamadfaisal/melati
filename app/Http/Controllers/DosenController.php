@@ -3,12 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dosen;
+use App\Models\Matakuliah;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class DosenController extends Controller
 {
+
+    
+
+    // public function tampil_data_kelas(Request $request){
+    //     if($request->ajax()){
+    //         $data = $request->all();
+    //         $tampilDataKelas = Matakuliah::where([
+    //             'id'=>$data['matakuliah_id'],
+    //         ])->first();
+    //         echo $tampilDataKelas->kelas;
+    //     }
+    // }
+
     public function dosen(){
         $datadosen = User::where('role_id', 2)->get();
 

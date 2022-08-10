@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
@@ -70,6 +71,72 @@
         }
     </script>
 
+    {{-- Select data matakuliah --}}
+    <script>
+        $(document).ready(function(){
+            $('select[name="nama_matakuliah"]').on('change', function () {
+                let matakuliahId = $(this).val();
+                if (matakuliahId) {
+                    jQuery.ajax({
+                        url: '/matakuliah/'+matakuliahId,
+                        type: "GET",
+                        dataType: "json",
+                        success: function (response) {
+                            $('.tampilDataKelas').attr("value", response).val(response);
+                        },
+                    });
+                }
+            });
+        });
+    </script>
+
+{{-- <script>
+   
+    $("#nama_matakuliah").change(function () {
+        var matakuliah_id = $(this).attr("matakuliah-id");
+        var 
+
+        $.ajax({
+            url: '/tampilDataKelas',
+            data: {
+                matakuliah_id: matakuliah_id,
+            },
+            type: 'post',
+            success: function (resp) {
+                $(".tampilDataKelas").html(resp);
+            },
+            error: function () {
+                alert("error");
+            }
+        });
+        // $.ajax({
+        //     url: '/tampilBerat',
+        //     data: {
+        //         berat: berat,
+        //         ukuran: ukuran,
+        //         produk_id: produk_id
+        //     },
+        //     type: 'post',
+        //     success: function (resp) {
+        //         $('.tampilBerat').attr("value", resp).val(resp);
+        //     },
+        //     error: function () {
+        //         alert("error");
+        //     }
+        // });
+        // $.ajax({
+        // 	url: '/tampilProdukHarga',
+        // 	data:{ukuran:ukuran, produk_id:produk_id},
+        // 	type:'post',
+        // 	success:function(resp){
+        // 		// alert(resp);
+        // 		$(".tampilAtributHarga").html("Rp. "+resp);
+        // 	}, error:function(){
+        // 		alert("error");
+        // 	}
+        // });
+    });
+</script> --}}
 </body>
 
 </html>

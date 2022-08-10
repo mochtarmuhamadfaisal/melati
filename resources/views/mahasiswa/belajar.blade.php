@@ -44,6 +44,10 @@
                                 </select>
                             </div>
                         </div>
+
+                        <div class="col-9 w-10 col-lg-4">
+                            <a href="http:" class="btn btn-primary" type="submit">Cari</a> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,26 +55,29 @@
             <div class="row my-5">
                 <table class="table scroll" style="margin-left: 0.4rem;">
                     <tbody class="ini-batang-scroll" style="height: 100px;">
+                        @foreach ($datamateri as $rowmateri) 
                         <tr class="align-middle">
                             <!-- <td width="18%">
                                 <img src="/assets/images/item_bootcamp.png" height="120" alt="">
                             </td> -->
                             <td>
                                 <p class="mb-2">
+                                    <strong>Nama Dosen</strong>
+                                </p>
+                                <p>{{ $rowmateri->users->nama }}</p>
+                            </td>
+
+                            <td>
+                                <p class="mb-2">
                                     <strong>Mata Kuliah</strong>
                                 </p>
                                 <p>
-                                    Pemrograman Mobile
+                                    {{ $rowmateri->matakuliah->nama_matakuliah }}
                                 </p>
                             </td>
+                            
                             <td>
-                                <p class="mb-2">
-                                    <strong>Nama Dosen</strong>
-                                </p>
-                                <p>Fitri Wibowo, S.ST., M.T.</p>
-                            </td>
-                            <td>
-                                <a href="/belajar_video" class="btn-video btn btn-fill btn-danger py-2 px-4 ">
+                                <a href="/belajar_video/{{ $rowmateri->users->id }}" class="btn-video btn btn-fill btn-danger py-2 px-4 ">
                                     Video
                                 </a>
                             </td>
@@ -81,6 +88,7 @@
                                 </a>
                             </td>
                         </tr>
+                        @endforeach
 
                     </tbody>
                 </table>

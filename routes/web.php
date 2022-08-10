@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MateriController;
+use App\Http\Controllers\BelajarController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\DasboardadminController;
@@ -57,6 +58,9 @@ Route::middleware(['auth', 'rolemelati:admin'])->group(function () {
     Route::put('/updatedata_dosen/{nip}',[DosenController::class, 'updatedata_dosen'])->name('updatedata_dosen');
     Route::get('/delete_dosen/{id}',[DosenController::class, 'delete'])->name('delete');
 
+    Route::get('/matakuliah/{id}',[DosenController::class, 'tampil_data_kelas']);
+
+    // Route::post('/tampilDataKelas',[DosenController::class, 'tampil_data_kelas']);
 
     //mahasiswa
     Route::get('/mahasiswa',[MahasiswaController::class, 'mahasiswa'])->name('mahasiswa');
@@ -97,6 +101,7 @@ Route::middleware(['auth','rolemelati:dosen'])->group(function (){
      //materi
      Route::get('/materi',[MateriController::class, 'materi'])->name('materi');
      Route::get('/tambah_materi',[MateriController::class, 'tambah_materi'])->name('tambah_materi');
+     Route::post('/insertdata_materi',[MateriController::class, 'insertdata_materi'])->name('insertdata_materi');
     //  Route::get('/materi', function(){
     //     return view('dosen/materi',[
     //         "sidebar"=>"Materi"
@@ -135,16 +140,20 @@ Route::middleware(['auth','rolemelati:mahasiswa'])->group(function (){
     });
 
     //belajar
-    Route::get('/belajar', function(){
-        return view('mahasiswa/belajar',[
-            "navbar"=>"Belajar"
-        ]);
-    });
-    Route::get('/belajar_video', function(){
-        return view('mahasiswa/belajar_video',[
-            "navbar"=>"Belajar"
-        ]);
-    });
+    Route::get('/belajar',[BelajarController::class, 'belajar'])->name('belajar');
+    // Route::get('/belajar', function(){
+    //     return view('mahasiswa/belajar',[
+    //         "navbar"=>"Belajar"
+    //     ]);
+    // });
+
+    Route::get('/belajar_video/{id}',[BelajarController::class, 'belajar_video'])->name('belajar_video');
+    // Route::get('/belajar_video', function(){
+    //     return view('mahasiswa/belajar_video',[
+    //         "navbar"=>"Belajar"
+    //     ]);
+    // });
+    
     Route::get('/belajar_diskusi', function(){
         return view('mahasiswa/belajar_diskusi',[
             "navbar"=>"Diskusi"

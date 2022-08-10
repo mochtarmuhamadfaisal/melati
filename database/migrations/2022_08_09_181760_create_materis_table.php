@@ -17,14 +17,19 @@ class CreateMaterisTable extends Migration
     {
         Schema::create('materis', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Matakuliah::class);
-            $table->foreignIdFor(User::class);
+            $table->bigInteger('id_matakuliah')->unsigned();
+            $table->bigInteger('id_user')->unsigned();
+            $table->integer('semester');
+            $table->string('kelas');
             $table->string('link_video');
             $table->string('judul_video');
             $table->string('deskripsi_video');
             $table->string('upload_modul');
             $table->string('upload_soal');
             $table->timestamps();
+
+            $table->foreign('id_matakuliah')->references('id')->on('matakuliahs')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

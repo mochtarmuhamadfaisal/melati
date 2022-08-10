@@ -41,27 +41,29 @@
                         </thead>
 
                         <tbody>
+                            @php
+                                $no = 1;
+                            @endphp
+                            @foreach ($datamateri as $rowmateri)
                             <tr>
-                                <td>1</td>
-                                <td>4</td>
-                                <td>A</td>
-                                <td>Pemrograman Mobile</td>
-                                <td><iframe width="300" height="200" src="https://www.youtube.com/embed/2LFvHZuY4xU"
-                                        title="YouTube video player" frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe></td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>15365</td>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $rowmateri->semester }}</td>
+                                <td>{{ $rowmateri->kelas }}</td>
+                                <td>{{ $rowmateri->matakuliah->nama_matakuliah }}</td>
+                                <td>{{ $rowmateri->link_video }}</td>
+                                <td>{{ $rowmateri->judul_video}}</td>
+                                <td>{{ $rowmateri->deskripsi_video }}</td>
+                                <td><a href="{{ asset('modul/') }}/{{ $rowmateri->upload_modul }}" target="_blank" download>{{ $rowmateri->upload_modul }}</a></td>
+                                <td><a href="{{ asset('soal/') }}/{{ $rowmateri->upload_soal }}" target="_blank" download>{{ $rowmateri->upload_soal }}</a></td>
+                                <td>{{ $rowmateri->link_grupdiskusi }}</td>
+                                <td>{{ $rowmateri->password_diskusi }}</td>
                                 <td>
                                     <a href="/edit_materi" class="text-decoration-none"><button
                                             class="btn-transaction  bg-warning  px-4 text-white mb-2">Edit</button></a>
                                     <button class="btn-transaction  bg-danger  px-4 text-white ">Hapus</button>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

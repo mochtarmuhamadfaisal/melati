@@ -22,15 +22,20 @@
                     </thead>
 
                     <tbody>
+                        @php
+                            $no=1;
+                        @endphp
+                        @foreach ($datamateri as $rowmateri)
                         <tr>
-                            <td>1</td>
-                            <td>Pembuatan Aplikasi mobile</td>
-                            <td class="text-decoration-underline">Download</td>
-                            <td class="text-decoration-underline">Download</td>
+                            <td>{{ $no++ }}</td>
+                            <td>{{ $rowmateri->judul_video }}</td>
+                            <td class="text-decoration-underline">{{ $rowmateri->upload_modul }}</td>
+                            <td class="text-decoration-underline">{{ $rowmateri->upload_soal }}</td>
                             <td class="text-center"><a href="" class="btn rounded-pill"
                                     style="background-color: #2390B9; color: white;" data-bs-toggle="modal"
                                     data-bs-target="#staticBackdrop">Tonton</a></td>
                         </tr>
+                        
                 </table>
             </div>
         </div>
@@ -52,24 +57,16 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Pembuatan Aplikasi mobile</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{ $rowmateri->judul_video }}</h5>
                 </div>
                 <div class="modal-body">
-                    <iframe width="1100" height="500" src="https://www.youtube.com/embed/hmMBmumqnLs"
-                        title="YouTube video player" frameborder="0"
+                    <iframe width="1100" height="500" src="{{ $rowmateri->link_video }}" title="YouTube video player"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen style="border-radius: 8px"></iframe>
-
+                        allowfullscreen></iframe>
                     <div class="row desc-video " style="margin-top: 2rem;">
-                        <h1 class="text-fitur ">Penjelasan Singkat Tentang Video di Atas</h1>
-                        <p class="text-caption">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis, a
-                            nesciunt porro quia dolorum soluta nemo animi. Enim voluptas culpa, soluta beatae, alias ipsa
-                            laborum nostrum dolor quod, eveniet quasi. Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Pariatur quam enim ipsam perferendis earum ex soluta blanditiis nulla! Magni libero quas
-                            consequuntur voluptatibus, ad dolore deleniti ab ullam asperiores dolor! Lorem ipsum dolor, sit
-                            amet consectetur adipisicing elit. Harum deserunt asperiores, deleniti nihil eaque soluta
-                            provident odio sint commodi voluptas dignissimos voluptate atque numquam vitae dolore accusamus
-                            ad, quaerat porro!</p>
+                        <h1 class="text-fitur ">Penjelasan Singkat Tentang Video di Atas </h1>
+                        <p class="text-caption">{{ $rowmateri->deskripsi_video }}</p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -78,4 +75,5 @@
             </div>
         </div>
     </div>
+    @endforeach
 @endsection

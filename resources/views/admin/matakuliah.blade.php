@@ -30,7 +30,7 @@
                         <tr>
                             <th>No</th>
                             <th>Mata Kuliah</th>
-                            <th class="action-header text-center">Action</th>
+                            <th class="action-header text-center">Aksi</th>
                         </tr>
                     </thead>
 
@@ -48,6 +48,7 @@
                                     </div>
                                 </div>
                             </td>
+
                             <td class="action">
                                 <a href="/tampilkan_matakuliah/{{ $rowmk->id }}" class="text-decoration-none"><button
                                         class="btn-transaction bg-warning text-white mx-auto">Edit</button></a>
