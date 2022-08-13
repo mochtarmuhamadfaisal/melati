@@ -37,7 +37,7 @@
                         <div class="card-body">
                             <h5 class="card-title text-fitur">Showcase🤹‍♀️</h5>
                             <p class="card-text text-caption lh-base">Pamerkan project<br>yang telah kamu buat.</p>
-                            <a href="/pamerin_showcase" class="btn btn-aksi">Pamerin</a>
+                            <a href="/insertdata_showcase" class="btn btn-aksi">Pamerin</a>
                         </div>
                     </div>
                 </div>

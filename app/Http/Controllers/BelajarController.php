@@ -32,4 +32,15 @@ class BelajarController extends Controller
                     "navbar"=>"Belajar",'datamateri'=> $datamateri
                 ]);
     }
+
+    public function cek_password_soal(Request $request){
+        $ambil_data_materi = Materi::where('id', $request->input('id_materi'))->first();
+        $unduh = public_path().'/soal/' . $ambil_data_materi->upload_soal;
+        if ($request->input('password_soal') === $ambil_data_materi->password_soal) {
+            
+            return response()->download($unduh);
+        } else {
+            abort(403, 'Unauthorized action.');
+        }
+    }
 }

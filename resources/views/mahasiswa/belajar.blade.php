@@ -21,7 +21,7 @@
                                     <label class="pilihsemester input-group-text text-white " for="semester"
                                         style="background-color:  var(--warna-pertama);">Pilih semester</label>
                                     <select class="pilihsemester-form form-select" id="semester" name="semester">
-                                        <option selected="">-</option>
+                                        <option selected disabled="">Pilih Semester</option>
                                         <option value="1">Semester 1</option>
                                         <option value="2">Semester 2</option>
                                         <option value="3">Semester 3</option>
@@ -37,7 +37,7 @@
                                     <label class="pilihkelas input-group-text text-white" for="kelas"
                                         style="background-color: var(--warna-pertama);">Pilih kelas</label>
                                     <select class="pilihkelas-form form-select" id="kelas" name="kelas">
-                                        <option selected="">-</option>
+                                        <option selected disabled="">Pilih Kelas</option>
                                         <option value="A">Kelas A</option>
                                         <option value="B">Kelas B</option>
                                         <option value="C">Kelas C</option>
@@ -60,9 +60,6 @@
                     <tbody class="ini-batang-scroll" style="height: 100px;">
                         @foreach ($datamateri as $rowmateri) 
                         <tr class="align-middle">
-                            <!-- <td width="18%">
-                                <img src="/assets/images/item_bootcamp.png" height="120" alt="">
-                            </td> -->
                             <td>
                                 <p class="mb-2">
                                     <strong>Nama Dosen</strong>

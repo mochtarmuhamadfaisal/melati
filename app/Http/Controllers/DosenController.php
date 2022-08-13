@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dosen;
 use App\Models\Matakuliah;
+use App\Models\Materi;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +12,12 @@ use Illuminate\Support\Facades\Auth;
 class DosenController extends Controller
 {
 
-    
+    public function dashboard_dosen (){
+        $datamateri = Materi::where('id_user',Auth::user()->id)->count();
+        return view('dosen/dashboard_dosen',[
+            "sidebar"=>"Dashboard"
+        ],compact('datamateri'));
+    }
 
     // public function tampil_data_kelas(Request $request){
     //     if($request->ajax()){

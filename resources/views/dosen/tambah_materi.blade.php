@@ -81,7 +81,7 @@
                     <div class=" mb-5">
                         <label for="exampleFormControlTextarea1" class="form-label fw-bold "
                             style="color: #2390B9">Deskripsi Materi</label>
-                        <textarea class="form-control" style="border-radius: 15px;" id="exampleFormControlTextarea1"
+                        <textarea class="form-control ckeditor" style="border-radius: 15px;" id="exampleFormControlTextarea1"
                             rows="5" name="deskripsi_video"></textarea>
                     </div>
 
@@ -91,10 +91,22 @@
                         aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_modul">
                     </div>
 
-                    <div class="mb-5">
-                        <label for="inputGroupFile04" class="fw-bold mb-2" style="color: #2390B9;">Upload Soal</label>
-                        <input type="file" class="form-control rounded-pill" id="inputGroupFile04"
-                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_soal">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-5">
+                                <label for="inputGroupFile04" class="fw-bold mb-2" style="color: #2390B9;">Upload Soal</label>
+                                <input type="file" class="form-control rounded-pill" id="inputGroupFile04"
+                                    aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_soal">
+                            </div>
+                        </div>
+    
+                        <div class="col-6">
+                            <div class="mb-5">
+                                <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Password Soal
+                                </label>
+                                <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="password_soal">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="mb-5">

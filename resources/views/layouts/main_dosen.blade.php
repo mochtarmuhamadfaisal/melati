@@ -90,53 +90,10 @@
         });
     </script>
 
-{{-- <script>
-   
-    $("#nama_matakuliah").change(function () {
-        var matakuliah_id = $(this).attr("matakuliah-id");
-        var 
-
-        $.ajax({
-            url: '/tampilDataKelas',
-            data: {
-                matakuliah_id: matakuliah_id,
-            },
-            type: 'post',
-            success: function (resp) {
-                $(".tampilDataKelas").html(resp);
-            },
-            error: function () {
-                alert("error");
-            }
-        });
-        // $.ajax({
-        //     url: '/tampilBerat',
-        //     data: {
-        //         berat: berat,
-        //         ukuran: ukuran,
-        //         produk_id: produk_id
-        //     },
-        //     type: 'post',
-        //     success: function (resp) {
-        //         $('.tampilBerat').attr("value", resp).val(resp);
-        //     },
-        //     error: function () {
-        //         alert("error");
-        //     }
-        // });
-        // $.ajax({
-        // 	url: '/tampilProdukHarga',
-        // 	data:{ukuran:ukuran, produk_id:produk_id},
-        // 	type:'post',
-        // 	success:function(resp){
-        // 		// alert(resp);
-        // 		$(".tampilAtributHarga").html("Rp. "+resp);
-        // 	}, error:function(){
-        // 		alert("error");
-        // 	}
-        // });
-    });
-</script> --}}
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script>
+		CKEDITOR.replaceAll('.ckeditor');
+	</script>
 </body>
 
 </html>

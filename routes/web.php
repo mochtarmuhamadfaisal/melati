@@ -11,7 +11,8 @@ use App\Http\Controllers\BelajarController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\DasboardadminController;
-
+use App\Http\Controllers\ShowcaseController;
+use App\Models\Showcase;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,11 +73,13 @@ Route::middleware(['auth', 'rolemelati:admin'])->group(function () {
 });
 
 Route::middleware(['auth','rolemelati:dosen'])->group(function (){
-    Route::get('/dashboard_dosen', function(){
-        return view('dosen/dashboard_dosen',[
-            "sidebar"=>"Dashboard"
-        ]);
-    })->name('dashboard.dosen');
+    Route::get('/dashboard_dosen',[DosenController::class, 'dashboard_dosen'])->name('dashboard.dosen');
+
+    // Route::get('/dashboard_dosen', function(){
+    //     return view('dosen/dashboard_dosen',[
+    //         "sidebar"=>"Dashboard"
+    //     ]);
+    // })->name('dashboard.dosen');
     Route::get('/pengaturan_dosen', function(){
         return view('dosen/pengaturan_dosen',[
             "sidebar"=>"Pengaturan"
@@ -102,23 +105,10 @@ Route::middleware(['auth','rolemelati:dosen'])->group(function (){
      Route::get('/materi',[MateriController::class, 'materi'])->name('materi');
      Route::get('/tambah_materi',[MateriController::class, 'tambah_materi'])->name('tambah_materi');
      Route::post('/insertdata_materi',[MateriController::class, 'insertdata_materi'])->name('insertdata_materi');
-    //  Route::get('/materi', function(){
-    //     return view('dosen/materi',[
-    //         "sidebar"=>"Materi"
-    //     ]);
-    // });
-    // Route::get('/tambah_materi', function(){
-    //     return view('dosen/tambah_materi',[
-    //         "sidebar"=>"Materi"
-    //     ]);
-    // });
-    Route::get('/edit_materi', function(){
-        return view('dosen/edit_materi',[
-            "sidebar"=>"Materi"
-        ]);
+     Route::get('/tampilkan_materi/{id}',[MateriController::class, 'tampilkan_materi'])->name('tampilkan_materi');
+     Route::put('/updatedata_materi/{id}',[MateriController::class, 'updatedata_materi'])->name('updatedata_materi');
+     Route::get('/delete_materi/{id}',[MateriController::class, 'delete_materi'])->name('delete_materi');
     });
-
-});
 
 
 Route::middleware(['auth','rolemelati:mahasiswa'])->group(function (){
@@ -142,18 +132,9 @@ Route::middleware(['auth','rolemelati:mahasiswa'])->group(function (){
     //belajar
     Route::get('/fillter',[BelajarController::class, 'fillter'])->name('fillter');
     Route::get('/belajar',[BelajarController::class, 'belajar'])->name('belajar');
-    // Route::get('/belajar', function(){
-    //     return view('mahasiswa/belajar',[
-    //         "navbar"=>"Belajar"
-    //     ]);
-    // });
-
     Route::get('/belajar_video/{id}',[BelajarController::class, 'belajar_video'])->name('belajar_video');
-    // Route::get('/belajar_video', function(){
-    //     return view('mahasiswa/belajar_video',[
-    //         "navbar"=>"Belajar"
-    //     ]);
-    // });
+    Route::post('/cek_password_soal',[BelajarController::class, 'cek_password_soal'])->name('cek_password_soal');
+    
 
     Route::get('/belajar_diskusi', function(){
         return view('mahasiswa/belajar_diskusi',[
@@ -162,20 +143,13 @@ Route::middleware(['auth','rolemelati:mahasiswa'])->group(function (){
     });
 
     //showcase
-    Route::get('/showcase', function(){
-        return view('mahasiswa/showcase',[
-            "navbar"=>"Showcase"
-        ]);
-    });
-    Route::get('/showcase_detail', function(){
-        return view('mahasiswa/showcase_detail',[
-            "navbar"=>"Showcase"
-        ]);
-    });
-    Route::get('/pamerin_showcase', function(){
-        return view('mahasiswa/pamerin_showcase',[
-            "navbar"=>"Pengaturan"]);
-    });
+    Route::get('/showcase',[ShowcaseController::class, 'showcase'])->name('showcase');
+    Route::get('/showcase_detail/{id}',[ShowcaseController::class, 'showcase_detail'])->name('showcase_detail');
+    Route::post('/tambah_showcase',[ShowcaseController::class, 'tambah_showcase'])->name('tambah_showcase');
+    Route::get('/insertdata_showcase',[ShowcaseController::class, 'insertdata_showcase'])->name('insertdata_showcase');
+    Route::get('/tampilakandata_showcase/{id}',[ShowcaseController::class, 'tampilakandata_showcase'])->name('tampilakandata_showcase');
+    Route::put('/updatedata_showcase/{id}',[ShowcaseController::class, 'updatedata_showcase'])->name('updatedata_showcase');
+    Route::get('/delete_showcase/{id}',[ShowcaseController::class, 'delete_showcase'])->name('delete_showcase');
 });
 
 // route yang tidak perlu loginnnnnnnn

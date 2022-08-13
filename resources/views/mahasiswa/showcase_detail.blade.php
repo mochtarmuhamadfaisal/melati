@@ -22,18 +22,13 @@
                     <div class="row">
                         <div class="col-lg-5 col-12">
                             <div class="item-bootcamp">
-                                <img src="{{ asset('img/Instagram post - FIX.png') }}" alt=""
+                                <img src="{{ asset('showcase') }}/{{ $datashowcase->foto }}" alt=""
                                     class="cover img-fluid w-100 h-100" style="border-radius: 18px;">
                                 <h1 class="text-judul-fitur mt-4">
-                                    Aplikasi Muslim Ku
+                                    {{ $datashowcase->judul_project }}
                                 </h1>
                                 <p class="text-caption lh-lg mb-5">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis alias, beatae nemo
-                                    corporis eveniet quas! Deleniti labore saepe itaque repellendus. Libero recusandae
-                                    velit enim quos consequuntur! Ad facilis numquam assumenda? Lorem ipsum, dolor sit
-                                    amet consectetur adipisicing elit. Neque eum magni voluptatem sint? Dolor placeat
-                                    perferendis voluptas, obcaecati qui culpa id tempora nam. Aliquam quasi incidunt
-                                    assumenda nulla, minima a.
+                                    {!! $datashowcase->deskripsi_project !!}
                                 </p>
 
                                 <a href="/showcase" class="text-decoration-none " style="color: #2390B9;">
@@ -47,15 +42,15 @@
                             <form action="#" class="basic-form">
                                 <div class="mb-4">
                                     <h5 class="fw-bold" style="color: #2390B9;">Nama</h5>
-                                    <p class="mb-5">Mochtar Muhammad Faisal</p>
+                                    <p class="mb-5">{{ $datashowcase->users->nama }}</p>
                                 </div>
                                 <div class="mb-5">
                                     <h5 class="fw-bold" style="color: #2390B9;">NIM</h5>
-                                    <p>3201916018</p>
+                                    <p>{{ $datashowcase->users->username }}</p>
                                 </div>
                                 <div class="mb-5">
                                     <h5 class="fw-bold" style="color: #2390B9;">Mata Kuliah</h5>
-                                    <p>Pemrograman Mobile</p>
+                                    <p>{{ $datashowcase->matakuliah->nama_matakuliah }}</p>
                                 </div>
                             </form>
                         </div>

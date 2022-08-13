@@ -9,23 +9,24 @@
             <div class="row row-judul" style="margin-top: 4rem;">
                 <h1 class="text-fitur text-center mb-0 mb-lg-0">Showcase🤹‍♀️</h1>
                 <h2 class="text-judul-fitur text-center">Pamerkan project
-                    yang telah kamu buat</h2>
+                    yang telah {{ Auth::user()->nama }} buat</h2>
             </div>
 
-            <form action="">
+            <form action="/tambah_showcase" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="row row-biodata d-sm-flex d-block justify-content-center mt-5">
                     <div iv class="col-lg-6">
                         <div class="mb-5 ">
                             <label for="formGroupExampleInput" class="form-label">Judul Project</label>
                             <input type="text" class="form-control px-4" id="formGroupExampleInput"
-                                placeholder="Masukan nama anda.."
-                                style="border-radius: 15px; height: 3rem; border-color: #2390B9;">
+                                placeholder="Masukan Judul project anda.."
+                                style="border-radius: 15px; height: 3rem; border-color: #2390B9;" name="judul_project">
                         </div>
 
                         <div class="mb-5">
                             <label for="exampleFormControlTextarea1" class="form-label">Deskripsi Project</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Masukan deskripsi project anda.."
-                                rows="5" style="border-radius: 15px; border-color: #2390B9;"></textarea>
+                                <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" placeholder="Masukan deskripsi project anda.."
+                                rows="5" style="border-radius: 15px; border-color: #2390B9;" name="deskripsi_project"></textarea>
                         </div>
 
                         <div class="mb-5 d-grid">
@@ -40,13 +41,16 @@
                         </div>
                         <div class="mb-5">
                             <label for="formGroupExampleInput2" class="form-label">Mata Kuliah</label>
-                            <select class="form-select" aria-label="Default select example" id="formGroupExampleInput2"
-                                style="border-radius: 15px; height: 3rem; border-color: #2390B9;">
-                                <option selected disabled>Pilih mata kuliah</option>
-                                <option value="1">Pemrograman Mobile</option>
-                                <option value="2">Basis data</option>
-                                <option value="3">Animasi</option>
-                            </select>
+                            <select class="form-select rounded-pill py-2" aria-label="Default select example"
+                            id="recipient-name" name="id_matakuliah">
+                            <option selected>-</option>
+                            @php
+                                $data_matakuliah=\App\Models\Matakuliah::all();
+                            @endphp
+                            @foreach ($data_matakuliah as $baris_mk)
+                            <option value="{{ $baris_mk->id }}">{{ $baris_mk->nama_matakuliah }}</option>
+                            @endforeach
+                        </select>
 
                         </div>
 

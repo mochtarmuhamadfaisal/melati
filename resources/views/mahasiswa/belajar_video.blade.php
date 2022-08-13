@@ -23,19 +23,82 @@
 
                     <tbody>
                         @php
-                            $no=1;
+                            $no = 1;
                         @endphp
                         @foreach ($datamateri as $rowmateri)
-                        <tr>
-                            <td>{{ $no++ }}</td>
-                            <td>{{ $rowmateri->judul_video }}</td>
-                            <td class="text-decoration-underline"><a href="{{ asset('modul/') }}/{{ $rowmateri->upload_modul }}" target="_blank" download style="color: black">{{ $rowmateri->upload_modul }}</td></a>
-                            <td class="text-decoration-underline"><a href="{{ asset('soal/') }}/{{ $rowmateri->upload_soal }}" target="_blank" download style="color: black">{{ $rowmateri->upload_soal }}</td></a>
-                            <td class="text-center"><a href="" class="btn rounded-pill"
-                                    style="background-color: #2390B9; color: white;" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop">Tonton</a></td>
-                        </tr>
-                        
+                            <tr>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $rowmateri->judul_video }}</td>
+                                <td class="text-decoration-underline"><a
+                                        href="{{ asset('modul/') }}/{{ $rowmateri->upload_modul }}" target="_blank" download
+                                        style="color: black">{{ $rowmateri->upload_modul }}</td></a>
+                                <td class="text-decoration-underline"><a
+                                        href="{{ asset('soal/') }}/{{ $rowmateri->upload_soal }}" target="_blank" download
+                                        style="color: black" data-bs-toggle="modal"
+                                        data-bs-target="#modalsoal">{{ $rowmateri->upload_soal }}</td></a>
+                                <!-- Modal password soal -->
+                                <div class="modal fade" id="modalsoal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Password soal</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form action="/cek_password_soal" method="POST">
+                                                @csrf
+                                                <div class="modal-body">
+                                                    <label for="inputPassword5" class="form-label">Password</label>
+                                                    <input value="{{ $rowmateri->id }}" type="hidden" name="id_materi">
+                                                    <input value="{{ $rowmateri->password_soal }}" type="hidden" name="password_soal">
+                                                
+                                                    <input type="password" id="inputPassword5" class="form-control"
+                                                        aria-describedby="passwordHelpBlock" name="password_soal">
+                                                    <div id="passwordHelpBlock" class="form-text">
+                                                        Masukan password yang telah di berikan dosen kepada anda..
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <td class="text-center"><a href="" class="btn rounded-pill"
+                                        style="background-color: #2390B9; color: white;" data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop">Tonton</a></td>
+                                <!-- Modal -->
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="staticBackdropLabel">
+                                                    {{ $rowmateri->judul_video }}</h5>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe width="1100" height="500" src="{{ $rowmateri->link_video }}"
+                                                    title="YouTube video player" frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen></iframe>
+                                                <div class="row desc-video " style="margin-top: 2rem;">
+                                                    <h1 class="text-fitur ">Penjelasan Singkat Tentang Video di Atas </h1>
+                                                    <p class="text-caption">{!! $rowmateri->deskripsi_video !!}</p>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger rounded-pill"
+                                                    data-bs-dismiss="modal">Tutup</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            @endforeach
                 </table>
             </div>
         </div>
@@ -50,30 +113,4 @@
     </div>
 
     <!-- AKHIR Table Untuk dosen  -->
-
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">{{ $rowmateri->judul_video }}</h5>
-                </div>
-                <div class="modal-body">
-                    <iframe width="1100" height="500" src="{{ $rowmateri->link_video }}" title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                    <div class="row desc-video " style="margin-top: 2rem;">
-                        <h1 class="text-fitur ">Penjelasan Singkat Tentang Video di Atas </h1>
-                        <p class="text-caption">{{ $rowmateri->deskripsi_video }}</p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger rounded-pill" data-bs-dismiss="modal">Tutup</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endforeach
 @endsection
