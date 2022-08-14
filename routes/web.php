@@ -11,6 +11,7 @@ use App\Http\Controllers\BelajarController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\DasboardadminController;
+use App\Http\Controllers\DiskusiController;
 use App\Http\Controllers\ShowcaseController;
 use App\Models\Showcase;
 
@@ -129,22 +130,16 @@ Route::middleware(['auth','rolemelati:mahasiswa'])->group(function (){
             "navbar"=>"Pengaturan"]);
     });
 
-    //belajar
+    //belajar video
     Route::get('/fillter',[BelajarController::class, 'fillter'])->name('fillter');
     Route::get('/belajar',[BelajarController::class, 'belajar'])->name('belajar');
     Route::get('/belajar_video/{id}',[BelajarController::class, 'belajar_video'])->name('belajar_video');
     Route::post('/cek_password_soal',[BelajarController::class, 'cek_password_soal'])->name('cek_password_soal');
     
 
-    Route::get('/belajar_diskusi', function(){
-        return view('mahasiswa/belajar_diskusi',[
-            "navbar"=>"Diskusi"
-        ]);
-    });
+    
 
     //showcase
-    Route::get('/showcase',[ShowcaseController::class, 'showcase'])->name('showcase');
-    Route::get('/showcase_detail/{id}',[ShowcaseController::class, 'showcase_detail'])->name('showcase_detail');
     Route::post('/tambah_showcase',[ShowcaseController::class, 'tambah_showcase'])->name('tambah_showcase');
     Route::get('/insertdata_showcase',[ShowcaseController::class, 'insertdata_showcase'])->name('insertdata_showcase');
     Route::get('/tampilakandata_showcase/{id}',[ShowcaseController::class, 'tampilakandata_showcase'])->name('tampilakandata_showcase');
@@ -152,6 +147,16 @@ Route::middleware(['auth','rolemelati:mahasiswa'])->group(function (){
     Route::get('/delete_showcase/{id}',[ShowcaseController::class, 'delete_showcase'])->name('delete_showcase');
 });
 
+Route::get('/showcase',[ShowcaseController::class, 'showcase'])->name('showcase');
+    Route::get('/showcase_detail/{id}',[ShowcaseController::class, 'showcase_detail'])->name('showcase_detail');
+
+    // Diskusi
+Route::middleware(['auth','rolemelati:mahasiswa,dosen'])->group(function (){
+    Route::get('/belajar_diskusi', [DiskusiController::class, 'belajar_diskusi'])->name('belajar_diskusi');
+    Route::post('/tambah_diskusi', [DiskusiController::class, 'tambah_diskusi'])->name('tambah_diskusi');
+    Route::post('/tambah_jawaban', [DiskusiController::class, 'tambah_jawaban'])->name('tambah_jawaban');
+    Route::get('/delete_komentar/{id}',[MatakuliahController::class, 'delete'])->name('delete');
+});
 // route yang tidak perlu loginnnnnnnn
 Route::middleware('guest')->group(function(){
     Route::get('/loginakun', [LoginController::class, 'index'])->name('loginakun');

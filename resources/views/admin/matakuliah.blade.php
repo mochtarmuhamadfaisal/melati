@@ -52,8 +52,10 @@
                             <td class="action">
                                 <a href="/tampilkan_matakuliah/{{ $rowmk->id }}" class="text-decoration-none"><button
                                         class="btn-transaction bg-warning text-white mx-auto">Edit</button></a>
-                                <button class="btn-transaction bg-danger text-white mx-auto hapusmatakuliah
-                                hapusmatakuliah" data-bs-toggle="modal" data-bs-target="#exampleModal" data-nama="{{ $rowmk->nama_matakuliah }}" onclick="hapus(`{{ $rowmk->id }}`,`{{ $rowmk->nama_matakuliah }}`)">Hapus</button>
+                                <button class="btn-transaction bg-danger text-white mx-auto hapusmatakuliah" 
+                                data-bs-toggle="modal" data-bs-target="#exampleModal" 
+                                data-nama="{{ $rowmk->nama_matakuliah }}" 
+                                onclick="hapus(`{{ $rowmk->id }}`,`{{ $rowmk->nama_matakuliah }}`)">Hapus</button>
                             </td>
                         </tr>
                         @endforeach

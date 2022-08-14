@@ -36,6 +36,11 @@
                     <span>Pengaturan</span>
                 </a>
 
+                <a href="/belajar_diskusi" class="sidebar-item {{ $sidebar === 'Diskusi' ? 'active' : '' }}"
+                    onclick="toggleActive(this)">
+                    <span>Diskusi</span>
+                </a>
+
                 <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();"

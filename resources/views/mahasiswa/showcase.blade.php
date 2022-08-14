@@ -4,6 +4,7 @@
 @endpush
 @section('konten_mahasiswa')
     <!-- AWAL PAGE SHOWCASE -->
+    @auth
     <section class="showcase">
         <div class="container-fluid">
             <div class="row text-center">
@@ -36,6 +37,7 @@
                         @csrf
                         @method('delete')
                     </form>
+                @elseif (Auth::user()->role->name == 'dosen')
                 @else
                     <div class="row d-flex justify-content-center pb-5">
                         <div class="col-6">
@@ -57,6 +59,7 @@
                 @endif
             </div>
     </section>
+    @endauth
 
     <section class="showcase">
         <div class="container-fluid">
@@ -66,6 +69,7 @@
             </div>
             <div class="row justify-content-center mt-5">
                 @foreach ($datashowcase as $datashowcasee)
+                @if (auth()->check())
                         @if ($datashowcasee->id_user != Auth::user()->id)
                             <div class="card border-0 rounded-3 ms-2 mb-5" style="width: 20rem;">
                                 <img src="{{ asset('showcase') }}/{{ $datashowcasee->foto }}" class="card-img-top"
@@ -78,6 +82,18 @@
                                 </div>
                             </div>
                         @endif
+                    @else
+                    <div class="card border-0 rounded-3 ms-2 mb-5" style="width: 20rem;">
+                        <img src="{{ asset('showcase') }}/{{ $datashowcasee->foto }}" class="card-img-top"
+                            alt="..."
+                            style="border-radius: 18px; width: 18rem; height: 18rem; object-fit: cover">
+                        <div class="card-body mt-2">
+                            <h5 class="card-title">{{ $datashowcasee->judul_project }}</h5>
+                            <p class="text-caption">{!! kata($datashowcasee->deskripsi_project, $limit = 15, $end = ' ... ') !!}</p>
+                            <a href="/showcase_detail/{{ $datashowcasee->id }}" class="btn">Selengkapnya</a>
+                        </div>
+                    </div>
+                    @endif
                     @endforeach
             </div>
     </section>

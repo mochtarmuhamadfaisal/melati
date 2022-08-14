@@ -34,7 +34,7 @@
                                 </li>
 
                                 <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
-                                    <a class="nav-link" href="#">Diskusi</a>
+                                    <a class="nav-link" href="/diskusi">Diskusi</a>
                                 </li>
 
                                 <li class="nav-item {{ $navbar === 'Showcase' ? 'active' : '' }}">
@@ -80,18 +80,32 @@
             <!-- Awal Navbar Versi Desktop -->
             <div class="collapse navbar-collapse" id="navbarTogglerDemo">
                 <ul class="navbar-nav ms-auto me-auto mt-lg-0 ">
+                    
                     <li class="nav-item {{ $navbar === 'Beranda' ? 'active' : '' }}">
                         <a class="nav-link" href="/">Beranda</a>
                     </li>
 
+                    @auth
+                    @if (Auth::user()->role->name === "mahasiswa")
+        
                     <li class="nav-item {{ $navbar === 'Belajar' ? 'active' : '' }}">
                         <a class="nav-link" href="/belajar">Belajar</a>
                     </li>
 
                     <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
-                        <a class="nav-link" href="#">Diskusi</a>
+                        <a class="nav-link" href="/belajar_diskusi">Diskusi</a>
                     </li>
 
+                    @elseif (Auth::user()->role->name === "dosen")
+                    <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
+                        <a class="nav-link" href="/belajar_diskusi">Diskusi</a>
+                    </li>
+
+                    <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
+                        <a class="nav-link" href="/dashboard_dosen">Dasboard Dosen</a>
+                    </li>
+                    @endif
+                    @endauth
                     <li class="nav-item {{ $navbar === 'Showcase' ? 'active' : '' }}">
                         <a class="nav-link" href="/showcase">Showcase</a>
                     </li>
