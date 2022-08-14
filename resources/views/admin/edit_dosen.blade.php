@@ -14,7 +14,7 @@
 
         </div>
 
-        <div class="row mt-3">
+        <div class="row mt-3 ms-lg-0 ms-1 me-lg-0 me-2">
             <div class="col-lg-6">
                 <form action="/updatedata_dosen/{{ $datadosen->id }}" method="post" enctype="multipart/form-data">
                     @csrf

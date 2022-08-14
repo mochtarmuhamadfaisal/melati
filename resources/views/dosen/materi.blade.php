@@ -14,7 +14,7 @@
         </div>
 
 
-        <div class="row">
+        <div class="row ms-lg-0 ms-1">
             <div class="col-12">
                 <div class="btn-content mb-1 mt-3">
                     <a href="/tambah_materi" class="btn btn-tambahakun">+</span> Tambah Materi</a>

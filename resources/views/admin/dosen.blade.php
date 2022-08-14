@@ -17,12 +17,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="btn-content  mb-1 mt-3">
-                    <a href="/tambah_dosen" class="btn btn-tambahakun"><span class="fw-bold">+</span>
+                    <a href="/tambah_dosen" class="btn btn-tambahakun ms-lg-0 ms-3"><span class="fw-bold">+</span>
                         Tambah Akun Dosen</a>
                 </div>
 
                 <!-- AWAL Table Untuk dosen  -->
-                <div class="col-11 mt-4">
+                <div class="col-11 mt-4 ms-lg-0 ms-3" style="overflow-x: auto">
                     {{-- allaert berhaisl tambah dosen --}}
                     {{-- @if ($message = Session::get('berhasil'))
                         <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">

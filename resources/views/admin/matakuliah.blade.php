@@ -19,13 +19,13 @@
         <div class="row">
             <div class="col-12">
                 <div class="btn-content  mb-1 mt-3">
-                    <a href="/tambah_matakuliah" class="btn btn-tambahakun"><span class="fw-bold">+</span>
+                    <a href="/tambah_matakuliah" class="btn btn-tambahakun ms-lg-0 ms-3"><span class="fw-bold">+</span>
                         Tambah Mata Kuliah</a>
                 </div>
 
 
                 <!-- AWAL Table Untuk Mata Kuliah  -->
-                <table class="table table-borderless w-50 active mt-4" id="table-all">
+                <table class="table table-borderless w-50 active mt-4 ms-lg-0 ms-3" id="table-all">
                     <thead style="background-color: #D4F3FF;">
                         <tr>
                             <th>No</th>

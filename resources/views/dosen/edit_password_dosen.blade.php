@@ -20,20 +20,20 @@
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label fw-bold"
                             style="color: #2390B9;">Password lama</label>
-                        <input type="password" class="form-control rounded-pill p-2 px-3" id="myInput1">
-                        <input class=" mt-3" type="checkbox" onclick="myFunction1()">Tampilkan
+                        <input type="password" class="form-control rounded-pill p-2 px-3" id="pswlamadosen">
+                        <input class=" mt-3" type="checkbox" onclick="myFunction_pswlamadosen()">Tampilkan
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label fw-bold"
                             style="color: #2390B9;">Password Baru</label>
-                        <input type="password" class="form-control rounded-pill p-2 px-3" id="myInput2">
-                        <input class=" mt-3" type="checkbox" onclick="myFunction2()">Tampilkan
+                        <input type="password" class="form-control rounded-pill p-2 px-3" id="pswbarudosen">
+                        <input class=" mt-3" type="checkbox" onclick="myFunction_pswbarudosen()">Tampilkan
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label fw-bold"
                             style="color: #2390B9;">Konfirmasi Password</label>
-                        <input type="password" class="form-control rounded-pill p-2 px-3" id="myInput3">
-                        <input class=" mt-3 " type="checkbox" onclick="myFunction3()">Tampilkan
+                        <input type="password" class="form-control rounded-pill p-2 px-3" id="pswkonfirdosen">
+                        <input class=" mt-3 " type="checkbox" onclick="myFunction_pswkonfirdosen()">Tampilkan
                     </div>
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn-admin rounded-pill">Simpan</button>
@@ -48,4 +48,37 @@
         </div>
     </div>
     <!-- Akhir Konten -->
+
+    <script>
+        function myFunction_pswlamadosen() {
+            var x = document.getElementById("pswlamadosen");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+
+    <script>
+        function myFunction_pswbarudosen() {
+            var x = document.getElementById("pswbarudosen");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+
+    <script>
+        function myFunction_pswkonfirdosen() {
+            var x = document.getElementById("pswkonfirdosen");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
 @endsection

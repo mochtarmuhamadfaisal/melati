@@ -13,14 +13,14 @@
             </div>
         </div>
 
-        <div class="row mt-3">
+        <div class="row mt-3 ms-lg-0 ms-1 me-lg-0 me-2">
             <div class="col-lg-6">
                 <form action="/updatedata_mahasiswa/{{ $datamahasiswa->id }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">Nama
-                            Dosen</label>
+                            Mahasiswa</label>
                         <input type="text" name="nama" value="{{ $datamahasiswa->nama }}" class="form-control rounded-pill p-2 px-3"
                             id="formGroupExampleInput" placeholder="Masukan Nama Mahasiswa..."  required autofocus>
                         @error('nama')

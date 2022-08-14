@@ -17,12 +17,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="btn-content  mb-1 mt-3">
-                    <a href="/tambah_mahasiswa" class="btn btn-tambahakun"><span class="fw-bold">+</span>
+                    <a href="/tambah_mahasiswa" class="btn btn-tambahakun ms-lg-0 ms-3"><span class="fw-bold">+</span>
                         Tambah Akun Mahasiswa</a>
                 </div>
 
                 <!-- AWAL Table Untuk Mahasiswa  -->
-                <div class="col-11 mt-4">
+                <div class="col-11 mt-4 ms-lg-0 ms-3" style="overflow-x: auto">
                     <table id="example" class="table table-borderless w-100">
                         <thead style="background-color: #D4F3FF;">
                             <tr>

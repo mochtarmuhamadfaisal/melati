@@ -15,7 +15,7 @@
         </div>
 
 
-        <div class="row mt-4">
+        <div class="row mt-4  ms-lg-0 ms-1">
             <div class="col-11">
                 <form action="{{ route('insertdata_materi') }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -53,7 +53,7 @@
                         </label>
                         <select class="form-select rounded-pill py-2" aria-label="Default select example"
                             id="recipient-name" name="id_matakuliah">
-                            <option selected>-</option>
+                            <option selected disabled>Pilih Matakuliah</option>
                             @php
                                 $data_matakuliah=\App\Models\Matakuliah::all();
                             @endphp
@@ -91,25 +91,26 @@
                         aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_modul">
                     </div>
 
-                    <div class="row">
+                    <div class="row mt-5">
                         <div class="col-6">
                             <div class="mb-5">
-                                <label for="inputGroupFile04" class="fw-bold mb-2" style="color: #2390B9;">Upload Soal</label>
+                                <label for="inputGroupFile04" class="fw-bold mb-2" style="color: #2390B9; margin-top: 5.5px">Upload Soal</label>
                                 <input type="file" class="form-control rounded-pill" id="inputGroupFile04"
                                     aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_soal">
                             </div>
                         </div>
     
-                        <div class="col-6">
+                        <div class="col-6 ">
                             <div class="mb-5">
                                 <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Password Soal
                                 </label>
-                                <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="password_soal">
+                                <input type="text" class="form-control rounded-pill h-100" id="recipient-name" name="password_soal">
+                                <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan password dengan 8 karakter</h5>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mb-5">
+                    {{-- <div class="mb-5">
                         <label for="inputGroupFile04" class="col-form-label fw-bold" style="color: #2390B9;">Link
                             Grup Diskusi
                         </label>
@@ -122,7 +123,7 @@
                             Diskusi
                         </label>
                         <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="password_diskusi">
-                                    </div>
+                                    </div> --}}
                     <div class=" d-flex justify-content-end">
                         <button type="submit" class="btn-admin rounded-pill mt-4">Tambah</button>
                     </div>

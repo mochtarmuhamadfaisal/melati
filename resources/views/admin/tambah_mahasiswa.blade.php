@@ -13,13 +13,13 @@
             </div>
         </div>
 
-        <div class="row mt-3">
+        <div class="row mt-3 ms-lg-0 ms-1 me-lg-0 me-2">
             <div class="col-lg-6">
                 <form action="/insertdata_mahasiswa" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label fw-bold"
-                            style="color: #2390B9;">Nama</label>
+                            style="color: #2390B9;">Nama Mahasiswa</label>
                         <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput" name="nama"
                             placeholder="Masukan Nama Mahasiswa..." required autofocus>
                             @error('nama')

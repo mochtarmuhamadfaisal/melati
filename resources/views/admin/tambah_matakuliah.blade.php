@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <div class="row mt-3">
+        <div class="row mt-3 ms-lg-0 ms-1 me-lg-0 me-2">
             <div class="col-lg-6">
                 <form action="/insertdata_matakuliah" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -21,7 +21,7 @@
                         <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">Mata
                             Kuliah</label>
                         <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
-                            placeholder="Masukan Mata Kuliah" name="nama_matakuliah">
+                            placeholder="Masukan Mata Kuliah.." name="nama_matakuliah">
                             @error('nama_matakuliah')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror

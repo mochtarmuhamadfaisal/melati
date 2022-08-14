@@ -15,7 +15,7 @@
 
     </div>
 
-    <div class="row mt-3">
+    <div class="row mt-3 ms-lg-0 ms-1 me-lg-0 me-2">
         <div class="col-lg-6">
             <form action="/updatedata_matakuliah/{{ $datamatakuliah->id }}" method="POST" enctype="multipart/form-data">
                 @method('put')
@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn-admin rounded-pill mt-2">Tambah</button>
+                        <button type="submit" class="btn-admin rounded-pill mt-2">Simpan</button>
                     </div>
             </form>
             <div class="d-flex justify-content-start">

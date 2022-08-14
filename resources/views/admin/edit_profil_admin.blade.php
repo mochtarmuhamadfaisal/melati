@@ -24,7 +24,7 @@
                             <img src="{{ asset('storage/' . $admin->foto) }}" class="img-preview rounded-circle"
                                 style="width: 250px; height: 250px; border: 4px solid #2390B9; object-fit: cover"> 
 
-                            <div class="hl-upload ms-sm-4 d-flex flex-column justify-content-center">
+                            <div class="hl-upload ms-sm-4 d-flex flex-column justify-content-center mt-lg-0 mt-3">
                                 <label for="foto" class="form-label btn-admin rounded-pill">
                                     <input class="btn btn-primary rounded-lg @error('foto') is-invalid @enderror"
                                         id="foto" name="foto" type="file" style="display:none">Ubah

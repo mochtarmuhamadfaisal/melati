@@ -15,7 +15,7 @@
         </div>
 
 
-        <div class="row mt-4">
+        <div class="row mt-4 ms-lg-0 ms-1">
             <div class="col-11">
                 <form action='/updatedata_materi/{{ $datamateri->id }}' method="POST" enctype="multipart/form-data">
                     @csrf
@@ -154,7 +154,7 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="mb-5">
-                                <label for="inputGroupFile04" class="fw-bold mb-2" style="color: #2390B9;">Upload Soal</label>
+                                <label for="inputGroupFile04" class="fw-bold mb-2" style="color: #2390B9; margin-top: 9.2px">Upload Soal</label>
                                 <input type="file" class="form-control rounded-pill" id="inputGroupFile04"
                                     aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_soal">
                                     <a href="{{ asset('soal/') }}/{{ $datamateri->upload_soal }}" class="text-decoration-none"  download><span class="text-muted">Data Lama: </span>{{ $datamateri->upload_soal }}</a>
@@ -166,6 +166,7 @@
                                 <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Password Soal
                                 </label>
                                 <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="password_soal" value="{{ $datamateri->password_soal }}">
+                                <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan password dengan 8 karakter</h5>
                             </div>
                         </div>
                     </div>
