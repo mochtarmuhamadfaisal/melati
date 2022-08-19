@@ -42,7 +42,7 @@ class ShowcaseController extends Controller
     
         $datashowcase->save();
      
-        return redirect()->route('showcase')->with('berhasil', 'Showcase berhasil di buat');
+        return redirect()->route('showcase')->with('berhasil', 'Showcase berhasil di BUAT');
     }
 
     public function tampilakandata_showcase($id){
@@ -68,7 +68,7 @@ class ShowcaseController extends Controller
     
         $dataupdateshowcase->save();
      
-        return redirect()->route('showcase')->with('berhasil', 'Showcase berhasil di buat');
+        return redirect()->route('showcase')->with('berhasil', 'Showcase berhasil di EDIT');
     }
 
     public function delete_showcase($id){

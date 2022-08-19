@@ -15,21 +15,21 @@
 
 
         <div class="content">
-            <form action="/updatedata_profil_admin/{{ $admin->id }}" method="POST" enctype="multipart/form-data">
+            <form action="/updatedata_profil_admin" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="col-12">
                     <div class="row">
                         <div class="admin d-sm-flex d-block">
-                            <img src="{{ asset('storage/' . $admin->foto) }}" class="img-preview rounded-circle"
-                                style="width: 250px; height: 250px; border: 4px solid #2390B9; object-fit: cover"> 
+                            <img src="{{ asset('foto') }}/{{ Auth::user()->foto }}" class="img-preview rounded-circle"
+                                style="width: 250px; height: 250px; border: 4px solid #2390B9; object-fit: cover;">
 
                             <div class="hl-upload ms-sm-4 d-flex flex-column justify-content-center mt-lg-0 mt-3">
                                 <label for="foto" class="form-label btn-admin rounded-pill">
                                     <input class="btn btn-primary rounded-lg @error('foto') is-invalid @enderror"
-                                        id="foto" name="foto" type="file" style="display:none">Ubah
+                                        id="foto" name="foto" type="file" style="display:none"
+                                        onchange="previewname()">Ubah
                                     Foto Profil</label>
-                                <p class="upload mt-1 ms-0">maks upload (2 Mb)</p>
                             </div>
                             <style>
                                 .inputfile {
@@ -59,42 +59,46 @@
                             <label for="formGroupExampleInput" class="form-label fw-bold"
                                 style="color: #2390B9;">Nama</label>
                             <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput"
-                                placeholder="" name="nama" value="{{ $admin->nama }}" required autofocus>
-                                @error('nama')
+                                placeholder="" name="nama" value="{{ Auth::user()->nama }}" required autofocus>
+                            @error('nama')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
-                                @enderror
+                            @enderror
                         </div>
                         <div class="mb-4">
                             <label for="formGroupExampleInput2" class="form-label fw-bold"
                                 style="color: #2390B9;">NIP</label>
-                            <input type="text" class="form-control rounded-pill p-2 px-3"
-                                id="formGroupExampleInput2" placeholder="" name="username" value="{{ $admin->username }}" required>
-                                @error('nip')
+                            <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput2"
+                                placeholder="" name="username" value="{{ Auth::user()->username }}" required>
+                            @error('nip')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
-                                @enderror
+                            @enderror
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="formGroupExampleInput2" class="form-label fw-bold"
+                                style="color: #2390B9;">Password</label>
+                            <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput2"
+                                placeholder="Masukan password anda.." name="password">
+                                <span class="text-muted" style="font-size: 12px;">*kosongkan jika tidak ingin mengubah password</span>
+                           
                         </div>
                         <div class="mb-2">
-                            <label for="formGroupExampleInput3" class="form-label fw-bold"
-                                style="color: #2390B9;">Jenis
+                            <label for="formGroupExampleInput3" class="form-label fw-bold" style="color: #2390B9;">Jenis
                                 Kelamin</label>
-                                <select class="form-select rounded-pill py-2" name="jenis_kelamin"
-                                aria-label="Default select example" id="recipient-name" >
-                                @if ($admin->jenis_kelamin = 'Laki-laki')
-                                <option disabled>Pilih Jenis Kelamin</option>
-                                <option selected value="Laki-laki">laki-laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                                @elseif($admin->jenis_kelamin = 'Laki-laki')
-                                <option disabled>Pilih Jenis Kelamin</option>
-                                <option value="Laki-laki">laki-laki</option>
-                                <option selected value="Perempuan">Perempuan</option>
-                                @else
-                                <option selected disabled>Pilih Jenis Kelamin</option>
-                                <option value="Laki-laki">laki-laki</option>
-                                <option value="Perempuan">Perempuan</option>
+                            <select class="form-select rounded-pill py-2" name="jenis_kelamin"
+                                aria-label="Default select example" id="recipient-name">
+                                <option selected disabled>Pilih jenis kelamin</option>
+                                @if (Auth::user()->jenis_kelamin == 'Laki-laki')
+                                    <option value="Laki-laki" selected>Laki-laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                @elseif (Auth::user()->jenis_kelamin == 'Perempuan')
+                                    <option value="Laki-laki">Laki-laki</option>
+                                    <option value="Perempuan" selected>Perempuan</option>
                                 @endif
                             </select>
+
                             @error('jenis_kelamin')
-                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="d-flex justify-content-end">
@@ -110,6 +114,20 @@
         </div>
     </div>
     <!-- Awal Konten -->
+
+    {{-- allert sweet allert --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        @if (Session::has('berhasil'))
+            swal({
+                title: "Berhasil!",
+                text: "{{ Session::get('berhasil') }}",
+                icon: "success",
+                button: "Oke",
+            });
+        @endif
+    </script>
 @endsection
 
 <!-- Awal Js Ubah Foto Profil -->
@@ -128,7 +146,7 @@
         const oFReader = new FileReader();
         oFReader.readAsDataURL(image.files[0]);
 
-        oFReader.onload = function (oFREvent) {
+        oFReader.onload = function(oFREvent) {
             imgPreview.src = oFREvent.target.result;
         }
         document.getElementById("cekubah").value = 'berubah';

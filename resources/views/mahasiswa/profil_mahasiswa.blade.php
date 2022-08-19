@@ -12,15 +12,15 @@
                         PROFIL🙍‍♂️
                     </p>
                     <h2 class="text-judul-fitur" style="margin-bottom: 3rem;">
-                        Kumpulan Project Mahasiswa
+                        Informasi Seputar Akun Anda
                     </h2>
                 </div>
             </div>
 
             <div class="row row-profile d-flex justify-content-center mt-5">
                 <div class="col-lg-3 col-12">
-                    <img class="rounded-circle mb-5 mb-lg-0" src="{{ asset('img/gue.jpg') }}" alt=""
-                        style="width: 250px; height: 250px; border: 4px solid var(--warna-pertama);">
+                    <img class="rounded-circle mb-5 mb-lg-0" src="{{ asset('foto') }}/{{ Auth::user()->foto }}" alt=""
+                        style="width: 250px; height: 250px; border: 4px solid var(--warna-pertama); object-fit:cover;">
                 </div>
                 <div class="col-lg-3 col-12">
                     <form action="#" class="basic-form">

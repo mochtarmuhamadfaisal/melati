@@ -26,16 +26,27 @@
                             !important>
                             <ul class="navbar-nav responsive me-auto mt-2 mt-lg-0">
                                 <li class="nav-item {{ $navbar === 'Beranda' ? 'active' : '' }}">
-                                    <a class="nav-link" href="/beranda_mahasiswa">Beranda</a>
+                                    <a class="nav-link" href="/">Beranda</a>
                                 </li>
+                                @auth
+                                    @if (Auth::user()->role->name === 'mahasiswa')
+                                        <li class="nav-item {{ $navbar === 'Belajar' ? 'active' : '' }}">
+                                            <a class="nav-link" href="/belajar">Belajar</a>
+                                        </li>
 
-                                <li class="nav-item {{ $navbar === 'Belajar' ? 'active' : '' }}">
-                                    <a class="nav-link" href="/belajar">Belajar</a>
-                                </li>
+                                        <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
+                                            <a class="nav-link" href="/belajar_diskusi">Diskusi</a>
+                                        </li>
+                                    @elseif (Auth::user()->role->name === 'dosen')
+                                        <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
+                                            <a class="nav-link" href="/belajar_diskusi">Diskusi</a>
+                                        </li>
 
-                                <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
-                                    <a class="nav-link" href="/diskusi">Diskusi</a>
-                                </li>
+                                        <li class="nav-item {{ $navbar === 'Diskusii' ? 'active' : '' }}">
+                                            <a class="nav-link" href="/dashboard_dosen">Dasboard Dosen</a>
+                                        </li>
+                                    @endif
+                                @endauth
 
                                 <li class="nav-item {{ $navbar === 'Showcase' ? 'active' : '' }}">
                                     <a class="nav-link" href="/showcase">Showcase</a>
@@ -45,12 +56,14 @@
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                             role="button" data-bs-toggle="dropdown" aria-expanded="false"
                                             style="color: #2390b9;">
-                                            <img class="rounded-circle me-2" src="assets/img/gue.jpg"
-                                                style="width: 50px; height: 50px; border: 3.5px solid #2390B9;">
+                                            <img class="rounded-circle me-2"
+                                                src="{{ asset('foto') }}/{{ Auth::user()->foto }}"
+                                                style="width: 50px; height: 50px; border: 3.5px solid #2390B9;  object-fit: cover;">
                                         </a>
                                         <ul class="dropdown-menu mb-5" aria-labelledby="navbarDropdownMenuLink">
                                             <li><a class="dropdown-item" href="/profil_mahasiswa">Profil</a></li>
-                                            <li><a class="dropdown-item" href="/pengaturan_mahasiswa">Pengaturan</a></li>
+                                            <li><a class="dropdown-item" href="/pengaturan_mahasiswa">Pengaturan</a>
+                                            </li>
                                             <li><a href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();"
@@ -58,21 +71,21 @@
                                                     data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                     <span>Keluar</span>
 
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                        class="d-none">
+                                                    <form id="logout-form" action="{{ route('logout') }}"
+                                                        method="POST" class="d-none">
                                                         @csrf
                                                     </form>
                                                 </a></li>
                                         </ul>
                                     </li>
                             </ul>
-                            @else
-                                <div class="modal-footer border-0 gap-3" style="padding: 2rem; padding-top: 0.75rem">
-                                    <a href="{{ route('loginakun') }}" class="btn btn-fill text-white">Login</a>
-                                </div>
-                            @endif
+                        @else
+                            <div class="modal-footer border-0 gap-3" style="padding: 2rem; padding-top: 0.75rem">
+                                <a href="{{ route('loginakun') }}" class="btn btn-fill text-white">Login</a>
                             </div>
-                     </div>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Akhir Navbar Versi Responsive -->
@@ -80,31 +93,29 @@
             <!-- Awal Navbar Versi Desktop -->
             <div class="collapse navbar-collapse" id="navbarTogglerDemo">
                 <ul class="navbar-nav ms-auto me-auto mt-lg-0 ">
-                    
+
                     <li class="nav-item {{ $navbar === 'Beranda' ? 'active' : '' }}">
                         <a class="nav-link" href="/">Beranda</a>
                     </li>
 
                     @auth
-                    @if (Auth::user()->role->name === "mahasiswa")
-        
-                    <li class="nav-item {{ $navbar === 'Belajar' ? 'active' : '' }}">
-                        <a class="nav-link" href="/belajar">Belajar</a>
-                    </li>
+                        @if (Auth::user()->role->name === 'mahasiswa')
+                            <li class="nav-item {{ $navbar === 'Belajar' ? 'active' : '' }}">
+                                <a class="nav-link" href="/belajar">Belajar</a>
+                            </li>
 
-                    <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
-                        <a class="nav-link" href="/belajar_diskusi">Diskusi</a>
-                    </li>
+                            <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
+                                <a class="nav-link" href="/belajar_diskusi">Diskusi</a>
+                            </li>
+                        @elseif (Auth::user()->role->name === 'dosen')
+                            <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
+                                <a class="nav-link" href="/belajar_diskusi">Diskusi</a>
+                            </li>
 
-                    @elseif (Auth::user()->role->name === "dosen")
-                    <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
-                        <a class="nav-link" href="/belajar_diskusi">Diskusi</a>
-                    </li>
-
-                    <li class="nav-item {{ $navbar === 'Diskusi' ? 'active' : '' }}">
-                        <a class="nav-link" href="/dashboard_dosen">Dasboard Dosen</a>
-                    </li>
-                    @endif
+                            <li class="nav-item {{ $navbar === 'Diskusii' ? 'active' : '' }}">
+                                <a class="nav-link" href="/dashboard_dosen">Dasboard Dosen</a>
+                            </li>
+                        @endif
                     @endauth
                     <li class="nav-item {{ $navbar === 'Showcase' ? 'active' : '' }}">
                         <a class="nav-link" href="/showcase">Showcase</a>
@@ -114,8 +125,8 @@
                     @if (auth()->check())
                         <div class="d-flex">
                             <div>
-                                <img class="rounded-circle me-2" src="assets/img/gue.jpg"
-                                    style="width: 50px; height: 50px; border: 3.5px solid #2390B9;">
+                                <img class="rounded-circle me-2" src="{{ asset('foto') }}/{{ Auth::user()->foto }}"
+                                    style="width: 50px; height: 50px; border: 3.5px solid #2390B9;  object-fit: cover;">
                             </div>
                             <div class="dropdown me-4 align-self-center">
                                 <a class="dropdown-toggle me-1 show" href="#" role="button"

@@ -17,8 +17,8 @@
                     <form action="/fillter" method="GET">
                         <div class="row">
                             <div class=" col-9 mb-2 col-lg-4">
-                                <div class="input-group mb-2 w-10">
-                                    <label class="pilihsemester input-group-text text-white " for="semester"
+                                <div class="input-group rounded-pill mb-2 w-10">
+                                    <label class="pilihsemester input-group-text text-white" for="semester"
                                         style="background-color:  var(--warna-pertama);">Pilih semester</label>
                                     <select class="pilihsemester-form form-select" id="semester" name="semester">
                                         <option selected disabled="">Pilih Semester</option>
@@ -47,16 +47,16 @@
                             </div>
     
                             <div class="col-9 w-10 col-lg-4">
-                                <button class="btn btn-primary">Cari</button> 
-                                <a href="/belajar" class="btn btn-info">Refresh</a> 
+                                <button class="btn rounded-pill" style="background-color:#2390B9; color: white;">Cari</button> 
+                                <a href="/belajar" class="btn ">Refresh</a> 
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
 
-            <div class="row my-5">
-                <table class="table scroll" style="margin-left: 0.4rem;">
+            <div class="row my-5" style="width: 90%">
+                {{-- <table class="table scroll" style="margin-left: 0.4rem;">
                     <tbody class="ini-batang-scroll" style="height: 100px;">
                         @foreach ($datamateri as $rowmateri) 
                         <tr class="align-middle">
@@ -81,15 +81,37 @@
                                     Video
                                 </a>
                             </td>
-                            <td>
-                                <a href="/belajar_diskusi" class="btn btn-warning py-2 px-4" style="color: white;"
-                                    style="color: white;">
-                                    Diskusi
-                                </a>
-                            </td>
                         </tr>
                         @endforeach
 
+                    </tbody>
+                </table> --}}
+                <table id="example" class="table table-borderless">
+                    <thead style="background-color: #D4F3FF;">
+                        <tr>
+                            {{-- <th>Nama Dosen</th> --}}
+                            <th style="width: 100px">Semester</th>
+                            <th style="width: 100px">Kelas</th>
+                            <th>Mata kuliah</th>
+                            <th class="text-center">Fitur</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+                        @foreach ($datamateri as $rowmateri) 
+                            <tr>
+                                {{-- <td>{{ $rowmateri->users->nama }}</td> --}}
+                                <td>{{ $rowmateri->semester }}</td>
+                                <td>{{ $rowmateri->kelas }}</td>
+                                <td>{{ $rowmateri->matakuliah->nama_matakuliah }}</td>
+                                <td class="text-center">
+                                    <a href="/belajar_video/{{ $rowmateri->id_matakuliah}}" class="btn px-4" style="background-color: #2390B9; color: white;">
+                                        Materi
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
+                
                     </tbody>
                 </table>
             </div>
@@ -97,3 +119,5 @@
     </section>
     <!-- AKHIR BELAJAR-PILIH KELAS & MATAKULIAH -->
 @endsection
+
+

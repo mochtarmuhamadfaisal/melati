@@ -54,7 +54,7 @@
         @if (Auth::user()->role->name === "dosen")
         
         @else
-        <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModalll">
+        <button type="button" class="btn py-2 px-4 rounded-pill" style="background-color: #2390B9; color: white" data-bs-toggle="modal" data-bs-target="#exampleModalll">
             Tambah pertanyaan
         </button>
         @endif
@@ -76,7 +76,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Kirim</button>
+                            <button type="submit" class="btn rounded-pill px-4" style="background-color: #2390B9; color: white">Kirim</button>
                         </div>
                     </div>
                 </div>
@@ -89,9 +89,9 @@
             <!-- Button trigger modal -->
             @foreach ($datapertanyaan as $rowpertanyaan)
             <div class="accordion" id="accordionExample">
-                <div class="accordion-item mt-3" style="border: 2px solid #2390B9; border-radius: 8px">
-                    <h2 class="accordion-header" id="headingOne" >
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" style="border-radius: 8px"
+                <div class="accordion-item mt-3" style="border: 2px solid #2390B9; border-radius: 20px">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" style="border-radius: 20px"
                             data-bs-target="#collapseOne-{{ $rowpertanyaan->id }}" aria-expanded="true" aria-controls="collapseOne">
                             <div>
                                 <p class="text-muted" style="font-size: 13px">{{ $rowpertanyaan->users->nama }}</p>
@@ -106,7 +106,7 @@
                                 @csrf
                                 <input type="hidden" value="{{ $rowpertanyaan->id }}" name="id_diskusi">
                                 <textarea class="form-control" style="width: 87%;" type="text" name="jawaban" required></textarea>
-                                <button type="submit" class="btn btn-primary h-25 ms-3 rounded-pill">Jawab</button>
+                                <button type="submit" class="btn h-25 ms-3 rounded-pill" style="background-color: #2390B9; color: white">Jawab</button>
                             </div>
                         </form>
                         <div class="accordion-body">

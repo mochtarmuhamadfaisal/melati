@@ -25,10 +25,10 @@
                                 <div class="card-body mt-2">
                                     <h5 class="card-title">{{ $datashowcasee->judul_project }}</h5>
                                     <p class="text-caption">{!! \Illuminate\Support\Str::limit($datashowcasee->deskripsi_project, 100, $end='...') !!}</p>
-                                    <a href="/showcase_detail/{{ $datashowcasee->id }}" class="btn">Selengkapnya</a>
+                                    <a href="/showcase_detail/{{ $datashowcasee->id }}" class="btn rounded-pill">Selengkapnya</a>
                                     <a href="/tampilakandata_showcase/{{ $datashowcasee->id }}"><i
-                                            class='bx bx-edit-alt bg-warning rounded-3 p-2 ms-3 text-dark'></i></a>
-                                    <a href="#" class="hapusshowcase" onclick="hapus(`{{ $datashowcasee->id }}`)"><i class='bx bx-message-square-x bg-danger rounded-3 p-2 ms-1 text-white hapusshowcase'></i></a>
+                                            class='bx bx-edit-alt bg-warning rounded-pill p-2 ms-3 text-dark'></i></a>
+                                    <a href="#" class="hapusshowcase" onclick="hapus(`{{ $datashowcasee->id }}`)"><i class='bx bx-message-square-x bg-danger rounded-pill p-2 ms-1 text-white hapusshowcase'></i></a>
                                 </div>
                             </div>
                         @endif
@@ -48,7 +48,7 @@
                                 <div class="card-body">
                                     <blockquote class="blockquote mb-0">
                                         <p>Anda belum mengupload data showcase</p>
-                                        <footer class="blockquote-footer">Silahkan upload <cite
+                                        <footer class="blockquote-footer rounded-pill">Silahkan upload<cite
                                                 title="Source Title">showcase anda😎</cite></footer>
                                         <a href="/insertdata_showcase" class="btn btn-primary">Upload Showcase</a>
                                     </blockquote>
@@ -78,7 +78,7 @@
                                 <div class="card-body mt-2">
                                     <h5 class="card-title">{{ $datashowcasee->judul_project }}</h5>
                                     <p class="text-caption">{!! kata($datashowcasee->deskripsi_project, $limit = 15, $end = ' ... ') !!}</p>
-                                    <a href="/showcase_detail/{{ $datashowcasee->id }}" class="btn">Selengkapnya</a>
+                                    <a href="/showcase_detail/{{ $datashowcasee->id }}" class="btn rounded-pill">Selengkapnya</a>
                                 </div>
                             </div>
                         @endif
@@ -90,7 +90,7 @@
                         <div class="card-body mt-2">
                             <h5 class="card-title">{{ $datashowcasee->judul_project }}</h5>
                             <p class="text-caption">{!! kata($datashowcasee->deskripsi_project, $limit = 15, $end = ' ... ') !!}</p>
-                            <a href="/showcase_detail/{{ $datashowcasee->id }}" class="btn">Selengkapnya</a>
+                            <a href="/showcase_detail/{{ $datashowcasee->id }}" class="btn rounded-pill">Selengkapnya</a>
                         </div>
                     </div>
                     @endif

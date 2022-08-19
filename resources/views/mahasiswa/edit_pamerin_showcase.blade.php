@@ -73,7 +73,7 @@
                         </div>
 
                         <div class="submit d-flex justify-content-end mt-5 col-8 col-sm-12">
-                            <button type="submit" class="btn btn-lg btn-submit mb-5 h-auto border-0" id="submit">Upload
+                            <button type="submit" class="btn btn-lg btn-submit rounded-pill mb-5 h-auto border-0" id="submit">Upload
                                 Project </button>
                         </div>
                         <a href="/pengaturan_mahasiswa" class="text-decoration-none " style="color: #2390B9;">

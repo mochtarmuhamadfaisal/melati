@@ -11,7 +11,7 @@
               </div>
               <nav class="list-unstyled">
                 <li class="list-space">
-                  <a href="" class="list-menu">Media Pembelajaran Teknik Informatika</a>
+                  <a href="#" class="list-menu">Media Pembelajaran Teknik Informatika</a>
                 </li>
               </nav>
             </div>
@@ -20,13 +20,13 @@
             <h2 class="footer-text-title">Alamat</h2>
             <nav class="list-unstyled">
               <li class="list-space">
-                <a href="" class="list-menu text-caption">Jl. Ahmad Yani Bansir Laut</a>
+                <a href="#" class="list-menu text-caption">Jl. Ahmad Yani Bansir Laut</a>
               </li>
               <li class="list-space">
-                <a href="" class="list-menu text-caption">(0561) 12782</a>
+                <a href="#" class="list-menu text-caption">(0561) 12782</a>
               </li>
               <li class="list-space">
-                <a href="" class="list-menu text-caption">ti@elektro.polnep.ac.id</a>
+                <a href="#" class="list-menu text-caption">ti@elektro.polnep.ac.id</a>
               </li>
               <!-- <li class="list-space">
 								<a href="" class="list-menu text-caption">Analytic Tool</a>
@@ -40,16 +40,16 @@
             <h2 class="footer-text-title">Link Terkait</h2>
             <nav class="list-unstyled">
               <li class="list-space">
-                <a href="" class="list-menu text-caption">E-learning</a>
+                <a href="#" class="list-menu text-caption">E-learning</a>
               </li>
               <li class="list-space">
-                <a href="" class="list-menu text-caption">SEMESTA</a>
+                <a href="#" class="list-menu text-caption">SEMESTA</a>
               </li>
               <li class="list-space">
-                <a href="" class="list-menu text-caption">Elektro Polnep</a>
+                <a href="#" class="list-menu text-caption">Elektro Polnep</a>
               </li>
               <li class="list-space">
-                <a href="" class="list-menu text-caption">Politekni Negeri Pontianak</a>
+                <a href="#" class="list-menu text-caption">Politekni Negeri Pontianak</a>
               </li>
             </nav>
           </div>
@@ -57,13 +57,13 @@
             <h2 class="footer-text-title">Lainnya</h2>
             <nav class="list-unstyled">
               <li class="list-space">
-                <a href="" class="list-menu text-caption">Lorem, ipsum dolor.</a>
+                <a href="#" class="list-menu text-caption"></a>
               </li>
               <li class="list-space">
-                <a href="" class="list-menu text-caption">Lorem, ipsum dolor.</a>
+                <a href="#" class="list-menu text-caption"></a>
               </li>
               <li class="list-space">
-                <a href="" class="list-menu text-caption">Lorem, ipsum dolor.</a>
+                <a href="#" class="list-menu text-caption"></a>
               </li>
             </nav>
           </div>

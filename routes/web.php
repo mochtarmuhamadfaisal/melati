@@ -41,8 +41,8 @@ Route::middleware(['auth', 'rolemelati:admin'])->group(function () {
         ]);
     });
     Route::get('/profil_admin',[AdminController::class, 'profil_admin'])->name('profil_admin');
-    Route::get('/tampilkan_profil_admin/{nip}',[AdminController::class, 'tampilkan_profil_admin'])->name('tampilkan_profil_admin');
-    Route::put('/updatedata_profil_admin/{nip}',[AdminController::class, 'updatedata_profil_admin'])->name('updatedata_profil_admin');
+    Route::get('/tampilkan_profil_admin',[AdminController::class, 'tampilkan_profil_admin'])->name('tampilkan_profil_admin');
+    Route::put('/updatedata_profil_admin',[AdminController::class, 'updatedata_profil_admin'])->name('updatedata_profil_admin');
 
     //matakuliah
     Route::get('/matakuliah',[MatakuliahController::class, 'matakuliah'])->name('matakuliah');
@@ -117,10 +117,14 @@ Route::middleware(['auth','rolemelati:mahasiswa'])->group(function (){
         return view('mahasiswa/profil_mahasiswa',[
             "navbar"=>"Profil"]);
     });
-    Route::get('/edit_profil_mahasiswa', function(){
-        return view('mahasiswa/edit_profil_mahasiswa',[
-            "navbar"=>"Pengaturan"]);
-    });
+
+    Route::get('/edit_profil_mahasiswa',[MahasiswaController::class, 'edit_profil_mahasiswa'])->name('edit_profil_mahasiswa');
+    Route::put('/update_profil_mahasiswa',[MahasiswaController::class, 'update_profil_mahasiswa'])->name('update_profil_mahasiswa');
+
+    // Route::get('/edit_profil_mahasiswa', function(){
+    //     return view('mahasiswa/edit_profil_mahasiswa',[
+    //         "navbar"=>"Pengaturan"]);
+    // });
     Route::get('/pengaturan_mahasiswa', function(){
         return view('mahasiswa/pengaturan_mahasiswa',[
             "navbar"=>"Pengaturan"]);
@@ -155,7 +159,7 @@ Route::middleware(['auth','rolemelati:mahasiswa,dosen'])->group(function (){
     Route::get('/belajar_diskusi', [DiskusiController::class, 'belajar_diskusi'])->name('belajar_diskusi');
     Route::post('/tambah_diskusi', [DiskusiController::class, 'tambah_diskusi'])->name('tambah_diskusi');
     Route::post('/tambah_jawaban', [DiskusiController::class, 'tambah_jawaban'])->name('tambah_jawaban');
-    Route::get('/delete_komentar/{id}',[MatakuliahController::class, 'delete'])->name('delete');
+    Route::get('/delete_komentar/{id}',[DiskusiController::class, 'delete'])->name('delete');
 });
 // route yang tidak perlu loginnnnnnnn
 Route::middleware('guest')->group(function(){

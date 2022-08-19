@@ -14,7 +14,11 @@
                     <thead style="background-color: #D4F3FF;">
                         <tr>
                             <th>No</th>
-                            <th>Materi</th>
+                            {{-- <th>Mata Kuliah</th> --}}
+                            <th class="w-25">Nama Dosen</th>
+                            <th class="w-25">Materi</th>
+                            <th>Semester</th>
+                            <th>Kelas</th>
                             <th>Modul</th>
                             <th>Soal</th>
                             <th class="action-header text-center">Video</th>
@@ -28,7 +32,11 @@
                         @foreach ($datamateri as $rowmateri)
                             <tr>
                                 <td>{{ $no++ }}</td>
+                                {{-- <td>{{ $rowmateri->matakuliah->nama_matakuliah }}</td> --}}
+                                <td>{{ $rowmateri->users->nama }}</td>
                                 <td>{{ $rowmateri->judul_video }}</td>
+                                <td>{{ $rowmateri->semester }}</td>
+                                <td>{{ $rowmateri->kelas }}</td>
                                 <td class="text-decoration-underline"><a
                                         href="{{ asset('modul/') }}/{{ $rowmateri->upload_modul }}" target="_blank" download
                                         style="color: black">{{ $rowmateri->upload_modul }}</td></a>
@@ -67,11 +75,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <td class="text-center"><a href="" class="btn rounded-pill"
+                                <td class="text-center"><a href="" class="btn  rounded-pill px-4"
                                         style="background-color: #2390B9; color: white;" data-bs-toggle="modal"
-                                        data-bs-target="#staticBackdrop">Tonton</a></td>
+                                        data-bs-target="#modaltonton-{{ $rowmateri->id }}">Tonton</a></td>
                                 <!-- Modal -->
-                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                <div class="modal fade" id="modaltonton-{{ $rowmateri->id }}" data-bs-backdrop="static"
                                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-xl">
@@ -91,7 +99,7 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger rounded-pill"
+                                                <button type="button" class="btn rounded-pill btn-danger px-4" style="border-radius: 11px;"
                                                     data-bs-dismiss="modal">Tutup</button>
                                             </div>
                                         </div>

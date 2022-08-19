@@ -1,6 +1,6 @@
 @extends('layouts.main_mahasiswa')
 @push('css_costum')
-<link rel="stylesheet" href="{{ asset('css/style_mahasiswa/style-index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style_mahasiswa/style-index.css') }}">
 @endpush
 @section('konten_mahasiswa')
     <!-- AWAL HERO SECTION -->
@@ -15,14 +15,14 @@
                         <p class="text-caption">Selamat Datang👋</p>
                         <h1 class="title-text-big">
                             Dapatkan Ilmu<br class="d-lg-block d-none" />
-                            Sebanyak-banyaknya dengan aplikasi ini.
+                            Sebanyak-banyaknya dengan website ini.
                         </h1>
                         <div
                             class="d-flex flex-sm-row flex-column align-items-center mx-lg-0 mx-auto justify-content-center gap-3">
-                            <button class="btn d-inline-flex mb-md-0 btn-try text-white">
+                            <a href="#" class="text-decoration-none "><button class="btn d-inline-flex mb-md-0 btn-try text-white rounded-pill">
                                 Ayo Belajar
-                            </button>
-                            <button class="btn btn-outline">
+                            </button></a>
+                            <button class="btn btn-outline rounded-pill">
                                 <div class="d-flex align-items-center">
                                     <svg class="me-2" width="13" height="12" viewBox="0 0 13 13" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -30,14 +30,15 @@
                                             d="M10.9293 7.99988L6.66668 5.15788V10.8419L10.9293 7.99988ZM12.9173 8.27722L5.85134 12.9879C5.80115 13.0213 5.74283 13.0404 5.6826 13.0433C5.62238 13.0462 5.5625 13.0327 5.50934 13.0042C5.45619 12.9758 5.41175 12.9334 5.38075 12.8817C5.34976 12.83 5.33337 12.7708 5.33334 12.7105V3.28922C5.33337 3.22892 5.34976 3.16976 5.38075 3.11804C5.41175 3.06633 5.45619 3.02398 5.50934 2.99552C5.5625 2.96706 5.62238 2.95355 5.6826 2.95644C5.74283 2.95932 5.80115 2.97848 5.85134 3.01188L12.9173 7.72255C12.963 7.75299 13.0004 7.79423 13.0263 7.84261C13.0522 7.89099 13.0658 7.94501 13.0658 7.99988C13.0658 8.05475 13.0522 8.10878 13.0263 8.15716C13.0004 8.20553 12.963 8.24678 12.9173 8.27722Z"
                                             fill="#555B61" />
                                     </svg>
-                                    lihat Video Tentang Aplikasi
+                                    lihat Video Tentang Website Ini
                                 </div>
                             </button>
                         </div>
                     </div>
                     <!-- Right Column -->
                     <div class="right-column text-center d-flex justify-content-center pe-0">
-                        <img id="img-fluid" class="h-auto mw-100" src="{{ asset('img/hero-section.png') }}" alt="" />
+                        <img id="img-fluid" class="h-auto mw-100" src="{{ asset('img/hero-section.png') }}"
+                            alt="" />
                     </div>
                 </div>
             </section>
@@ -47,32 +48,21 @@
     <!-- AKHIR HERO SECTION -->
 
 
-                {{-- @dd(auth('mahasiswa')->check()) --}}
+    {{-- @dd(auth('mahasiswa')->check()) --}}
 
 
     <!-- AWAL  TENTANG APLIKASI -->
     <section class="tentang-aplikasi h-100 w-100 bg-white" style="box-sizing: border-box">
         <div class="content-2-2 container-fluid mx-auto p-0  position-relative" style="font-family: 'Poppins', sans-serif">
             <div class="text-center title-text">
-                <h1 class="text-fitur">TENTANG APLIKASI</h1>
+                <h1 class="text-fitur">TENTANG WEBSITE</h1>
                 <p class="text-judul-fitur">Media pembelajaran Teknik Informatika</p>
                 <p class="text-caption mt-3 lh-lg" style="margin-left: 6rem; margin-right: 6rem;">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium assumenda repudiandae nobis enim
-                    quisquam
-                    excepturi magnam eos, illum porro corrupti impedit, dolor suscipit? Perspiciatis magnam repudiandae in
-                    cupiditate dolores possimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
-                    voluptates.
-                    Id officia laborum eum dolore numquam eveniet, in ut culpa! Fugit ratione iste suscipit architecto
-                    recusandae
-                    voluptas itaque non repellat Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium
-                    assumenda
-                    repudiandae nobis enim quisquam
-                    excepturi magnam eos, illum porro corrupti impedit, dolor suscipit? Perspiciatis magnam repudiandae in
-                    cupiditate dolores possimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
-                    voluptates.
-                    Id officia laborum eum dolore numquam eveniet, in ut culpa! Fugit ratione iste suscipit architecto
-                    recusandae
-                    voluptas itaque non repellat
+                    Media pembelajaran ini dibangun untuk dapat menambah minat dan semangat kalian dalam mempelajari
+                    berbagai mata kuliah yang pada Program Studi Teknik Informatika Politeknik Negeri Pontianak,
+                    pembelajaran pada webiste ini di kemas dalma bentuk video yang akan di jelaskan oleh dosen-dosen mata
+                    kuliah masing-masing, terdapat beberapa fitur yang dapat kalian nikmati pada website ini seperti, menu
+                    belajar, diskusi dan showcase.
                 </p>
             </div>
 
@@ -84,8 +74,8 @@
                         </div>
                         <h3 class="icon-title">Belajar</h3>
                         <p class="text-caption">
-                            Lorem ipsum dolor sit amet.<br />
-                            Lorem ipsum dolor sit amet consectetur.
+                            Terdapat penjelasan pembelajaran dalam bentuk video dan juga terdapat modul beserta soal-soal yang dapat
+                            kalian kerjakan.
                         </p>
                     </div>
 
@@ -95,8 +85,8 @@
                         </div>
                         <h3 class="icon-title">Diskusi</h3>
                         <p class="text-caption">
-                            Lorem ipsum dolor sit amet.<br />
-                            Lorem ipsum dolor sit amet consectetur.
+                            Menyatukan mahasiswa dan dosen pada kolom pertanyaan agar dapat membagikan wawasan dan
+                            pengetahuan.
                         </p>
                     </div>
 
@@ -106,8 +96,7 @@
                         </div>
                         <h3 class="icon-title">Showcase</h3>
                         <p class="text-caption">
-                            Lorem ipsum dolor sit amet.<br />
-                            Lorem ipsum dolor sit amet consectetur.
+                            Terdapat banyak hasil karya mahasiswa dalam membuat suatu project. 
                         </p>
                     </div>
                 </div>
@@ -132,15 +121,14 @@
                         BELAJAR👨‍💻
                     </div>
                     <div class="headline text-judul-fitur">
-                        Lorem ipsum dolor sit. <br class="d-none d-md-block">
-                        Lorem. &amp; Lorem.
+                        Dengan video, <br class="d-none d-md-block">
+                        belajar akan lebih <br>menyenangkan
                     </div>
                     <div class="subheadline mt-4 text-caption">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br class="d-none d-md-block">
-                        Lorem ipsum dolor sit amet consectetur.
+                        Pembelajaran di kemas dengan video dengan <br>penjelasan yang lebih menarik.
                     </div>
                     <div class="button-header">
-                        <button class="btn btn-started">Ayo Belajar</button>
+                        <a href="#"><button class="btn btn-started rounded-pill">Ayo Belajar</button></a>
                     </div>
                 </div>
             </div>
@@ -160,15 +148,15 @@
                         DISKUSI🧏‍♂️
                     </div>
                     <div class="headline mt-3 text-judul-fitur">
-                        Lorem ipsum dolor sit. <br class="d-none d-md-block">
-                        Lorem. &amp; Lorem.
+                        Diskusi dapat menyatukan <br class="d-none d-md-block">
+                        kita semua.
                     </div>
                     <div class="subheadline mt-4 text-caption">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br class="d-none d-md-block">
-                        Lorem ipsum dolor sit amet consectetur.
+                        Pertanyaan yang di ajukan<br class="d-none d-md-block">
+                        akan di jawab oleh penguna webiste.
                     </div>
                     <div class="button-header">
-                        <button class="btn btn-started">Ayo Belajar</button>
+                        <a href="#"><button class="btn btn-started rounded-pill">Ayo Berdiskusi </button></a>
                     </div>
                 </div>
 
@@ -208,8 +196,8 @@
                                 Menambah semangat belajar
                             </h4>
                             <p class="text-caption">
-                                Lorem ipsum dolor sit amet consectetur adipisicing.<br class="d-sm-inline d-none" />
-                                Lorem ipsum dolor sit amet.
+                                Melihat hasil dari project yang di buat<br class="d-sm-inline d-none" />
+                                akan menambah semangat belajar yang lainnya.
                             </p>
                         </li>
                         <li class="list-unstyled" style="margin-bottom: 2rem">
@@ -221,8 +209,8 @@
                                 Menambah Wawasan
                             </h4>
                             <p class="text-caption">
-                                Lorem ipsum dolor sit amet consectetur adipisicing.<br class="d-sm-inline d-none" />
-                                Lorem ipsum dolor sit amet.
+                                Mengatahui apa saja<br class="d-sm-inline d-none" />
+                                project-project yang mahasiswa buat.
                             </p>
                         </li>
                         <li class="list-unstyled" style="margin-bottom: 4rem">
@@ -234,12 +222,12 @@
                                 Memperkaya Referensi
                             </h4>
                             <p class="text-caption">
-                                Lorem ipsum dolor sit amet consectetur adipisicing.<br class="d-sm-inline d-none" />
-                                Lorem ipsum dolor sit amet.
+                                Mendapatkan inspirasi dari<br class="d-sm-inline d-none" />
+                                project-project yang mahasiswa buat.
                             </p>
                         </li>
                     </ul>
-                    <button class="btn btn-learn text-white">Selengkapnya</button>
+                    <a href="#"><button class="btn btn-learn text-white rounded-pill">Selengkapnya</button></a>
                 </div>
             </div>
         </div>

@@ -27,7 +27,7 @@
                         <thead style="background-color: #D4F3FF;">
                             <tr>
                                 <th>No</th>
-                                <th>Nama</th>
+                                <th>Nama Mahasiswa</th>
                                 <th>NIM</th>
                                 <th>Jenis Kelamin</th>
                                 <th class="action-header text-center">Aksi</th>

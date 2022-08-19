@@ -27,7 +27,7 @@ class BelajarController extends Controller
     }
 
     public function belajar_video($id){
-        $datamateri = Materi::where('id_user',$id)->get();
+        $datamateri = Materi::where('id_matakuliah',$id)->get();
         return view('mahasiswa/belajar_video',[
                     "navbar"=>"Belajar",'datamateri'=> $datamateri
                 ]);

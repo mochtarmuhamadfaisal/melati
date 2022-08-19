@@ -30,7 +30,7 @@ class DiskusiController extends Controller
         $datajawaban->id_user = Auth::user()->id;
         $datajawaban->id_diskusi = $request->id_diskusi;
         $datajawaban->jawaban =$request->jawaban;
-        $datajawaban->save();
+    $datajawaban->save();
         return back();
     }
 
