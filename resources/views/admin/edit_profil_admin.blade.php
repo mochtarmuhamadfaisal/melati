@@ -7,7 +7,7 @@
                 <div class="d-flex justify-content-between align-items-center w-100">
                     <h2 class="nav-title">Edit Profil</h2>
                     <button id="toggle-navbar" onclick="toggleNavbar()">
-                        <img src="{{ asset('img/gue.jpg') }}" class="rounded-circle" alt="">
+                        <img src="{{ asset('foto') }}/{{ Auth::user()->foto }}" class="rounded-circle" alt="">
                     </button>
                 </div>
             </div>
@@ -76,12 +76,12 @@
 
                         <div class="mb-4">
                             <label for="formGroupExampleInput2" class="form-label fw-bold"
-                                style="color: #2390B9;">Password</label>
+                                style="color: #2390B9;">Password Baru</label>
                             <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput2"
                                 placeholder="Masukan password anda.." name="password">
                                 <span class="text-muted" style="font-size: 12px;">*kosongkan jika tidak ingin mengubah password</span>
-                           
                         </div>
+                        
                         <div class="mb-2">
                             <label for="formGroupExampleInput3" class="form-label fw-bold" style="color: #2390B9;">Jenis
                                 Kelamin</label>

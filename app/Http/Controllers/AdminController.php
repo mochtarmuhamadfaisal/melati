@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     public function profil_admin(){
-
         // $admin = User::where('role_id', 1)->get();
         return view('admin/profil_admin',[
                     "sidebar"=>"Pengaturan"

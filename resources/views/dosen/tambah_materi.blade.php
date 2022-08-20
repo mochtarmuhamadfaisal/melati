@@ -7,7 +7,7 @@
                 <div class="d-flex justify-content-between align-items-center w-100">
                     <h2 class="nav-title">Tambah Materi</h2>
                     <button id="toggle-navbar" onclick="toggleNavbar()">
-                        <img src="{{ asset('img/gue.jpg') }}" class="rounded-circle" alt="">
+                        <img src="{{ asset('foto') }}/{{ Auth::user()->foto }}" class="rounded-circle" alt="">
                     </button>
                 </div>
             </div>

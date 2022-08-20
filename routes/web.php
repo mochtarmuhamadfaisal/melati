@@ -12,6 +12,7 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\DasboardadminController;
 use App\Http\Controllers\DiskusiController;
+use App\Http\Controllers\ProfildosenController;
 use App\Http\Controllers\ShowcaseController;
 use App\Models\Showcase;
 
@@ -86,21 +87,25 @@ Route::middleware(['auth','rolemelati:dosen'])->group(function (){
             "sidebar"=>"Pengaturan"
         ]);
     });
-    Route::get('/profil_dosen', function(){
-        return view('dosen/profil_dosen',[
-            "sidebar"=>"Pengaturan"
-        ]);
-    });
-    Route::get('/edit_profil_dosen', function(){
-        return view('dosen/edit_profil_dosen',[
-            "sidebar"=>"Pengaturan"
-        ]);
-    });
+    // Route::get('/profil_dosen', function(){
+    //     return view('dosen/profil_dosen',[
+    //         "sidebar"=>"Pengaturan"
+    //     ]);
+    // });
+    // Route::get('/edit_profil_dosen', function(){
+    //     return view('dosen/edit_profil_dosen',[
+    //         "sidebar"=>"Pengaturan"
+    //     ]);
+    // });
     Route::get('/edit_password_dosen', function(){
         return view('dosen/edit_password_dosen',[
             "sidebar"=>"Pengaturan"
         ]);
     });
+
+    Route::get('/profil_dosen',[ProfildosenController::class, 'profil_dosen'])->name('profil_dosen');
+    Route::get('/tampilkan_profil_dosen',[ProfildosenController::class, 'tampilkan_profil_dosen'])->name('tampilkan_profil_dosen');
+    Route::put('/updatedata_profil_dosen',[ProfildosenController::class, 'updatedata_profil_dosen'])->name('updatedata_profil_dosen');
 
      //materi
      Route::get('/materi',[MateriController::class, 'materi'])->name('materi');

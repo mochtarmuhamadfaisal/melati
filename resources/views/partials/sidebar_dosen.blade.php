@@ -10,7 +10,7 @@
                 </button>
 
                 <div class="profile-img">
-                    <img src="{{ asset('img/gue.jpg') }}" class="rounded-circle" style="width: 100%; object-fit: cover"
+                    <img src="{{ asset('foto') }}/{{ Auth::user()->foto }}" class="rounded-circle" style="width: 90px; height: 90px; object-fit: cover"
                         alt="">
                 </div>
 

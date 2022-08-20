@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="mb-5">
-                            <label for="formGroupExampleInput2" class="form-label">Password</label>
+                            <label for="formGroupExampleInput2" class="form-label">Password Baru</label>
                             <input type="text" name="password" class="form-control px-4 " id="formGroupExampleInput2"
                                 placeholder="Masukan Password anda.."
                                 style="border-radius: 15px; height: 3rem; border-color: #2390B9;">
