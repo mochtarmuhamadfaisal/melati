@@ -24,14 +24,14 @@
                             <div
                                 class="d-flex flex-column justify-content-around align-items-start employee-stat">
                                 <h5 class="content-desc">Pengaturan</h5>
-                                <h3 class="statistics-value" style="font-size: 27px;">Profil & Password</h3>
+                                <h3 class="statistics-value">Profil</h3>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
 
-            {{-- <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <a href="/edit_password_admin" class="text-decoration-none">
                     <div class="statistics-card simple">
                         <div class="d-flex justify-content-between align-items-center">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </a>
-            </div> --}}
+            </div>
 
             <!-- <div class="col-12 col-md-6 col-lg-4">
                 <div class="statistics-card simple">
@@ -62,4 +62,18 @@
     </div>
 </div>
 <!-- Awal Konten -->
+
+{{-- allert sweet allert --}}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    @if (Session::has('berhasil'))
+        swal({
+            title: "Berhasil!",
+            text: "{{ Session::get('berhasil') }}",
+            icon: "success",
+            button: "Oke",
+        });
+    @endif
+</script>
 @endsection

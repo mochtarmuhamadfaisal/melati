@@ -62,13 +62,14 @@
                                 style="border-radius: 15px; height: 3rem; border-color: #2390B9;" value="{{ Auth::user()->username }}">
                         </div>
 
-                        <div class="mb-5">
+                        {{-- <div class="mb-5">
                             <label for="formGroupExampleInput2" class="form-label">Password Baru</label>
-                            <input type="text" name="password" class="form-control px-4 " id="formGroupExampleInput2"
-                                placeholder="Masukan Password anda.."
+                            <input type="password" name="password" class="form-control px-4 " id="formGroupExampleInput2"
+                                placeholder="Masukan Password anda.." 
                                 style="border-radius: 15px; height: 3rem; border-color: #2390B9;">
-                                <span class="text-muted" style="font-size: 12px;">*kosongkan jika tidak ingin mengubah password</span>
-                        </div>
+                                <span class="text-muted" style="font-size: 12px;">*kosongkan jika tidak ingin mengubah password</span><br>
+                                <span class="text-muted" style="font-size: 12px;">*Isikan minimal 6 karakter</span>
+                        </div> --}}
 
                         <label class="form-label" for="inlineFormSelectPref">Jenis Kelamin</label>
                         <select class="form-select px-4" name="jenis_kelamin" id="inlineFormSelectPref"

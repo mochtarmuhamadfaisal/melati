@@ -69,14 +69,18 @@
                                 name="username" value="{{ Auth::user()->username }}" placeholder="">
                         </div>
 
-                        <div class="mb-4">
-                            <label for="formGroupExampleInput2" class="form-label fw-bold" style="color: #2390B9;">Password
-                                Baru</label>
-                            <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput2"
-                                placeholder="Masukan password anda.." name="password">
-                            <span class="text-muted" style="font-size: 12px;">*kosongkan jika tidak ingin mengubah
-                                password</span>
-                        </div>
+                        {{-- <div class="mb-4">
+                            <label for="formGroupExampleInput2" class="form-label fw-bold" style="color: #2390B9;">Password</label>
+                            <input type="password" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput2"
+                                placeholder="Masukan password anda.." name="password" required>
+                            <span class="text-muted" style="font-size: 12px;">*Selalu isi password jika ingin mengubah profil, password baru ataupun password lama</span><br>
+                            <span class="text-muted" style="font-size: 12px;">*Isi password minimal 6 karakter</span>
+                            <div class=" text-dark bg-warning mt-2 p-1 rounded-3" style="font-size: 12px; width: 100%;">
+                                catatan:<br>
+                                *Selalu isi password jika ingin mengubah profil, password baru ataupun password &nbsp;&nbsp;lama <br>
+                                *Isi password minimal 6 karakter
+                            </div>
+                        </div> --}}
 
                         <div class="mb-2">
                             <label for="formGroupExampleInput3" class="form-label fw-bold" style="color: #2390B9;">Jenis

@@ -15,14 +15,14 @@
                 <div class="col-lg-3 mt-lg-4 mt-4 ">
                     <div class="card" style="width: 18rem; border-radius: 14px;">
                         <div class="card-body">
-                            <h5 class="card-title text-fitur" style="font-size: 18px;">Edit Profil & password🙍‍♂️</h5>
+                            <h5 class="card-title text-fitur" style="font-size: 18px;">Edit Profil🙍‍♂️</h5>
                             <p class="card-text text-caption lh-base">Sesuaikan data anda dengan benar.</p>
                             <a href="/edit_profil_mahasiswa" class="btn btn-aksi">Edit</a>
                         </div>
                     </div>
                 </div>
 
-                {{-- <div class="col-lg-3 mt-lg-4 mt-4 ">
+                <div class="col-lg-3 mt-lg-4 mt-4 ">
                     <div class="card" style="width: 18rem; border-radius: 14px;">
                         <div class="card-body">
                             <h5 class="card-title text-fitur">Edit Password🔐</h5>
@@ -30,7 +30,7 @@
                             <a href="/edit_password_mahasiswa" class="btn btn-aksi">Edit</a>
                         </div>
                     </div>
-                </div> --}}
+                </div>
 
                 <div class="col-lg-3 mt-lg-4 mt-4 ">
                     <div class="card" style="width: 18rem; border-radius: 14px;">
@@ -45,5 +45,20 @@
         </div>
     </div>
     <!-- AKHIR PAGE PENGATURAN -->
+
+
+    {{-- allert sweet allert --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        @if (Session::has('berhasil'))
+            swal({
+                title: "Berhasil!",
+                text: "{{ Session::get('berhasil') }}",
+                icon: "success",
+                button: "Oke",
+            });
+        @endif
+    </script>
     
 @endsection

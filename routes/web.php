@@ -31,16 +31,12 @@ use App\Models\Showcase;
 Route::middleware(['auth', 'rolemelati:admin'])->group(function () {
     //admin
     Route::get('/dashboard_admin', [DasboardadminController::class, 'dashboard_admin'])->name('dashboard.admin');
-    Route::get('/pengaturan_admin', function(){
-        return view('admin/pengaturan_admin',[
-            "sidebar"=>"Pengaturan"
-        ]);
-    });
-    Route::get('/edit_password_admin', function(){
-        return view('admin/edit_password_admin',[
-            "sidebar"=>"Pengaturan"
-        ]);
-    });
+    
+    Route::get('/pengaturan_admin',[AdminController::class, 'pengaturan_admin'])->name('pengaturan_admin');
+
+    Route::get('/edit_password_admin',[AdminController::class, 'edit_password_admin'])->name('edit_password_admin');
+    Route::put('/update_password_admin',[AdminController::class, 'update_password_admin'])->name('update_password_admin');
+
     Route::get('/profil_admin',[AdminController::class, 'profil_admin'])->name('profil_admin');
     Route::get('/tampilkan_profil_admin',[AdminController::class, 'tampilkan_profil_admin'])->name('tampilkan_profil_admin');
     Route::put('/updatedata_profil_admin',[AdminController::class, 'updatedata_profil_admin'])->name('updatedata_profil_admin');
@@ -82,26 +78,25 @@ Route::middleware(['auth','rolemelati:dosen'])->group(function (){
     //         "sidebar"=>"Dashboard"
     //     ]);
     // })->name('dashboard.dosen');
-    Route::get('/pengaturan_dosen', function(){
-        return view('dosen/pengaturan_dosen',[
-            "sidebar"=>"Pengaturan"
-        ]);
-    });
+
+    Route::get('/pengaturan_dosen',[DosenController::class, 'pengaturan_dosen'])->name('pengaturan_dosen');
+
+    
     // Route::get('/profil_dosen', function(){
     //     return view('dosen/profil_dosen',[
     //         "sidebar"=>"Pengaturan"
     //     ]);
     // });
-    // Route::get('/edit_profil_dosen', function(){
-    //     return view('dosen/edit_profil_dosen',[
-    //         "sidebar"=>"Pengaturan"
-    //     ]);
-    // });
-    Route::get('/edit_password_dosen', function(){
-        return view('dosen/edit_password_dosen',[
+
+    Route::get('/edit_profil_dosen', function(){
+        return view('dosen/edit_profil_dosen',[
             "sidebar"=>"Pengaturan"
         ]);
     });
+
+    Route::get('/edit_password_dosen',[ProfildosenController::class, 'edit_password_dosen'])->name('edit_password_dosen');
+    Route::put('/update_password_dosen',[ProfildosenController::class, 'update_password_dosen'])->name('update_password_dosen');
+
 
     Route::get('/profil_dosen',[ProfildosenController::class, 'profil_dosen'])->name('profil_dosen');
     Route::get('/tampilkan_profil_dosen',[ProfildosenController::class, 'tampilkan_profil_dosen'])->name('tampilkan_profil_dosen');
@@ -130,14 +125,18 @@ Route::middleware(['auth','rolemelati:mahasiswa'])->group(function (){
     //     return view('mahasiswa/edit_profil_mahasiswa',[
     //         "navbar"=>"Pengaturan"]);
     // });
-    Route::get('/pengaturan_mahasiswa', function(){
-        return view('mahasiswa/pengaturan_mahasiswa',[
-            "navbar"=>"Pengaturan"]);
-    });
-    Route::get('/edit_password_mahasiswa', function(){
-        return view('mahasiswa/edit_password_mahasiswa',[
-            "navbar"=>"Pengaturan"]);
-    });
+
+    Route::get('/pengaturan_mahasiswa',[MahasiswaController::class, 'pengaturan_mahasiswa'])->name('pengaturan_mahasiswa');
+
+    // Route::get('/pengaturan_mahasiswa', function(){
+    //     return view('mahasiswa/pengaturan_mahasiswa',[
+    //         "navbar"=>"Pengaturan"]);
+    // })->name('pengaturan_mahasiswa');
+
+    Route::get('/edit_password_mahasiswa',[MahasiswaController::class, 'edit_password_mahasiswa'])->name('edit_password_mahasiswa');
+    Route::put('/update_password_mahasiswa',[MahasiswaController::class, 'update_password_mahasiswa'])->name('update_password_mahasiswa');
+
+    
 
     //belajar video
     Route::get('/fillter',[BelajarController::class, 'fillter'])->name('fillter');

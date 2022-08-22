@@ -79,7 +79,8 @@
                                 style="color: #2390B9;">Password Baru</label>
                             <input type="text" class="form-control rounded-pill p-2 px-3" id="formGroupExampleInput2"
                                 placeholder="Masukan password anda.." name="password">
-                                <span class="text-muted" style="font-size: 12px;">*kosongkan jika tidak ingin mengubah password</span>
+                                <span class="text-muted" style="font-size: 12px;">*kosongkan jika tidak ingin mengubah password</span><br>
+                                <span class="text-muted" style="font-size: 12px;">*Isi password minimal 6 karakter</span>
                         </div>
                         
                         <div class="mb-2">

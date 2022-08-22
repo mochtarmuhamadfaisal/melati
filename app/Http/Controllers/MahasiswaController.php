@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PasswordRequest;
 use App\Models\Mahasiswa;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -96,7 +97,6 @@ class MahasiswaController extends Controller
         $update_data_mahasiswa = User::where('id', Auth::user()->id)->first();
         $update_data_mahasiswa->nama = $request->nama;
         $update_data_mahasiswa->username = $request->username;
-        $update_data_mahasiswa->password = bcrypt($request->password);
         $update_data_mahasiswa->jenis_kelamin = $request->jenis_kelamin;
 
         if ($request->hasFile('foto')) {
@@ -110,4 +110,24 @@ class MahasiswaController extends Controller
 
         return redirect()->route('edit_profil_mahasiswa')->with('berhasil', 'Profil berhasil di UBAH');
     }
+    // ubah password mahasiswa
+    public function edit_password_mahasiswa (){
+        return view('mahasiswa/edit_password_mahasiswa',[
+            "navbar"=>"Pengaturan"]);
+    }
+
+    public function update_password_mahasiswa(PasswordRequest $request){
+        $update_data_mahasiswa = User::where('id', Auth::user()->id)->first();
+        $update_data_mahasiswa->password = bcrypt($request->password);
+        $update_data_mahasiswa->save();
+
+        return redirect()->route('pengaturan_mahasiswa')->with('berhasil', 'Password berhasil di UBAH');
+    }
+
+    public function pengaturan_mahasiswa (){
+        return view('mahasiswa/pengaturan_mahasiswa',[
+            "navbar"=>"Pengaturan"]);
+    }
+
 }
+

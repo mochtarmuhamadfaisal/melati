@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PasswordRequest;
 use App\Models\User;
 use App\Models\Admin;
 use Illuminate\Http\Request;
@@ -27,7 +28,6 @@ class AdminController extends Controller
         $update_data_admin = User::where('id', Auth::user()->id)->first();
         $update_data_admin->nama = $request->nama;
         $update_data_admin->username = $request->username;
-        $update_data_admin->password = bcrypt($request->password);
         $update_data_admin->jenis_kelamin = $request->jenis_kelamin;
 
         if ($request->hasFile('foto')) {
@@ -42,5 +42,26 @@ class AdminController extends Controller
         // $datamahasiswa = Mahasiswa::find($id);
         // $datamahasiswa->update($request->all());
         return redirect()->route('profil_admin')->with('berhasil', 'Profil berhasil di EDIT');
+    }
+
+    public function edit_password_admin (){
+        return view('admin/edit_password_admin',[
+            "sidebar"=>"Pengaturan"
+        ]);
+    }
+
+    public function update_password_admin(PasswordRequest $request){
+        
+        $update_data_admin = User::where('id', Auth::user()->id)->first();
+        $update_data_admin->password = bcrypt($request->password);
+        $update_data_admin->save();
+
+        return redirect()->route('pengaturan_admin')->with('berhasil', 'Password berhasil di EDIT');
+    }
+
+    public function pengaturan_admin(){
+        return view('admin/pengaturan_admin',[
+            "sidebar"=>"Pengaturan"
+        ]);
     }
 }

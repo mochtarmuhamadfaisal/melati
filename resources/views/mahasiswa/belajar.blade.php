@@ -3,6 +3,13 @@
     <link rel="stylesheet" href="{{ asset('css/style_mahasiswa/style-belajar.css') }}">
 @endpush
 @section('konten_mahasiswa')
+<style>
+    @media only screen and (max-width: 768px){
+        .tabelbelajar{
+          overflow-x: auto
+        }
+    }
+</style>
     <!-- AWAL BELAJAR-PILIH KELAS & MATAKULIAH -->
     <section class="dashboard my-5">
         <div class="container belajar" style="margin-left: 5rem;">
@@ -55,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="row my-5" style="width: 90%">
+            <div class="row my-5 tabelbelajar" style="width: 90%">
                 {{-- <table class="table scroll" style="margin-left: 0.4rem;">
                     <tbody class="ini-batang-scroll" style="height: 100px;">
                         @foreach ($datamateri as $rowmateri) 

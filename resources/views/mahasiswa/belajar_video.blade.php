@@ -3,13 +3,26 @@
     <link rel="stylesheet" href="{{ asset('css/style_mahasiswa/style-belajar-video.css') }}">
 @endpush
 @section('konten_mahasiswa')
+<style>
+ @media only screen and (max-width: 768px){
+  .tabelmateri{
+    overflow-x: auto
+  }
+
+  iframe.videopembelajaran{
+    width: 340px; 
+    height: 400px;
+  }
+}
+</style>
+
     <!-- AWAL BELAJAR-VIDEO -->
-    <h1 class="text-fitur text-center" style="margin-top: 6rem;">BELAJAR👨‍💻</h1>
+    <h1 class="text-fitur text-center ww" style="margin-top: 6rem;">BELAJAR👨‍💻</h1>
     <h3 class="heading text-judul-fitur text-center">Vidio Pembelajaran</h3>
     <!-- AWAL Table Untuk dosen  -->
     <div class="container-fluid ">
         <div class="row d-flex justify-content-center">
-            <div class="col-9 mt-4">
+            <div class="col-9 mt-4 tabelmateri">
                 <table id="example" class="table table-borderless " style="height: 50px">
                     <thead style="background-color: #D4F3FF;">
                         <tr>
@@ -79,7 +92,7 @@
                                         style="background-color: #2390B9; color: white;" data-bs-toggle="modal"
                                         data-bs-target="#modaltonton-{{ $rowmateri->id }}">Tonton</a></td>
                                 <!-- Modal -->
-                                <div class="modal fade" id="modaltonton-{{ $rowmateri->id }}" data-bs-backdrop="static"
+                                <div class="modal fade inimodalnontn" id="modaltonton-{{ $rowmateri->id }}" data-bs-backdrop="static"
                                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-xl">
@@ -89,7 +102,7 @@
                                                     {{ $rowmateri->judul_video }}</h5>
                                             </div>
                                             <div class="modal-body">
-                                                <iframe width="1100" height="500" src="{{ $rowmateri->link_video }}"
+                                                <iframe class="videopembelajaran" width="1100" height="500" src="{{ $rowmateri->link_video }}"
                                                     title="YouTube video player" frameborder="0"
                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                     allowfullscreen></iframe>

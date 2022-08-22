@@ -101,4 +101,10 @@ class DosenController extends Controller
         $datadosen = User::where('id',$id)->delete();
         return redirect()->route('dosen')->with('berhasil', 'Akun dosen berhasil di HAPUS');
     }
+
+    public function pengaturan_dosen (){
+        return view('dosen/pengaturan_dosen',[
+            "sidebar"=>"Pengaturan"
+        ]);
+    }
 }
