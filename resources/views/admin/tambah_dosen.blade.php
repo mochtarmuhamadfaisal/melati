@@ -21,7 +21,7 @@
                         <label for="formGroupExampleInput" class="form-label fw-bold" style="color: #2390B9;">Nama
                             Dosen</label>
                         <input type="text" name="nama" class="form-control rounded-pill p-2 px-3"
-                            id="formGroupExampleInput" placeholder="Masukan Nama Mahasiswa..."  required autofocus>
+                            id="formGroupExampleInput" placeholder="Masukan Nama Dosen..."  required autofocus>
                         @error('nama')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror

@@ -28,14 +28,14 @@
                                 <th>No</th>
                                 <th>Semester</th>
                                 <th>Kelas</th>
-                                <th>Mata Kuliah</th>
+                                <th class="w-25">Mata Kuliah</th>
                                 {{-- <th>Link Video</th> --}}
-                                <th>Judul Materi</th>
+                                <th class="w-50">Judul Materi</th>
                                 {{-- <th>Deskripsi Materi</th> --}}
                                 {{-- <th>Upload Materi</th> --}}
                                 {{-- <th>Upload Soal</th> --}}
                                 {{-- <th>Password Soal</th> --}}
-                                <th class="action-header">Aksi</th>
+                                <th class="action-header w-25">Aksi</th>
                             </tr>
                         </thead>
 
@@ -59,7 +59,7 @@
                                     {{-- <td>{{ $rowmateri->password_soal }}</td> --}}
                                     {{-- <td>{{ $rowmateri->link_grupdiskusi }}</td>
                                 <td>{{ $rowmateri->password_diskusi }}</td> --}}
-                                    <td>
+                                    <td class="">
                                         <button class="btn-transaction bg-info text-white" data-bs-toggle="modal"
                                             data-bs-target="#detailmateri-{{ $rowmateri->id }}">
                                             Detail

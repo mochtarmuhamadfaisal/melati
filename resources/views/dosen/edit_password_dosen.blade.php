@@ -23,6 +23,7 @@
                         <label for="exampleInputPassword1" class="form-label fw-bold"
                             style="color: #2390B9;">Password Baru</label>
                         <input type="password" name="password" class="form-control rounded-pill p-2 px-3 @error('password') is-invalid @enderror" id="pswbarudosen" placeholder="Masukan Password anda...">
+                        <h5 class="text-muted mt-2 fw-light" style="font-size: 12px;">*Kosongkan form jika tidak ingin mengubah password</span></h5>
                         <input class=" mt-3" type="checkbox" onclick="myFunction_pswbarudosen()">Tampilkan <br>
                         <span class ="text-danger">@error('password') {{$message}} @enderror</span>
                     </div>

@@ -28,7 +28,7 @@
                         <div class="mb-5">
                             <label for="exampleFormControlTextarea1" class="form-label">Deskripsi Project</label>
                             <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" placeholder="Masukan deskripsi project anda.."
-                                rows="5" style="border-radius: 15px; border-color: #2390B9;" name="deskripsi_project"
+                                rows="5" style="border-radius: 15px; border-color: #2390B9;" name="deskripsi_project" 
                                 value="{{ $datashowcase->deskripsi_project }}">{{ $datashowcase->deskripsi_project }}</textarea>
                         </div>
 
@@ -73,11 +73,11 @@
                         </div>
 
                         <div class="submit d-flex justify-content-end mt-5 col-8 col-sm-12">
-                            <button type="submit" class="btn btn-lg btn-submit rounded-pill mb-5 h-auto border-0" id="submit">Upload
+                            <button type="submit" class="btn btn-lg btn-submit rounded-pill mb-5 h-auto border-0 rounded-pill" id="submit">Upload
                                 Project </button>
                         </div>
-                        <a href="/pengaturan_mahasiswa" class="text-decoration-none " style="color: #2390B9;">
-                            <i class='bx bx-chevron-left mb-5 mb-lg-0'></i>Kembali ke pengaturan</a>
+                        <a href="/showcase" class="text-decoration-none " style="color: #2390B9;">
+                            <i class='bx bx-chevron-left mb-5 mb-lg-0'></i>Kembali ke showcase</a>
                     </div>
                 </div>
             </form>

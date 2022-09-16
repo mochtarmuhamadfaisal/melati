@@ -41,13 +41,17 @@
                         <div class="col-lg-6 col-12">
                             <form action="#" class="basic-form">
                                 <div class="mb-4">
+                                    <h5 class="fw-bold" style="color: #2390B9;">Foto</h5>
+                                    <img src="{{ asset('foto') }}/{{ $datashowcase->users->foto }}" width="120px;" height="120px" alt="" class="rounded-circle me-1 mb-3" style="border: solid 3px #2390B9; object-fit: cover;">
+                                </div>
+                                <div class="mb-4">
                                     <h5 class="fw-bold" style="color: #2390B9;">Nama</h5>
                                     <p class="mb-5">{{ $datashowcase->users->nama }}</p>
                                 </div>
-                                <div class="mb-5">
+                                {{-- <div class="mb-5">
                                     <h5 class="fw-bold" style="color: #2390B9;">NIM</h5>
                                     <p>{{ $datashowcase->users->username }}</p>
-                                </div>
+                                </div> --}}
                                 <div class="mb-5">
                                     <h5 class="fw-bold" style="color: #2390B9;">Mata Kuliah</h5>
                                     <p>{{ $datashowcase->matakuliah->nama_matakuliah }}</p>

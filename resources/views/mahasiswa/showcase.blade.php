@@ -48,9 +48,9 @@
                                 <div class="card-body">
                                     <blockquote class="blockquote mb-0">
                                         <p>Anda belum mengupload data showcase</p>
-                                        <footer class="blockquote-footer rounded-pill">Silahkan upload<cite
+                                        <footer class="blockquote-footer rounded-pill">Silahkan upload <cite
                                                 title="Source Title">showcase anda😎</cite></footer>
-                                        <a href="/insertdata_showcase" class="btn btn-primary">Upload Showcase</a>
+                                        <a href="/insertdata_showcase" class="btn btn-primary rounded-pill">Upload Showcase</a>
                                     </blockquote>
                                 </div>
                             </div>
@@ -71,13 +71,13 @@
                 @foreach ($datashowcase as $datashowcasee)
                 @if (auth()->check())
                         @if ($datashowcasee->id_user != Auth::user()->id)
-                            <div class="card border-0 rounded-3 ms-2 mb-5" style="width: 20rem;">
+                            <div class="card border-0 rounded-3 ms-2 mb-5" style="width: 20rem; ">
                                 <img src="{{ asset('showcase') }}/{{ $datashowcasee->foto }}" class="card-img-top"
                                     alt="..."
-                                    style="border-radius: 18px; width: 18rem; height: 18rem; object-fit: cover">
+                                    style=" border-radius: 18px; width: 18rem; height: 18rem; object-fit: cover">
                                 <div class="card-body mt-2">
                                     <h5 class="card-title">{{ $datashowcasee->judul_project }}</h5>
-                                    <p class="text-caption">{!! kata($datashowcasee->deskripsi_project, $limit = 15, $end = ' ... ') !!}</p>
+                                    <p class="text-caption">{!! kata($datashowcasee->deskripsi_project, $limit = 10, $end = ' ... ') !!}</p>
                                     <a href="/showcase_detail/{{ $datashowcasee->id }}" class="btn rounded-pill">Selengkapnya</a>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@
                             style="border-radius: 18px; width: 18rem; height: 18rem; object-fit: cover">
                         <div class="card-body mt-2">
                             <h5 class="card-title">{{ $datashowcasee->judul_project }}</h5>
-                            <p class="text-caption">{!! kata($datashowcasee->deskripsi_project, $limit = 15, $end = ' ... ') !!}</p>
+                            <p class="text-caption">{!! kata($datashowcasee->deskripsi_project, $limit = 10, $end = ' ... ') !!}</p>
                             <a href="/showcase_detail/{{ $datashowcasee->id }}" class="btn rounded-pill">Selengkapnya</a>
                         </div>
                     </div>

@@ -20,7 +20,8 @@
             <h2 class="footer-text-title">Alamat</h2>
             <nav class="list-unstyled">
               <li class="list-space">
-                <a href="#" class="list-menu text-caption">Jl. Ahmad Yani Bansir Laut</a>
+                <a href="https://www.google.com/maps/place/TEKNIK+INFORMATIKA+POLITEKNIK+NEGERI+PONTIANAK/@-0.0549427,109.3451261,19z/data=!4m5!3m4!1s0x2e1d5909668af117:0x6c9e9bfb351f0b66!8m2!3d-0.05505!4d109.3452984" 
+                target ="_blank" class="list-menu text-caption">Jl. Ahmad Yani Bansir Laut</a>
               </li>
               <li class="list-space">
                 <a href="#" class="list-menu text-caption">(0561) 12782</a>
@@ -28,28 +29,22 @@
               <li class="list-space">
                 <a href="#" class="list-menu text-caption">ti@elektro.polnep.ac.id</a>
               </li>
-              <!-- <li class="list-space">
-								<a href="" class="list-menu text-caption">Analytic Tool</a>
-							</li>
-							<li class="list-space">
-								<a href="" class="list-menu text-caption">Story</a>
-							</li> -->
             </nav>
           </div>
           <div class="col-lg-3 col-md-6">
             <h2 class="footer-text-title">Link Terkait</h2>
             <nav class="list-unstyled">
               <li class="list-space">
-                <a href="#" class="list-menu text-caption">E-learning</a>
+                <a href="https://elearning.elektro.polnep.ac.id/" target="_blank" class="list-menu text-caption">E-learning</a>
               </li>
               <li class="list-space">
-                <a href="#" class="list-menu text-caption">SEMESTA</a>
+                <a href="https://semesta.elektro.polnep.ac.id/" target="_blank"  class="list-menu text-caption">SEMESTA</a>
               </li>
               <li class="list-space">
-                <a href="#" class="list-menu text-caption">Elektro Polnep</a>
+                <a href="http://elektro.polnep.ac.id/" target="_blank"  class="list-menu text-caption">Elektro Polnep</a>
               </li>
               <li class="list-space">
-                <a href="#" class="list-menu text-caption">Politekni Negeri Pontianak</a>
+                <a href="https://polnep.ac.id/" target="_blank"  class="list-menu text-caption">Politekni Negeri Pontianak</a>
               </li>
             </nav>
           </div>
@@ -57,13 +52,13 @@
             <h2 class="footer-text-title">Lainnya</h2>
             <nav class="list-unstyled">
               <li class="list-space">
-                <a href="#" class="list-menu text-caption"></a>
+                <a href="#" target="_blank"  class="list-menu text-caption"></a>
               </li>
               <li class="list-space">
-                <a href="#" class="list-menu text-caption"></a>
+                <a href="#" target="_blank"  class="list-menu text-caption"></a>
               </li>
               <li class="list-space">
-                <a href="#" class="list-menu text-caption"></a>
+                <a href="#" target="_blank"  class="list-menu text-caption"></a>
               </li>
             </nav>
           </div>
@@ -76,7 +71,7 @@
         </div>
         <div class="mx-auto d-flex flex-column flex-lg-row align-items-center footer-info-space gap-4">
           <div class="d-flex title-font font-medium align-items-center gap-4">
-            <a href="">
+            <a href="https://www.facebook.com/POLNEP.Politeknik.Negeri.Pontianak?_rdc=1&_rdr" target="_blank">
               <svg class="social-media-c" width="30" height="30" viewBox="0 0 30 30" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <circle cx="15" cy="15" r="15" fill="#C7C7C7" />
@@ -93,7 +88,7 @@
               </svg>
             </a>
 
-            <a href="">
+            {{-- <a href="">
               <svg class="social-media-c" width="30" height="30" viewBox="0 0 30 30" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <circle cx="15" cy="15" r="15" fill="#C7C7C7" />
@@ -108,9 +103,9 @@
                   </clipPath>
                 </defs>
               </svg>
-            </a>
+            </a> --}}
 
-            <a href="">
+            <a href="https://www.instagram.com/mediapolnep/" target="_blank">
               <svg class="social-media-p" width="30" height="30" viewBox="0 0 30 30" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path

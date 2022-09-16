@@ -18,49 +18,51 @@
 
         <div class="row">
             <div class="col-12">
-                <div class="btn-content  mb-1 mt-3">
+                <div class="btn-content  mb-4 mt-3">
                     <a href="/tambah_matakuliah" class="btn btn-tambahakun ms-lg-0 ms-3"><span class="fw-bold">+</span>
                         Tambah Mata Kuliah</a>
                 </div>
 
 
-                <!-- AWAL Table Untuk Mata Kuliah  -->
-                <table class="table table-borderless w-50 active mt-4 ms-lg-0 ms-3" id="table-all">
-                    <thead style="background-color: #D4F3FF;">
-                        <tr>
-                            <th>No</th>
-                            <th>Mata Kuliah</th>
-                            <th class="action-header text-center">Aksi</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        @php
-                        $no = 1;
-                        @endphp
-                        @foreach ($datamatakuliah as $rowmk)
-                        <tr>
-                            <td>{{ $no++ }}</td>   
-                            <td>
-                                <div>
-                                    <div class="d-flex flex-column justify-content-center align-items-start mt-2">
-                                        <h5 class="transaction-game">{{ $rowmk->nama_matakuliah }}</h5>
+                <div class="w-75">
+                    <!-- AWAL Table Untuk Mata Kuliah  -->
+                    <table class="table table-borderless  active mt-4 ms-lg-0 ms-3 " id="example" >
+                        <thead style="background-color: #D4F3FF;">
+                            <tr>
+                                <th>No</th>
+                                <th>Mata Kuliah</th>
+                                <th class="action-header text-center">Aksi</th>
+                            </tr>
+                        </thead>
+    
+                        <tbody>
+                            @php
+                            $no = 1;
+                            @endphp
+                            @foreach ($datamatakuliah as $rowmk)
+                            <tr>
+                                <td>{{ $no++ }}</td>   
+                                <td>
+                                    <div>
+                                        <div class="d-flex flex-column justify-content-center align-items-start mt-2">
+                                            <h5 class="transaction-game">{{ $rowmk->nama_matakuliah }}</h5>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-
-                            <td class="action">
-                                <a href="/tampilkan_matakuliah/{{ $rowmk->id }}" class="text-decoration-none"><button
-                                        class="btn-transaction bg-warning text-white mx-auto">Edit</button></a>
-                                <button class="btn-transaction bg-danger text-white mx-auto hapusmatakuliah" 
-                                data-bs-toggle="modal" data-bs-target="#exampleModal" 
-                                data-nama="{{ $rowmk->nama_matakuliah }}" 
-                                onclick="hapus(`{{ $rowmk->id }}`,`{{ $rowmk->nama_matakuliah }}`)">Hapus</button>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                                </td>
+    
+                                <td class="action">
+                                    <a href="/tampilkan_matakuliah/{{ $rowmk->id }}" class="text-decoration-none"><button
+                                            class="btn-transaction bg-warning text-white mx-auto">Edit</button></a>
+                                    <button class="btn-transaction bg-danger text-white mx-auto hapusmatakuliah" 
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" 
+                                    data-nama="{{ $rowmk->nama_matakuliah }}" 
+                                    onclick="hapus(`{{ $rowmk->id }}`,`{{ $rowmk->nama_matakuliah }}`)">Hapus</button>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
                 <!-- AKHIR Table Untuk Mata Kuliah  -->
                 <form action="/delete/" class="hapusmatakuliah">
                     @csrf

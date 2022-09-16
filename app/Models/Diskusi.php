@@ -11,4 +11,8 @@ class Diskusi extends Model
     public function users(){
         return $this->belongsTo(User::class,'id_user','id');
     }
+
+    public function kategori(){
+        return $this->belongsTo(Matakuliah::class,'id_kategori','id');
+    }
 }

@@ -2,7 +2,7 @@
     <div class="container-fluid mx-auto p-0  position-relative header-2-1" style="font-family: 'Poppins', sans-serif;">
         <nav class="navbar navbar-expand-lg navbar-light bg-white ">
             <a href="#">
-                <img style="margin-right: 0.75rem" src="{{ asset('img/logo.png') }}" alt="" />
+                <img style="margin-right: 0.75rem" src="{{ asset('img/Logo.png') }}" alt="" />
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="modal"
                 data-bs-target="#targetModal-item">

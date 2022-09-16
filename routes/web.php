@@ -164,6 +164,10 @@ Route::middleware(['auth','rolemelati:mahasiswa,dosen'])->group(function (){
     Route::post('/tambah_diskusi', [DiskusiController::class, 'tambah_diskusi'])->name('tambah_diskusi');
     Route::post('/tambah_jawaban', [DiskusiController::class, 'tambah_jawaban'])->name('tambah_jawaban');
     Route::get('/delete_komentar/{id}',[DiskusiController::class, 'delete'])->name('delete');
+
+    Route::get('/fillter_kategori_matakuliah',[DiskusiController::class, 'fillter_kategori_matakuliahs'])->name('fillter_kategori_matakuliah');
+    Route::get('/pencarian_diskusi',[DiskusiController::class, 'pencarian_diskusis'])->name('pencarian_diskusi');
+    
 });
 // route yang tidak perlu loginnnnnnnn
 Route::middleware('guest')->group(function(){

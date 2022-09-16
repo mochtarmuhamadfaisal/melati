@@ -20,7 +20,8 @@
                         <div class="mb-0">
                             <label for="exampleInputPassword1" class="form-label text-fitur">Password Baru</label>
                             <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="myInput2"
-                                style="border-radius: 15px; height: 3rem; border-color: #2390B9;" placeholder="Masukan Password anada..">
+                                style="border-radius: 15px; height: 3rem; border-color: #2390B9;" placeholder="Masukan Password anda..">
+                                <h5 class="text-muted mt-2 fw-light" style="font-size: 12px;">*Kosongkan form jika tidak ingin mengubah password</span></h5>
                             <input class="ceklis mt-3 text-caption" type="checkbox" onclick="myFunction2()">Tampilkan
                             Password <br>
                             <span class ="text-danger">@error('password') {{$message}} @enderror</span>

@@ -148,6 +148,7 @@
                         <label for="myfile" class="fw-bold mb-2" style="color: #2390B9;">Upload Modul</label>
                         <input type="file" class="form-control rounded-pill" id="inputGroupFile04"
                         aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_modul">
+                        <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan file dengan format <span class="fw-bold">PDF</span></h5>
                         <a href="{{ asset('modul/') }}/{{ $datamateri->upload_modul }}" class="text-decoration-none"  download><span class="text-muted">Data Lama: </span>{{ $datamateri->upload_modul }}</a>
                     </div>
 
@@ -157,6 +158,7 @@
                                 <label for="inputGroupFile04" class="fw-bold mb-2" style="color: #2390B9; margin-top: 9.2px">Upload Soal</label>
                                 <input type="file" class="form-control rounded-pill" id="inputGroupFile04"
                                     aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_soal">
+                                    <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan file dengan format <span class="fw-bold">PDF</span></h5>
                                     <a href="{{ asset('soal/') }}/{{ $datamateri->upload_soal }}" class="text-decoration-none"  download><span class="text-muted">Data Lama: </span>{{ $datamateri->upload_soal }}</a>
                             </div>
                         </div>
@@ -166,7 +168,7 @@
                                 <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Password Soal
                                 </label>
                                 <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="password_soal" value="{{ $datamateri->password_soal }}">
-                                <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan password dengan 8 karakter</h5>
+                                <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan password dengan <span class="fw-bold">8 karakter</span></h5>
                             </div>
                         </div>
                     </div>

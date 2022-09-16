@@ -19,7 +19,7 @@
                         </h1>
                         <div
                             class="d-flex flex-sm-row flex-column align-items-center mx-lg-0 mx-auto justify-content-center gap-3">
-                            <a href="#" class="text-decoration-none "><button class="btn d-inline-flex mb-md-0 btn-try text-white rounded-pill">
+                            <a href="/belajar" class="text-decoration-none "><button class="btn d-inline-flex mb-md-0 btn-try text-white rounded-pill">
                                 Ayo Belajar
                             </button></a>
                             <button class="btn btn-outline rounded-pill">
@@ -56,7 +56,8 @@
         <div class="content-2-2 container-fluid mx-auto p-0  position-relative" style="font-family: 'Poppins', sans-serif">
             <div class="text-center title-text">
                 <h1 class="text-fitur">TENTANG WEBSITE</h1>
-                <p class="text-judul-fitur">Media pembelajaran Teknik Informatika</p>
+                <p class="text-judul-fitur"><span style="color: #2390B9">Me</span>dia pembe<span style="color: #2390B9">la</span>jaran <span style="color: #2390B9">T</span>eknik <span style="color: #2390B9">I</span>nformatika</p>
+                <img style="margin-right: 0.75rem;" class="w-25" src="{{ asset('img/logoremake1.png') }}" />
                 <p class="text-caption mt-3 lh-lg" style="margin-left: 6rem; margin-right: 6rem;">
                     Media pembelajaran ini dibangun untuk dapat menambah minat dan semangat kalian dalam mempelajari
                     berbagai mata kuliah yang pada Program Studi Teknik Informatika Politeknik Negeri Pontianak,
@@ -128,7 +129,7 @@
                         Pembelajaran di kemas dengan video dengan <br>penjelasan yang lebih menarik.
                     </div>
                     <div class="button-header">
-                        <a href="#"><button class="btn btn-started rounded-pill">Ayo Belajar</button></a>
+                        <a href="/belajar"><button class="btn btn-started rounded-pill">Ayo Belajar</button></a>
                     </div>
                 </div>
             </div>
@@ -156,7 +157,7 @@
                         akan di jawab oleh penguna webiste.
                     </div>
                     <div class="button-header">
-                        <a href="#"><button class="btn btn-started rounded-pill">Ayo Berdiskusi </button></a>
+                        <a href="/belajar_diskusi"><button class="btn btn-started rounded-pill">Ayo Berdiskusi </button></a>
                     </div>
                 </div>
 
@@ -227,7 +228,7 @@
                             </p>
                         </li>
                     </ul>
-                    <a href="#"><button class="btn btn-learn text-white rounded-pill">Selengkapnya</button></a>
+                    <a href="/showcase"><button class="btn btn-learn text-white rounded-pill">Selengkapnya</button></a>
                 </div>
             </div>
         </div>

@@ -23,7 +23,7 @@
                         <label for="formGroupExampleInput3" class="form-label fw-bold"
                             style="color: #2390B9;">Semester</label>
                         <select class="form-select rounded-pill p-2 px-3" aria-label="Default select example"
-                            id="formGroupExampleInput3" name="semester">
+                            id="formGroupExampleInput3" name="semester" required>
                             <option selected disabled>Pilih Semester</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -89,6 +89,7 @@
                         <label for="myfile" class="fw-bold mb-2" style="color: #2390B9;">Upload Modul</label>
                         <input type="file" class="form-control rounded-pill" id="inputGroupFile04"
                         aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_modul">
+                        <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan file dengan format <span class="fw-bold">PDF</span></h5>
                     </div>
 
                     <div class="row mt-5">
@@ -97,6 +98,8 @@
                                 <label for="inputGroupFile04" class="fw-bold mb-2" style="color: #2390B9; margin-top: 5.5px">Upload Soal</label>
                                 <input type="file" class="form-control rounded-pill" id="inputGroupFile04"
                                     aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_soal">
+                                    <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan file dengan format <span class="fw-bold">PDF</span></h5>
+
                             </div>
                         </div>
     
@@ -105,7 +108,7 @@
                                 <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Password Soal
                                 </label>
                                 <input type="text" class="form-control rounded-pill h-100" id="recipient-name" name="password_soal">
-                                <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan password dengan 8 karakter</h5>
+                                <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan password dengan <span class="fw-bold">8 karakter</span></h5>
                             </div>
                         </div>
                     </div>
