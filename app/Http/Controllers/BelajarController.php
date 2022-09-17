@@ -40,7 +40,7 @@ class BelajarController extends Controller
             
             return response()->download($unduh);
         } else {
-            abort(403, 'Unauthorized action.');
+            return back()->with('Salah', 'Password Soal yang anda masukan salah');
         }
     }
 }

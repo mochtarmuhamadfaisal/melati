@@ -22,7 +22,7 @@
                     <div class="mb-5">
                         <label for="formGroupExampleInput3" class="form-label fw-bold"
                             style="color: #2390B9;">Semester</label>
-                        <select class="form-select rounded-pill p-2 px-3" aria-label="Default select example"
+                        <select class="form-select rounded-pill p-2 px-3 @error('semester') is-invalid @enderror" aria-label="Default select example"
                             id="formGroupExampleInput3" name="semester" required>
                             <option selected disabled>Pilih Semester</option>
                             <option value="1">1</option>
@@ -32,12 +32,15 @@
                             <option value="5">5</option>
                             <option value="6">6</option>
                         </select>
+                        @error('semester')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-5">
                         <label for="formGroupExampleInput3" class="form-label fw-bold"
                             style="color: #2390B9;">Kelas</label>
-                        <select class="form-select rounded-pill p-2 px-3" aria-label="Default select example"
+                        <select class="form-select rounded-pill p-2 px-3 @error('kelas') is-invalid @enderror" aria-label="Default select example"
                             id="formGroupExampleInput3" name="kelas">
                             <option selected disabled>Pilih kelas</option>
                             <option value="A">A</option>
@@ -45,13 +48,16 @@
                             <option value="C">C</option>
                             <option value="D">D</option>
                         </select>
+                        @error('kelas')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-5">
                         <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Mata
                             Kuliah
                         </label>
-                        <select class="form-select rounded-pill py-2" aria-label="Default select example"
+                        <select class="form-select rounded-pill py-2 @error('id_matakuliah') is-invalid @enderror" aria-label="Default select example"
                             id="recipient-name" name="id_matakuliah">
                             <option selected disabled>Pilih Matakuliah</option>
                             @php
@@ -61,13 +67,16 @@
                             <option value="{{ $baris_mk->id }}">{{ $baris_mk->nama_matakuliah }}</option>
                             @endforeach
                         </select>
+                        @error('id_matakuliah')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-5">
                         <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Link
                             Video
                         </label>
-                        <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="link_video">
+                        <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="link_video" required>
                                     </div>
                                     
                         <div class=" mb-5">
@@ -75,20 +84,20 @@
                         <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Judul
                             Materi
                         </label>
-                        <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="judul_video">
+                        <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="judul_video" required>
                     </div>
 
                     <div class=" mb-5">
                         <label for="exampleFormControlTextarea1" class="form-label fw-bold "
                             style="color: #2390B9">Deskripsi Materi</label>
                         <textarea class="form-control ckeditor" style="border-radius: 15px;" id="exampleFormControlTextarea1"
-                            rows="5" name="deskripsi_video"></textarea>
+                            rows="5" name="deskripsi_video" required></textarea>
                     </div>
 
                     <div class=" mb-5">
                         <label for="myfile" class="fw-bold mb-2" style="color: #2390B9;">Upload Modul</label>
                         <input type="file" class="form-control rounded-pill" id="inputGroupFile04"
-                        aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_modul">
+                        aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_modul" required>
                         <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan file dengan format <span class="fw-bold">PDF</span></h5>
                     </div>
 
@@ -97,7 +106,7 @@
                             <div class="mb-5">
                                 <label for="inputGroupFile04" class="fw-bold mb-2" style="color: #2390B9; margin-top: 5.5px">Upload Soal</label>
                                 <input type="file" class="form-control rounded-pill" id="inputGroupFile04"
-                                    aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_soal">
+                                    aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_soal" required>
                                     <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan file dengan format <span class="fw-bold">PDF</span></h5>
 
                             </div>
@@ -107,7 +116,7 @@
                             <div class="mb-5">
                                 <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Password Soal
                                 </label>
-                                <input type="text" class="form-control rounded-pill h-100" id="recipient-name" name="password_soal">
+                                <input type="text" class="form-control rounded-pill h-100 @error('password_soal') is-invalid @enderror" id="recipient-name" name="password_soal" required>
                                 <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan password dengan <span class="fw-bold">8 karakter</span></h5>
                             </div>
                         </div>

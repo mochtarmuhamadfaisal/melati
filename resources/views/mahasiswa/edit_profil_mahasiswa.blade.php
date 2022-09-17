@@ -53,13 +53,13 @@
                             <input type="text" name="nama" class="form-control px-4" id="formGroupExampleInput"
                                 placeholder="Masukan nama anda.."
                                 style="border-radius: 15px; height: 3rem; border-color: #2390B9;"
-                                value="{{ Auth::user()->nama }}">
+                                value="{{ Auth::user()->nama }}" required>
                         </div>
                         <div class="mb-5">
                             <label for="formGroupExampleInput2" class="form-label">Nomor Induk Mahasiswa (NIM)</label>
                             <input type="text" name="username" class="form-control px-4 " id="formGroupExampleInput2"
                                 placeholder="Masukan NIM anda.."
-                                style="border-radius: 15px; height: 3rem; border-color: #2390B9;" value="{{ Auth::user()->username }}">
+                                style="border-radius: 15px; height: 3rem; border-color: #2390B9;" value="{{ Auth::user()->username }}" required>
                         </div>
 
                         {{-- <div class="mb-5">

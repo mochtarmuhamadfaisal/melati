@@ -3,6 +3,15 @@
     <link rel="stylesheet" href="{{ asset('css/style_mahasiswa/style-index.css') }}">
 @endpush
 @section('konten_mahasiswa')
+
+<style>
+    @media only screen and (max-width: 768px){
+        .videoPerkenalan{
+            width: 340px;
+            height: 300px;
+        }
+    }
+</style>
     <!-- AWAL HERO SECTION -->
     <section class="h-100 w-100 bg-white" style="box-sizing: border-box; ">
         <div class="container-fluid mx-auto p-0  position-relative header-2-1" style="font-family: 'Poppins', sans-serif;">
@@ -19,10 +28,12 @@
                         </h1>
                         <div
                             class="d-flex flex-sm-row flex-column align-items-center mx-lg-0 mx-auto justify-content-center gap-3">
-                            <a href="/belajar" class="text-decoration-none "><button class="btn d-inline-flex mb-md-0 btn-try text-white rounded-pill">
-                                Ayo Belajar
-                            </button></a>
-                            <button class="btn btn-outline rounded-pill">
+                            <a href="/belajar" class="text-decoration-none "><button
+                                    class="btn d-inline-flex mb-md-0 btn-try text-white rounded-pill">
+                                    Ayo Belajar
+                                </button></a>
+                            <button class="btn btn-outline rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#modalvideopenjelasan">
                                 <div class="d-flex align-items-center">
                                     <svg class="me-2" width="13" height="12" viewBox="0 0 13 13" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -47,6 +58,26 @@
     </section>
     <!-- AKHIR HERO SECTION -->
 
+    {{-- Awal Modal Video --}}
+    <!-- Modal -->
+    <div class="modal fade " id="modalvideopenjelasan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe class="videoPerkenalan" width="760" height="315" src="https://www.youtube.com/embed/Cnlov_zOiCE"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- Akhir Modal Video --}}
+
 
     {{-- @dd(auth('mahasiswa')->check()) --}}
 
@@ -56,7 +87,9 @@
         <div class="content-2-2 container-fluid mx-auto p-0  position-relative" style="font-family: 'Poppins', sans-serif">
             <div class="text-center title-text">
                 <h1 class="text-fitur">TENTANG WEBSITE</h1>
-                <p class="text-judul-fitur"><span style="color: #2390B9">Me</span>dia pembe<span style="color: #2390B9">la</span>jaran <span style="color: #2390B9">T</span>eknik <span style="color: #2390B9">I</span>nformatika</p>
+                <p class="text-judul-fitur"><span style="color: #2390B9">Me</span>dia pembe<span
+                        style="color: #2390B9">la</span>jaran <span style="color: #2390B9">T</span>eknik <span
+                        style="color: #2390B9">I</span>nformatika</p>
                 <img style="margin-right: 0.75rem;" class="w-25" src="{{ asset('img/logoremake1.png') }}" />
                 <p class="text-caption mt-3 lh-lg" style="margin-left: 6rem; margin-right: 6rem;">
                     Media pembelajaran ini dibangun untuk dapat menambah minat dan semangat kalian dalam mempelajari
@@ -75,7 +108,8 @@
                         </div>
                         <h3 class="icon-title">Belajar</h3>
                         <p class="text-caption">
-                            Terdapat penjelasan pembelajaran dalam bentuk video dan juga terdapat modul beserta soal-soal yang dapat
+                            Terdapat penjelasan pembelajaran dalam bentuk video dan juga terdapat modul beserta soal-soal
+                            yang dapat
                             kalian kerjakan.
                         </p>
                     </div>
@@ -97,7 +131,7 @@
                         </div>
                         <h3 class="icon-title">Showcase</h3>
                         <p class="text-caption">
-                            Terdapat banyak hasil karya mahasiswa dalam membuat suatu project. 
+                            Terdapat banyak hasil karya mahasiswa dalam membuat suatu project.
                         </p>
                     </div>
                 </div>
@@ -157,7 +191,8 @@
                         akan di jawab oleh penguna webiste.
                     </div>
                     <div class="button-header">
-                        <a href="/belajar_diskusi"><button class="btn btn-started rounded-pill">Ayo Berdiskusi </button></a>
+                        <a href="/belajar_diskusi"><button class="btn btn-started rounded-pill">Ayo Berdiskusi
+                            </button></a>
                     </div>
                 </div>
 
@@ -228,7 +263,7 @@
                             </p>
                         </li>
                     </ul>
-                    <a href="/showcase"><button class="btn btn-learn text-white rounded-pill">Selengkapnya</button></a>
+                    <a href="/showcases"><button class="btn btn-learn text-white rounded-pill">Selengkapnya</button></a>
                 </div>
             </div>
         </div>

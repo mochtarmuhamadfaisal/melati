@@ -155,7 +155,7 @@ Route::middleware(['auth','rolemelati:mahasiswa'])->group(function (){
     Route::get('/delete_showcase/{id}',[ShowcaseController::class, 'delete_showcase'])->name('delete_showcase');
 });
 
-Route::get('/showcase',[ShowcaseController::class, 'showcase'])->name('showcase');
+Route::get('/showcases',[ShowcaseController::class, 'showcase'])->name('showcase');
     Route::get('/showcase_detail/{id}',[ShowcaseController::class, 'showcase_detail'])->name('showcase_detail');
 
     // Diskusi

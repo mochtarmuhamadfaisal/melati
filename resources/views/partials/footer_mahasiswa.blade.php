@@ -16,7 +16,7 @@
               </nav>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 ms-auto">
             <h2 class="footer-text-title">Alamat</h2>
             <nav class="list-unstyled">
               <li class="list-space">
@@ -31,6 +31,7 @@
               </li>
             </nav>
           </div>
+
           <div class="col-lg-3 col-md-6">
             <h2 class="footer-text-title">Link Terkait</h2>
             <nav class="list-unstyled">
@@ -48,7 +49,8 @@
               </li>
             </nav>
           </div>
-          <div class="col-lg-3 col-md-6">
+
+          {{-- <div class="col-lg-3 col-md-6">
             <h2 class="footer-text-title">Lainnya</h2>
             <nav class="list-unstyled">
               <li class="list-space">
@@ -61,7 +63,7 @@
                 <a href="#" target="_blank"  class="list-menu text-caption"></a>
               </li>
             </nav>
-          </div>
+          </div> --}}
         </div>
       </div>
 

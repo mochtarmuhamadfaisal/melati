@@ -70,7 +70,7 @@
         @else
             <button type="button" class="btn py-2 px-4 rounded-pill" style="background-color: #2390B9; color: white"
                 data-bs-toggle="modal" data-bs-target="#exampleModalll">
-                Tambah pertanyaan
+                Tambah Pertanyaan
             </button>
         @endif
 
@@ -140,7 +140,7 @@
                                     @endforeach
                                 </select>
                                 <button class="btn  ms-2" id="recipient-namee" style="background-color: #2390B9; color: white; border-radius: 50%;"><i class='bx bx-search-alt-2 d-flex align-self-center' style="font-size: 20px;"></i></button>
-                                <a href="/belajar_diskusi" class="btn "><i class='bx bx-refresh'></i></a> 
+                                <a href="/belajar_diskusi" class="btn d-flex align-self-center"><i class='bx bx-refresh fw-bold' style="font-size: 20px; color: #2390B9"></i></a> 
                             </div>
                         </form>
                     </div>
@@ -149,7 +149,7 @@
                 <div class="col-lg-6 col-12">
                     <form action="/pencarian_diskusi">
                         <div class="input-group mb-3" style="margin-top: 28px;">
-                            <input type="text" class="form-control rounded-pill py-2 ms-3" name="pencarian_diskusi" placeholder="Pencarian.."
+                            <input type="text" class="form-control rounded-pill py-2 ms-0 ms-lg-3" name="pencarian_diskusi" placeholder="Pencarian.."
                                 aria-label="Recipient's username" aria-describedby="button-addon2"
                                 style="border: solid 3px #2390B9" value="{{ request('pencarian_diskusi') }}">
                                 <button class="btn  ms-2" type="submit"  id="recipient-namee" style="background-color: #2390B9; color: white; border-radius: 50%;"><i class='bx bx-search-alt-2 d-flex align-self-center' style="font-size: 20px;"></i></button>
@@ -180,7 +180,7 @@
                                         <p class="fw-bold" style="margin-top: -10px">{{ $rowpertanyaan->pertanyaan }}</p>
 
                                         <p class="text-muted" style="font-size: 12px;"><span
-                                                class="fw-bold">Kategori :</span> {{ $rowpertanyaan->kategori->nama_matakuliah   }}</p>
+                                                class="fw-bold">Kategori :</span> {{ $rowpertanyaan->kategori->nama_matakuliah }}</p>
                                     </div>
                                 </button>
                             </h2>

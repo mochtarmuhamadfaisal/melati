@@ -49,7 +49,7 @@
                                 @endauth
 
                                 <li class="nav-item {{ $navbar === 'Showcase' ? 'active' : '' }}">
-                                    <a class="nav-link" href="/showcase">Showcase</a>
+                                    <a class="nav-link" href="/showcases">Showcase</a>
                                 </li>
                                 @if (auth()->check())
                                     <li class="nav-item">
@@ -118,7 +118,7 @@
                         @endif
                     @endauth
                     <li class="nav-item {{ $navbar === 'Showcase' ? 'active' : '' }}">
-                        <a class="nav-link" href="/showcase">Showcase</a>
+                        <a class="nav-link" href="/showcases">Showcase</a>
                     </li>
                 </ul>
                 <div class="gap-3 d-flex justify-content-center">

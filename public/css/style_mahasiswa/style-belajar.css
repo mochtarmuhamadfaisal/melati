@@ -253,25 +253,7 @@ div.hero{
   height: 45px;
 }
 
-.pilihsemester{
-  border-start-start-radius: 17px;
-  border-end-start-radius: 17px;
-}
 
-.pilihsemester-form{
-  border-end-end-radius: 17px;
-  border-top-right-radius: 17px;
-}
-
-.pilihkelas{
-  border-start-start-radius: 17px;
-  border-end-start-radius: 17px;
-}
-
-.pilihkelas-form{
-  border-end-end-radius: 17px;
-  border-top-right-radius: 17px;
-}
 
 table.scroll tbody {
   display:block;

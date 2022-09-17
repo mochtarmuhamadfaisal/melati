@@ -4,6 +4,25 @@
 @endpush
 @section('konten_mahasiswa')
 <style>
+    .pilihsemester{
+        border-start-start-radius: 50px;
+        border-end-start-radius: 50px;
+        }
+
+        .pilihsemester-form{
+        border-end-end-radius: 50px;
+        border-top-right-radius: 50px;
+        }
+
+        .pilihkelas{
+        border-start-start-radius: 50px;
+        border-end-start-radius: 50px;
+        }
+
+        .pilihkelas-form{
+        border-end-end-radius: 50px;
+        border-top-right-radius: 50px;
+        }
     @media only screen and (max-width: 768px){
         .tabelbelajar{
           overflow-x: auto
@@ -22,7 +41,7 @@
                         Pilih kelas anda terlebih dahulu
                     </h2>
                     <form action="/fillter" method="GET">
-                        <div class="row">
+                        <div class="row ">
                             <div class=" col-9 mb-2 col-lg-4">
                                 <div class="input-group rounded-pill mb-2 w-10">
                                     <label class="pilihsemester input-group-text text-white" for="semester"
@@ -42,7 +61,7 @@
                             <div class="col-9 w-10 col-lg-4">
                                 <div class="input-group mb-2 w-10">
                                     <label class="pilihkelas input-group-text text-white" for="kelas"
-                                        style="background-color: var(--warna-pertama);">Pilih kelas</label>
+                                        style="background-color: var(--warna-pertama); ">Pilih kelas</label>
                                     <select class="pilihkelas-form form-select" id="kelas" name="kelas">
                                         <option selected disabled="">Pilih Kelas</option>
                                         <option value="A">Kelas A</option>
@@ -53,9 +72,9 @@
                                 </div>
                             </div>
     
-                            <div class="col-9 w-10 col-lg-4">
-                                <button class="btn rounded-pill" style="background-color:#2390B9; color: white;">Cari</button> 
-                                <a href="/belajar" class="btn ">Refresh</a> 
+                            <div class="col-9 w-10 col-lg-4 ">
+                                <button class="btn p-2 " style="background-color:#2390B9; color: white;  border-radius: 50px !important;"><i class='bx bx-search-alt-2 d-flex align-self-center' style="font-size: 20px;"></i></button> 
+                                <a href="/belajar" class="btn "><i class='bx bx-refresh fw-bold d-flex align-self-center' style="font-size: 20px; color: #2390B9"></i></a> 
                             </div>
                         </div>
                     </form>
@@ -112,7 +131,7 @@
                                 <td>{{ $rowmateri->kelas }}</td>
                                 <td>{{ $rowmateri->matakuliah->nama_matakuliah }}</td>
                                 <td class="text-center">
-                                    <a href="/belajar_video/{{ $rowmateri->id_matakuliah}}" class="btn px-4" style="background-color: #2390B9; color: white;">
+                                    <a href="/belajar_video/{{ $rowmateri->id_matakuliah}}" class="btn px-4" style="background-color: #2390B9; color: white; border-radius: 50px !important;">
                                         Materi
                                     </a>
                                 </td>

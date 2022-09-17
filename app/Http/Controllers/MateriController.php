@@ -27,6 +27,18 @@ class MateriController extends Controller
         //     'nama_matakuliah' => 'required|min:3|max:255'
         // ]);
 
+        $this->validate($request,[
+            'semester' => 'required',
+            'kelas' => 'required',
+            'id_matakuliah' => 'required',
+            'link_video' => 'required',
+            'judul_video' => 'required',
+            'deskripsi_video' => 'required',
+            'upload_modul' => 'required',
+            'upload_soal' => 'required',
+            'password_soal' => 'required',
+        ]);
+
         if (str_contains($request->link_video, 'watch')) {
             $link1 = explode('/', $request->link_video);
             $akhir = end($link1);
@@ -78,6 +90,18 @@ class MateriController extends Controller
     }
 
     public function updatedata_materi(Request $request, $id){
+        $this->validate($request,[
+            'semester' => 'required',
+            'kelas' => 'required',
+            'id_matakuliah' => 'required',
+            'link_video' => 'required',
+            'judul_video' => 'required',
+            'deskripsi_video' => 'required',
+            'upload_modul' => 'required',
+            'upload_soal' => 'required',
+            'password_soal' => 'required',
+        ]);
+
         if (str_contains($request->link_video, 'watch')) {
             $link1 = explode('/', $request->link_video);
             $akhir = end($link1);

@@ -23,7 +23,7 @@
                     <div class="mb-5">
                         <label for="formGroupExampleInput3" class="form-label fw-bold"
                             style="color: #2390B9;">Semester</label>
-                        <select class="form-select rounded-pill p-2 px-3" aria-label="Default select example"
+                        <select class="form-select rounded-pill p-2 px-3 @error('semester') is-invalid @enderror" aria-label="Default select example"
                             id="formGroupExampleInput3" name="semester">
                             <option selected disabled>Pilih Semester</option>
                             @if ($datamateri->semester == '1')
@@ -70,12 +70,15 @@
                             <option value="6" selected>6</option>
                             @endif
                         </select>
+                        @error('semester')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-5">
                         <label for="formGroupExampleInput3" class="form-label fw-bold"
                             style="color: #2390B9;">Kelas</label>
-                        <select class="form-select rounded-pill p-2 px-3" aria-label="Default select example"
+                        <select class="form-select rounded-pill p-2 px-3 @error('kelas') is-invalid @enderror" aria-label="Default select example"
                             id="formGroupExampleInput3" name="kelas">
                             <option selected disabled>Pilih kelas</option>
                             @if ($datamateri->kelas == 'A')
@@ -100,15 +103,18 @@
                             <option value="D">D</option>
                             @endif
                         </select>
+                        @error('kelas')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-5">
                         <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Mata
                             Kuliah
                         </label>
-                        <select class="form-select rounded-pill py-2" aria-label="Default select example"
+                        <select class="form-select rounded-pill py-2 @error('id_matakuliah') is-invalid @enderror" aria-label="Default select example"
                           name="id_matakuliah">
-                            <option selected>-</option>
+                            <option selected disabled>Pilih Mata kuliah</option>
                             @php
                                 $data_matakuliah=\App\Models\Matakuliah::all();
                             @endphp
@@ -120,13 +126,17 @@
                             @endif
                             @endforeach
                         </select>
+
+                        @error('id_matakuliah')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-5">
                         <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Link
                             Video
                         </label>
-                        <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="link_video" value="{{ $datamateri->link_video }}">
+                        <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="link_video" value="{{ $datamateri->link_video }}" required>
                                     </div>
                                     
                         <div class=" mb-5">
@@ -134,20 +144,20 @@
                         <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Judul
                             Materi
                         </label>
-                        <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="judul_video" value="{{ $datamateri->judul_video }}">
+                        <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="judul_video" value="{{ $datamateri->judul_video }}" required>
                     </div>
 
                     <div class=" mb-5">
                         <label for="exampleFormControlTextarea1" class="form-label fw-bold "
                             style="color: #2390B9">Deskripsi Materi</label>
                         <textarea class="form-control ckeditor" style="border-radius: 15px;" id="exampleFormControlTextarea1"
-                            rows="5" name="deskripsi_video" value="{{ $datamateri->deskripsi_video }}">{!! $datamateri->deskripsi_video !!}</textarea>
+                            rows="5" name="deskripsi_video" value="{{ $datamateri->deskripsi_video }}" required>{!! $datamateri->deskripsi_video !!}</textarea>
                     </div>
 
                     <div class=" mb-5">
                         <label for="myfile" class="fw-bold mb-2" style="color: #2390B9;">Upload Modul</label>
                         <input type="file" class="form-control rounded-pill" id="inputGroupFile04"
-                        aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_modul">
+                        aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_modul" required>
                         <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan file dengan format <span class="fw-bold">PDF</span></h5>
                         <a href="{{ asset('modul/') }}/{{ $datamateri->upload_modul }}" class="text-decoration-none"  download><span class="text-muted">Data Lama: </span>{{ $datamateri->upload_modul }}</a>
                     </div>
@@ -157,7 +167,7 @@
                             <div class="mb-5">
                                 <label for="inputGroupFile04" class="fw-bold mb-2" style="color: #2390B9; margin-top: 9.2px">Upload Soal</label>
                                 <input type="file" class="form-control rounded-pill" id="inputGroupFile04"
-                                    aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_soal">
+                                    aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="upload_soal" required>
                                     <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan file dengan format <span class="fw-bold">PDF</span></h5>
                                     <a href="{{ asset('soal/') }}/{{ $datamateri->upload_soal }}" class="text-decoration-none"  download><span class="text-muted">Data Lama: </span>{{ $datamateri->upload_soal }}</a>
                             </div>
@@ -167,7 +177,7 @@
                             <div class="mb-5">
                                 <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Password Soal
                                 </label>
-                                <input type="text" class="form-control rounded-pill py-2 h-100" id="recipient-name" name="password_soal" value="{{ $datamateri->password_soal }}">
+                                <input type="text" class="form-control rounded-pill py-2 h-100 " id="recipient-name" name="password_soal" value="{{ $datamateri->password_soal }}" required>
                                 <h5 class="text-muted mt-1 fw-light" style="font-size: 12px;">*Masukan password dengan <span class="fw-bold">8 karakter</span></h5>
                             </div>
                         </div>

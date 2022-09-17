@@ -43,7 +43,7 @@
                         <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Jenis
                             Kelamin
                         </label>
-                        <select class="form-select rounded-pill py-2" name="jenis_kelamin"
+                        <select class="form-select rounded-pill py-2 @error('jeniskelamin') is-invalid @enderror"" name="jenis_kelamin"
                         aria-label="Default select example" id="recipient-name" name="jeniskelamin">
                         @if ($datadosen->jeniskelamin = 'Laki-laki')
                         <option disabled>Pilih Jenis Kelamin</option>

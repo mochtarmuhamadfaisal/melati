@@ -41,12 +41,15 @@
                         <label for="recipient-name" class="col-form-label fw-bold" style="color: #2390B9;">Jenis
                             Kelamin :
                         </label>
-                        <select class="form-select rounded-pill py-2" aria-label="Default select example"
-                            id="recipient-name" name="jeniskelamin">
+                        <select class="form-select rounded-pill py-2 @error('jeniskelamin') is-invalid @enderror" aria-label="Default select example"
+                            id="recipient-name" name="jeniskelamin" >
                             <option selected disabled>Pilih Jenis Kelamin</option>
                             <option value="Laki-laki">laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
                         </select>
+                        @error('jeniskelamin')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="d-flex justify-content-end">

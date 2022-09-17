@@ -76,7 +76,7 @@
                             <button type="submit" class="btn btn-lg btn-submit rounded-pill mb-5 h-auto border-0 rounded-pill" id="submit">Upload
                                 Project </button>
                         </div>
-                        <a href="/showcase" class="text-decoration-none " style="color: #2390B9;">
+                        <a href="/showcases" class="text-decoration-none " style="color: #2390B9;">
                             <i class='bx bx-chevron-left mb-5 mb-lg-0'></i>Kembali ke showcase</a>
                     </div>
                 </div>

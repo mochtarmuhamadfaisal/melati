@@ -23,6 +23,9 @@
     <div class="container-fluid ">
         <div class="row d-flex justify-content-center">
             <div class="col-9 mt-4 tabelmateri">
+                @if (session()->has('Salah')) 
+                    <div class="alert alert-danger mt-2">{{ session('Salah') }}</div>
+                @endif
                 <table id="example" class="table table-borderless " style="height: 50px">
                     <thead style="background-color: #D4F3FF;">
                         <tr>
@@ -69,20 +72,20 @@
                                             </div>
                                             <form action="/cek_password_soal" method="POST">
                                                 @csrf
-                                                <div class="modal-body">
-                                                    <label for="inputPassword5" class="form-label">Password</label>
+                                                <div class="modal-body py-4">
+                                                    <label for="inputPassword5" class="form-label fw-bold" style="color: #2390B9">Password</label>
                                                     <input value="{{ $rowmateri->id }}" type="hidden" name="id_materi">
-                                                    <input value="{{ $rowmateri->password_soal }}" type="hidden" name="password_soal">
+                                                    <input  value="{{ $rowmateri->password_soal }}" type="hidden" name="password_soal" >
                                                 
-                                                    <input type="password" id="inputPassword5" class="form-control"
-                                                        aria-describedby="passwordHelpBlock" name="password_soal">
-                                                    <div id="passwordHelpBlock" class="form-text">
-                                                        Masukan password yang telah di berikan dosen kepada anda..
+                                                    <input type="password" id="inputPassword5" class="form-control rounded-pill py-2 px-3"
+                                                        aria-describedby="passwordHelpBlock" name="password_soal" placeholder="Masukan Password..">
+                                                    <div id="passwordHelpBlock" class="form-text" style="font-size: 12px;">
+                                                        *Masukan password yang telah di berikan dosen kepada anda..
                                                     </div>
 
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                                    <button type="submit" class="btn btn-danger rounded-pill">Submit</button>
                                                 </div>
                                             </form>
                                         </div>
