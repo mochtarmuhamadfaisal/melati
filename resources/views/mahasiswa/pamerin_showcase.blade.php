@@ -18,9 +18,9 @@
                     <div iv class="col-lg-6">
                         <div class="mb-5 ">
                             <label for="formGroupExampleInput" class="form-label">Judul Project</label>
-                            <input type="text" class="form-control px-4" id="formGroupExampleInput"
+                            <input type="text" class="form-control px-4 @error('judul_project') is-invalid @enderror" id="formGroupExampleInput"
                                 placeholder="Masukan Judul project anda.."
-                                style="border-radius: 15px; height: 3rem; border-color: #2390B9;" name="judul_project">
+                                style="border-radius: 15px; height: 3rem; border-color: #2390B9;" name="judul_project" required>
                         </div>
 
                         <div class="mb-5">
@@ -34,16 +34,16 @@
                             <!-- <input class="upload-project" type='file' onchange="readURL(this);" />
                                     <img id="blah" src="http://placehold.it/180" alt="your image" /> -->
                             <input type="file" name="foto" class="custom-file-input" id="foto"
-                                onchange="previewname()">
+                                onchange="previewname()" required>
                             <img class="img-preview mt-4" id="upload-file-info" style="display: none; margin-bottom: 2rem;"
                                 src="" alt="">
                             {{-- <p ></p> --}}
                         </div>
                         <div class="mb-5">
-                            <label for="formGroupExampleInput2" class="form-label">Mata Kuliah</label>
+                            <label for="formGroupExampleInput2" class="form-label @error('id_matakuliah') is-invalid @enderror">Mata Kuliah</label>
                             <select class="form-select rounded-pill py-2" aria-label="Default select example"
-                            id="recipient-name" name="id_matakuliah">
-                            <option selected>-</option>
+                            id="recipient-name" name="id_matakuliah" required>
+                            <option selected disabled>Piliah Mata Kuliah</option>
                             @php
                                 $data_matakuliah=\App\Models\Matakuliah::all();
                             @endphp
@@ -51,7 +51,9 @@
                             <option value="{{ $baris_mk->id }}">{{ $baris_mk->nama_matakuliah }}</option>
                             @endforeach
                         </select>
-
+                        @error('id_matakuliah')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                         </div>
 
                         <div class="submit d-flex justify-content-end mt-5 col-8 col-sm-12">

@@ -26,6 +26,10 @@ class ShowcaseController extends Controller
     }
 
     public function tambah_showcase(Request $request){
+        $this->validate($request,[
+            'id_matakuliah' => 'required',
+        ]);
+
         $datashowcase = new Showcase();
         $datashowcase->id_matakuliah = $request->id_matakuliah;
         $datashowcase->id_user = Auth::user()->id;
@@ -53,6 +57,10 @@ class ShowcaseController extends Controller
     }
 
     public function updatedata_showcase(Request $request, $id){
+        $this->validate($request,[
+            'id_matakuliah' => 'required',
+        ]);
+
         $dataupdateshowcase=Showcase::where('id',$id)->first();
         $dataupdateshowcase->id_matakuliah = $request->id_matakuliah;
         $dataupdateshowcase->judul_project = $request->judul_project;

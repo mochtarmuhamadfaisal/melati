@@ -22,14 +22,14 @@
                             <input type="text" class="form-control px-4" id="formGroupExampleInput"
                                 placeholder="Masukan Judul project anda.."
                                 style="border-radius: 15px; height: 3rem; border-color: #2390B9;" name="judul_project"
-                                value="{{ $datashowcase->judul_project }}">
+                                value="{{ $datashowcase->judul_project }}" required>
                         </div>
 
                         <div class="mb-5">
                             <label for="exampleFormControlTextarea1" class="form-label">Deskripsi Project</label>
                             <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" placeholder="Masukan deskripsi project anda.."
                                 rows="5" style="border-radius: 15px; border-color: #2390B9;" name="deskripsi_project" 
-                                value="{{ $datashowcase->deskripsi_project }}">{{ $datashowcase->deskripsi_project }}</textarea>
+                                value="{{ $datashowcase->deskripsi_project }}" required>{{ $datashowcase->deskripsi_project }}</textarea>
                         </div>
 
                         <div class="mb-5 d-grid">
@@ -37,7 +37,7 @@
                             <!-- <input class="upload-project" type='file' onchange="readURL(this);" />
                                             <img id="blah" src="http://placehold.it/180" alt="your image" /> -->
                             <input type="file" name="foto" class="custom-file-input" id="foto"
-                                onchange="previewname()">
+                                onchange="previewname()" required>
                             <br><br>
                             <div class="row d-flex">
                                 <div class="col-6">
@@ -55,9 +55,9 @@
                         </div>
                         <div class="mb-5">
                             <label for="formGroupExampleInput2" class="form-label">Mata Kuliah</label>
-                            <select class="form-select rounded-pill py-2" aria-label="Default select example"
+                            <select class="form-select rounded-pill py-2 @error('id_matakuliah') is-invalid @enderror" aria-label="Default select example"
                                 id="recipient-name" name="id_matakuliah">
-                                <option selected>-</option>
+                                <option selected disabled>Pilih Mata Kuliah</option>
                                 @php
                                     $data_matakuliah = \App\Models\Matakuliah::all();
                                 @endphp
@@ -69,7 +69,9 @@
                                     @endif
                                 @endforeach
                             </select>
-
+                            @error('id_matakuliah')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="submit d-flex justify-content-end mt-5 col-8 col-sm-12">
